@@ -17,7 +17,7 @@
     "facts": "node scripts/verify-facts.mjs",
     "facts:strict": "node scripts/verify-facts.mjs --strict",
     "facts:links": "node scripts/verify-facts.mjs --links",
-    "verify": "astro check && node scripts/verify-facts.mjs",
+    "verify": "astro check && node scripts/verify-facts.mjs --strict",
     "deploy:pages": "node scripts/deploy-gh-pages.mjs"
   },
   "devDependencies": {
