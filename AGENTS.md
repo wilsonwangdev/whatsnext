@@ -34,4 +34,4 @@ pnpm build        # 事实校验 + 静态构建
 
 ## 部署
 
-`pnpm deploy` 会构建并推送到 `gh-pages` 分支，GitHub Pages 从该分支发布。部署前确认 `src/data/site.ts` 与 `astro.config.mjs` 中的域名、base 与仓库地址。
+`pnpm deploy:pages` 会构建并推送到 `gh-pages` 分支，GitHub Pages 从该分支发布。部署前确认 `src/data/site.ts` 与 `astro.config.mjs` 中的域名、base 与仓库地址。

@@ -102,7 +102,7 @@ src/
 站点已部署在 **<https://wilsonwangdev.github.io/postclose/>**（GitHub Pages，`gh-pages` 分支）。
 
 ```bash
-pnpm deploy
+pnpm deploy:pages
 ```
 
 部署使用子路径 `/postclose/`，因此 `astro.config.mjs` 通过 `BASE_PATH` 设置 base，站内链接统一走 `src/lib/paths.ts` 的 `withBase()`。
