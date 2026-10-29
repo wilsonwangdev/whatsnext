@@ -38,6 +38,7 @@ pnpm facts:links  # 额外检查来源链接（需要网络）
 pnpm verify       # astro check + 事实核验
 pnpm build        # 事实核验 + 构建到 dist/
 pnpm preview      # 预览构建产物
+pnpm watch        # 生成本周监测报告（不修改内容）
 ```
 
 ## 目录结构

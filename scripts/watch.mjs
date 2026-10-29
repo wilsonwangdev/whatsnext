@@ -335,5 +335,8 @@ section('无法判断（被拦截）', findings.blocked, (item) => `- ${item}`);
 lines.push('---');
 lines.push('');
 lines.push('本报告由 `scripts/watch.mjs` 自动生成，只提交线索，不修改内容。核验后请更新 `lastVerified` 并运行 `pnpm facts`。');
+lines.push('');
+lines.push(`核验状态：${SITE.replace(/\/$/, '')}${BASE.replace(/\/$/, '')}/status/`);
+lines.push('处理完本周条目后可关闭本 issue；下次运行会新建一条。');
 
 console.log(lines.join('\n'));
