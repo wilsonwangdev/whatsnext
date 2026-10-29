@@ -1,0 +1,163 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+import { fmtDate, fmtISO } from '../lib/format';
+import { withBase } from '../lib/paths';
+
+const cases = await getCollection('cases');
+const watchlist = await getCollection('watchlist');
+
+const today = new Date();
+today.setUTCHours(0, 0, 0, 0);
+const ageOf = (date: Date) => Math.max(0, Math.round((today.getTime() - date.getTime()) / 86_400_000));
+
+type Row = {
+  name: string;
+  kind: string;
+  href: string;
+  lastVerified: Date;
+  age: number;
+};
+
+const rows: Row[] = [
+  ...cases.map((c) => ({
+    name: c.data.name,
+    kind: '案例',
+    href: withBase(`/cases/${c.id}`),
+    lastVerified: c.data.lastVerified,
+    age: ageOf(c.data.lastVerified),
+  })),
+  ...watchlist.map((w) => ({
+    name: w.data.name,
+    kind: '观察',
+    href: withBase(`/watchlist/${w.id}`),
+    lastVerified: w.data.lastVerified,
+    age: ageOf(w.data.lastVerified),
+  })),
+].sort((a, b) => b.age - a.age);
+
+const fresh = rows.filter((r) => r.age <= 90);
+const due = rows.filter((r) => r.age > 90 && r.age <= 180);
+const overdue = rows.filter((r) => r.age > 180);
+
+const levelOf = (age: number) => (age > 180 ? 'overdue' : age > 90 ? 'due' : 'fresh');
+const labelOf = (age: number) => (age > 180 ? '已过期' : age > 90 ? '建议回查' : '核验正常');
+
+const upcoming = cases
+  .flatMap((c) =>
+    c.data.plans.map((plan) => ({
+      name: c.data.name,
+      href: withBase(`/cases/${c.id}`),
+      title: plan.title,
+      date: plan.date,
+      basis: plan.basis,
+      days: Math.round((plan.date.getTime() - today.getTime()) / 86_400_000),
+    })),
+  )
+  .filter((p) => p.days >= 0 && p.days <= 120)
+  .sort((a, b) => a.date.getTime() - b.date.getTime());
+---
+
+<BaseLayout
+  title="核验状态"
+  description="每个案例与观察对象的最后核验日期、是否超过回查期限，以及未来 120 天内已公布的计划。"
+>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">核验状态 / Status</p>
+      <h1>哪些记录该回查了。</h1>
+      <p class="lede">
+        每个条目都有“最后核验”日期。核验间隔目标为 90 天；超过 180 天视为过期，构建会被阻断。
+        这里按时间从旧到新排列，方便排期。自动监测每周运行一次，只提交线索，不改内容。
+      </p>
+      <div class="page-head__meta">
+        <span>核验目标 ≤ 90 天</span>
+        <span>过期线 &gt; 180 天</span>
+        <span>最后构建 {fmtDate(today)}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="status-summary">
+        <div class="status-summary__item">
+          <strong>{String(fresh.length).padStart(2, '0')}</strong>
+          <span>90 天内 · 正常</span>
+        </div>
+        <div class="status-summary__item status-summary__item--due">
+          <strong>{String(due.length).padStart(2, '0')}</strong>
+          <span>91—180 天 · 建议回查</span>
+        </div>
+        <div class="status-summary__item status-summary__item--overdue">
+          <strong>{String(overdue.length).padStart(2, '0')}</strong>
+          <span>超过 180 天 · 已过期</span>
+        </div>
+      </div>
+
+      <div class="status-list" role="table" aria-label="核验状态">
+        <div class="status-row status-row--head" role="row">
+          <span role="columnheader">条目</span>
+          <span role="columnheader">类型</span>
+          <span role="columnheader">最后核验</span>
+          <span role="columnheader">状态</span>
+        </div>
+        {rows.map((row) => (
+          <div class="status-row" role="row">
+            <span role="cell"><a href={row.href}>{row.name}</a></span>
+            <span role="cell" class="muted">{row.kind}</span>
+            <span role="cell">
+              <time datetime={fmtISO(row.lastVerified)}>{fmtDate(row.lastVerified)}</time>
+              <span class="status-age">{row.age} 天前</span>
+            </span>
+            <span role="cell">
+              <span class:list={['status-dot', `status-dot--${levelOf(row.age)}`]} aria-hidden="true"></span>
+              <span class:list={['status-label', `status-label--${levelOf(row.age)}`]}>{labelOf(row.age)}</span>
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {upcoming.length > 0 && (
+    <section class="section section-rule">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-head__left">
+            <span class="section-head__num">SOON</span>
+            <div>
+              <h2>未来 120 天的计划</h2>
+              <p>已公布但尚未发生的节点；到点后需要回查是否兑现。</p>
+            </div>
+          </div>
+        </div>
+        <ol class="timeline">
+          {upcoming.map((plan) => (
+            <li class="tl-item" data-kind="plan">
+              <div class="tl-item__date">
+                <time datetime={fmtISO(plan.date)}>{fmtDate(plan.date)}</time>
+                <span class="tl-item__kind">{plan.basis === 'derived' ? '推算' : '公告'}</span>
+              </div>
+              <h3><a href={plan.href}>{plan.name}</a> · {plan.title}</h3>
+              <p>还有 {plan.days} 天</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )}
+
+  <section class="section section-rule">
+    <div class="wrap wrap--narrow">
+      <div class="callout">
+        <strong>自动监测做什么：</strong>
+        每周检查仓库 release、许可证、仓库归档/转移、产品站点可用性与来源链接，
+        把可疑变化开成 GitHub issue（标签 <code>watch</code>），由维护者按事实核验流程确认后再改内容。
+        没有任何自动提交或自动发布。
+        <a href={`${SITE.repo}/issues?q=label%3Awatch`} target="_blank" rel="noopener noreferrer">查看监测 issue ↗</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

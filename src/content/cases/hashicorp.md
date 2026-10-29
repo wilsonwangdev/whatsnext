@@ -25,7 +25,7 @@ summary: IBM 以约 64 亿美元收购 HashiCorp，2025 年 2 月完成。交易
 lastVerified: 2026-10-28
 sources:
   - title: IBM to Acquire HashiCorp, Inc.
-    url: https://newsroom.ibm.com/2024-04-24-IBM-to-Acquire-HashiCorp-Inc-Creating-a-Comprehensive-End-to-End-Hybrid-Cloud-AI-Driven-Software-Platform
+    url: https://newsroom.ibm.com/2024-04-24-IBM-to-Acquire-HashiCorp-Inc-Creating-a-Comprehensive-End-to-End-Hybrid-Cloud-Platform
     publisher: IBM
     date: 2024-04-24
     type: primary
@@ -77,7 +77,7 @@ timeline:
   - date: 2024-04-24
     title: IBM 宣布以约 64 亿美元收购 HashiCorp
     kind: deal
-    source: https://newsroom.ibm.com/2024-04-24-IBM-to-Acquire-HashiCorp-Inc-Creating-a-Comprehensive-End-to-End-Hybrid-Cloud-AI-Driven-Software-Platform
+    source: https://newsroom.ibm.com/2024-04-24-IBM-to-Acquire-HashiCorp-Inc-Creating-a-Comprehensive-End-to-End-Hybrid-Cloud-Platform
   - date: 2025-02-27
     title: 交易完成，HashiCorp 成为 IBM Software 的一个部门
     kind: deal

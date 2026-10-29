@@ -13,7 +13,7 @@
 
 - **8 个案例**：Teambition → 阿里巴巴、Netless → 声网、Bun → Anthropic、Deno → Cloudflare、Dioxus → Cognition、HashiCorp → IBM、Figma → Adobe（已终止）、npm → GitHub。
 - **6 个观察对象**：tldraw、AFFiNE、Excalidraw、Obsidian、Raycast、Zed。
-- **可筛选的目录**、案例详情页（交易事实 / 承诺核对 / 来源 / 时间线）、全局时间线、方法与贡献规范。
+- **可筛选的目录**、案例详情页（交易事实 / 承诺核对 / 来源 / 时间线）、全局时间线、[核验状态](https://wilsonwangdev.github.io/postclose/status)、方法与贡献规范。
 - **机器可读导出**：[`/cases.json`](https://wilsonwangdev.github.io/postclose/cases.json)、RSS。
 - 每条案例带 **证据等级**（A/B/C）与 **最后核验日期**。
 - **内置事实核验技能**：`.agents/skills/fact-check/` + `scripts/verify-facts.mjs`，构建前自动检查日期、金额、人数与来源。
@@ -97,6 +97,13 @@ src/
 - 观察名单里带数字的 `signals` 是否都有来源；
 - 来源 URL 是否合法、重复，来源日期是否在未来；
 - 正文里的人数/金额会列成 `info`，供人工回查（不阻断构建）。
+
+## 维护节奏
+
+- **静态发布**：内容在 Git 里，构建时生成；没有任何自动发布。
+- **每周监测**：`.github/workflows/watch.yml` 每周一跑 `scripts/watch.mjs`，检查仓库 release、许可证、归档/转移、站点可用性与来源链接，把线索开成带 `watch` 标签的 issue；不自动改内容。
+- **核验 SLA**：90 天内回查，超过 180 天构建失败；进度见 `/status`。
+- **人工核验**：确认后更新内容、`lastVerified`，跑 `pnpm facts --strict` 再部署。
 
 ## 数据导出
 

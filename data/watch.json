@@ -1,0 +1,27 @@
+{
+  "repos": [
+    { "repo": "oven-sh/bun", "label": "Bun", "entry": "/cases/bun", "license": "MIT" },
+    { "repo": "denoland/deno", "label": "Deno", "entry": "/cases/deno", "license": "MIT" },
+    { "repo": "DioxusLabs/dioxus", "label": "Dioxus", "entry": "/cases/dioxus", "license": null },
+    { "repo": "DioxusLabs/taffy", "label": "Taffy", "entry": "/cases/dioxus", "license": "MIT" },
+    { "repo": "hashicorp/terraform", "label": "Terraform", "entry": "/cases/hashicorp", "license": "BUSL-1.1" },
+    { "repo": "npm/cli", "label": "npm CLI", "entry": "/cases/npm", "license": "Artistic-2.0" },
+    { "repo": "tldraw/tldraw", "label": "tldraw", "entry": "/watchlist/tldraw", "license": null },
+    { "repo": "toeverything/AFFiNE", "label": "AFFiNE", "entry": "/watchlist/affine", "license": "MIT" },
+    { "repo": "excalidraw/excalidraw", "label": "Excalidraw", "entry": "/watchlist/excalidraw", "license": "MIT" },
+    { "repo": "zed-industries/zed", "label": "Zed", "entry": "/watchlist/zed", "license": "GPL-3.0" }
+  ],
+  "sites": [
+    { "url": "https://www.teambition.com", "label": "Teambition 官网", "entry": "/cases/teambition" },
+    { "url": "https://bun.com", "label": "Bun 官网", "entry": "/cases/bun" },
+    { "url": "https://deno.com", "label": "Deno 官网", "entry": "/cases/deno" },
+    { "url": "https://tldraw.dev", "label": "tldraw 官网", "entry": "/watchlist/tldraw" },
+    { "url": "https://affine.pro", "label": "AFFiNE 官网", "entry": "/watchlist/affine" },
+    { "url": "https://excalidraw.com", "label": "Excalidraw 官网", "entry": "/watchlist/excalidraw" },
+    { "url": "https://obsidian.md", "label": "Obsidian 官网", "entry": "/watchlist/obsidian" },
+    { "url": "https://www.raycast.com", "label": "Raycast 官网", "entry": "/watchlist/raycast" },
+    { "url": "https://zed.dev", "label": "Zed 官网", "entry": "/watchlist/zed" },
+    { "url": "https://www.npmjs.com", "label": "npm 官网", "entry": "/cases/npm" },
+    { "url": "https://www.figma.com", "label": "Figma 官网", "entry": "/cases/figma" }
+  ]
+}

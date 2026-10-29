@@ -16,6 +16,7 @@ pnpm facts:strict # 警告也视为失败
 pnpm facts:links  # 额外检查来源链接可达性
 pnpm verify       # astro check + 事实校验
 pnpm build        # 事实校验 + 静态构建
+pnpm watch        # 生成本周监测报告（不修改内容）
 ```
 
 ## 内容位置
