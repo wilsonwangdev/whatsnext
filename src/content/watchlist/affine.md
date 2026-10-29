@@ -88,11 +88,6 @@ timeline:
     detail: 贺嘉琛去做 agent-native 产品 Bridge；Vincent Chen 接任 CEO，承诺 Markdown 优先、BYOK 与全开源。
     kind: governance
     source: https://affine.pro/blog/next-chapter-of-affine
-  - date: 2026-10-29
-    title: Apache 2.0 迁移仍未执行
-    detail: 仓库仍为 MIT + EE 拆分；承诺已宣布五个月。
-    kind: license
-    source: https://github.com/toeverything/AFFiNE/blob/canary/LICENSE
 openQuestions:
   - 2023 年 Pre-A 之后是否还有融资，缺少一手确认。
   - Pre-A 金额只有“千万美元”口径，精确数字未知。

@@ -26,6 +26,23 @@ const timelineEvent = z.object({
   source: z.string().url().optional(),
 });
 
+const plan = z.object({
+  date: z.coerce.date(),
+  dateLabel: z.string().optional(),
+  title: z.string(),
+  detail: z.string().optional(),
+  /** announced：公告给出了具体日期；derived：按公告给出的期限推算 */
+  basis: z.enum(['announced', 'derived']).default('announced'),
+  source: z.string().url(),
+});
+
+const check = z.object({
+  date: z.coerce.date(),
+  label: z.string(),
+  value: z.string(),
+  source: z.string().url(),
+});
+
 const promise = z.object({
   claim: z.string(),
   status: z.enum(['kept', 'partial', 'pending', 'broken', 'unclear']),
@@ -64,6 +81,10 @@ const cases = defineCollection({
     lastVerified: z.coerce.date(),
     sources: z.array(source).min(1),
     timeline: z.array(timelineEvent).default([]),
+    /** 已公布但尚未发生的计划；不要写进 timeline */
+    plans: z.array(plan).default([]),
+    /** 状态核查：某个时间点的静态事实，不是事件 */
+    checks: z.array(check).default([]),
     promises: z.array(promise).default([]),
     openQuestions: z.array(z.string()).default([]),
   }),
@@ -101,6 +122,7 @@ const watchlist = defineCollection({
     lastVerified: z.coerce.date(),
     sources: z.array(source).min(1),
     timeline: z.array(timelineEvent).default([]),
+    plans: z.array(plan).default([]),
     openQuestions: z.array(z.string()).default([]),
   }),
 });

@@ -89,6 +89,16 @@ function parseEntry(raw, file) {
   }
 }
 
+function looksLikeIndex(url) {
+  try {
+    const parsed = new URL(url);
+    const pathname = parsed.pathname.replace(/\/+$/, '');
+    return pathname === '' || /\/blog$/.test(pathname) || /\/news$/.test(pathname);
+  } catch {
+    return false;
+  }
+}
+
 function isUrl(value) {
   if (typeof value !== 'string') return false;
   try {
@@ -178,8 +188,13 @@ function checkTimeline(data, file) {
     if (year < 1990 || date > addYears(TODAY, 5)) {
       report('error', file, 'DATE-10', `${where} 日期超出合理范围：${iso(date)}`);
     }
-    if (date > TODAY && !event.detail) {
-      report('error', file, 'DATE-11', `${where} 是未来事件，但没有 detail 说明计划内容`);
+    if (date > TODAY) {
+      report('error', file, 'DATE-14', `${where} 在未来；时间线只记录已发生事件，请移入 plans`);
+    }
+    if (!event.source) {
+      report('error', file, 'SRC-06', `${where} 缺少 source`);
+    } else if (looksLikeIndex(event.source)) {
+      report('warn', file, 'SRC-05', `${where} 的来源是首页或列表页，应指向具体公告`);
     }
     if (event.dateLabel) {
       const mismatch = checkDateLabel(event.dateLabel, date);
@@ -222,6 +237,36 @@ function checkDateLabel(label, date) {
   return null;
 }
 
+function checkPlans(data, file) {
+  const plans = Array.isArray(data.plans) ? data.plans : [];
+  for (const [index, plan] of plans.entries()) {
+    const where = `plans[${index}]「${plan?.title ?? '?'}」`;
+    const date = toDate(plan?.date);
+    if (!date) {
+      report('error', file, 'PLAN-01', `${where} 日期无法解析`);
+      continue;
+    }
+    if (date <= TODAY) {
+      report('warn', file, 'PLAN-01', `${where} 的日期已过，应移入 timeline 或更新计划状态`);
+    }
+    if (date > addYears(TODAY, 5)) {
+      report('error', file, 'PLAN-01', `${where} 的日期超出合理范围`);
+    }
+    if (plan.dateLabel) {
+      const mismatch = checkDateLabel(plan.dateLabel, date);
+      if (mismatch) report('error', file, 'PLAN-02', `${where} ${mismatch}`);
+    }
+    if (!isUrl(plan.source)) {
+      report('error', file, 'PLAN-03', `${where} 缺少合法来源`);
+    } else if (looksLikeIndex(plan.source)) {
+      report('warn', file, 'SRC-05', `${where} 的来源是首页或列表页，应指向具体公告`);
+    }
+    if (plan.basis === 'derived' && !/推算|按公告|期限|据此/.test(String(plan.detail ?? ''))) {
+      report('error', file, 'PLAN-04', `${where} 是推算日期，detail 必须说明推算依据`);
+    }
+  }
+}
+
 function checkAmount(data, file) {
   const amount = data.amount ?? {};
   const value = amount.value;
@@ -246,6 +291,27 @@ function checkAmount(data, file) {
     const note = String(amount.note ?? '');
     if (!/(终止|未完成|未交割|取消)/.test(note)) {
       report('error', file, 'AMT-05', '交易已终止，对价 note 必须说明交易未完成');
+    }
+  }
+}
+
+function checkChecks(data, file) {
+  const checks = Array.isArray(data.checks) ? data.checks : [];
+  for (const [index, check] of checks.entries()) {
+    const where = `checks[${index}]「${check?.label ?? '?'}」`;
+    const date = toDate(check?.date);
+    if (!date) {
+      report('error', file, 'CHECK-01', `${where} 日期无法解析`);
+      continue;
+    }
+    if (date > TODAY) {
+      report('error', file, 'CHECK-01', `${where} 的核查日期在未来`);
+    }
+    if (!isUrl(check.source)) {
+      report('error', file, 'CHECK-02', `${where} 缺少合法来源`);
+    }
+    if (!String(check.value ?? '').trim()) {
+      report('error', file, 'CHECK-03', `${where} 缺少 value`);
     }
   }
 }
@@ -410,6 +476,8 @@ for (const entry of entries) {
   checkVerified(data, file);
   checkSources(data, file);
   checkTimeline(data, file);
+  checkPlans(data, file);
+  checkChecks(data, file);
   checkSignals(data, file);
 
   if (entry.kind === 'case') {

@@ -85,7 +85,7 @@ timeline:
   - date: 2025-04-30
     title: 推出 iOS 版
     kind: product
-    source: https://www.raycast.com/blog
+    source: https://www.raycast.com/blog/raycast-for-ios
   - date: 2026-05-14
     title: 完成底层重写（The New Raycast）
     detail: 自建磁盘索引替代 Spotlight，加入系统级听写与新的快捷键录制。

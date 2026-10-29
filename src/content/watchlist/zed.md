@@ -66,7 +66,8 @@ sources:
 timeline:
   - date: 2021-01-01
     dateLabel: 2021 年
-    title: Nathan Sobo 等人创立 Zed
+    title: Zed 项目启动
+    detail: 据 2026 年 4 月的 1.0 公告，团队已构建五年；按此回溯为 2021 年，具体月份未披露。
     kind: founding
     source: https://zed.dev/blog/zed-1-0
   - date: 2023-03-17

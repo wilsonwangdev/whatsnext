@@ -6,6 +6,7 @@ import EvidenceBadge from '../../components/EvidenceBadge.astro';
 import Timeline from '../../components/Timeline.astro';
 import SourceList from '../../components/SourceList.astro';
 import PromiseList from '../../components/PromiseList.astro';
+import PlanList from '../../components/PlanList.astro';
 import { DEAL_TYPE_LABEL, EVIDENCE_LABEL, EVIDENCE_NOTE, SITE, STATUS_LABEL } from '../../data/site';
 import { elapsed, fmtAmount, fmtDate, sortByDateDesc } from '../../lib/format';
 import { withBase } from '../../lib/paths';
@@ -67,12 +68,12 @@ const jsonLd = {
           <StatusChip status={c.status} />
           <span class="chip">{DEAL_TYPE_LABEL[c.dealType]}</span>
           <EvidenceBadge level={c.evidence} withLabel />
-          {age && <span class="chip chip--soft">{age}前</span>}
+          {age && <span class="chip chip--soft">距今 {age}</span>}
         </div>
         <h1>
           {c.name}
           <span class="of">
-            <b>{c.acquirer}</b> ·
+            <b>{c.acquirer}</b> ·{' '}
             {c.status === 'terminated' ? '交易终止' : c.status === 'team-join' ? '团队加入' : DEAL_TYPE_LABEL[c.dealType]}
           </span>
         </h1>
@@ -161,6 +162,20 @@ const jsonLd = {
           </dl>
         </div>
 
+        {c.checks.length > 0 && (
+          <div class="panel">
+            <h2>状态核查</h2>
+            <ul>
+              {c.checks.map((check) => (
+                <li>
+                  <span class="small">{check.label}：{check.value}</span>
+                  <span class="small">核查于 {fmtDate(check.date)} · <a href={check.source} target="_blank" rel="noopener noreferrer">来源 ↗</a></span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {c.promises.length > 0 && <PromiseList promises={c.promises} />}
 
         <SourceList sources={c.sources} />
@@ -179,12 +194,29 @@ const jsonLd = {
     </div>
   </div>
 
+  {c.plans.length > 0 && (
+    <section class="section section-rule">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-head__left">
+            <span class="section-head__num">PLAN</span>
+            <div>
+              <h2>已公布的计划</h2>
+              <p>尚未发生。日期来自官方公告，或按公告给出的期限推算，并标注推算依据。</p>
+            </div>
+          </div>
+        </div>
+        <PlanList plans={c.plans} />
+      </div>
+    </section>
+  )}
+
   {c.timeline.length > 0 && (
     <section class="section section-rule">
       <div class="wrap">
         <div class="section-head">
           <div class="section-head__left">
-            <span class="section-head__num">↳</span>
+            <span class="section-head__num">LOG</span>
             <div>
               <h2>完整时间线</h2>
               <p>从创立到最近一条可核验的后续。悬停来源可查看出处。</p>

@@ -1447,6 +1447,11 @@ samp {
   border-color: var(--accent);
 }
 
+.tl-item[data-kind='plan']::before {
+  border-color: var(--accent);
+  border-style: dashed;
+}
+
 .tl-item[data-kind='shutdown']::before {
   background: var(--paper);
   border-color: var(--accent);

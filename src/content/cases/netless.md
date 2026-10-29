@@ -58,11 +58,6 @@ timeline:
     detail: 约 20 万美元开发技术（五年摊销）与约 310 万美元商誉，商誉归因于与实时互动平台的协同。
     kind: aftermath
     source: https://vectorshift.ai/research/deals/agora-netless-2020
-  - date: 2026-10-28
-    title: herewhite.com 已无法访问
-    detail: 独立品牌网站不再提供服务；未见声网发布白板产品线停运或整合的专门公告。
-    kind: shutdown
-    source: https://herewhite.com
 openQuestions:
   - Netless 团队加入声网后的具体去向与存续时间，缺少公开记录。
   - 声网互动白板产品线的最终状态（继续售卖、合并或停运）没有一手公告。
@@ -87,7 +82,7 @@ Netless 是一家上海团队，运营主体上海它山石信息科技有限公
 
 ## 之后：能力留下，品牌淡出
 
-收购后，Netless 没有保持独立品牌运营。白板能力被并入声网的实时互动（RTE）产品组合，Netless 作为独立 SDK 品牌的存在感迅速下降。截至 2026 年 10 月，herewhite.com 已无法访问。
+收购后，Netless 没有保持独立品牌运营。白板能力被并入声网的实时互动（RTE）产品组合，Netless 作为独立 SDK 品牌的存在感迅速下降。截至 2026 年 10 月，herewhite.com 已无法访问（本次核验直接访问的结果）。
 
 需要说明的是：我们没有找到声网发布的“白板产品线整合/停运”专门公告。这段过程缺少一手记录，只能从品牌网站消失、产品文档收敛这些侧面观察。对档案来说，这是一个诚实的空白，而不是可以补写的剧情。
 

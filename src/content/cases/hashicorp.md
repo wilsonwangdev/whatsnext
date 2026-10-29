@@ -82,10 +82,10 @@ timeline:
     title: 交易完成，HashiCorp 成为 IBM Software 的一个部门
     kind: deal
     source: https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp,-creates-comprehensive,-end-to-end-hybrid-cloud-platform
+checks:
   - date: 2026-10-28
-    title: Terraform 仍采用 BUSL 1.1
-    detail: 收购没有改变许可证；OpenTofu 作为分叉继续存在。
-    kind: license
+    label: Terraform 许可证
+    value: BUSL 1.1（收购后未回到 MPL）
     source: https://github.com/hashicorp/terraform/blob/main/LICENSE
 promises:
   - claim: IBM 将继续投资并发展 HashiCorp 的能力。

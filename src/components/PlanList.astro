@@ -1,0 +1,34 @@
+---
+import { fmtISO, fmtMonth } from '../lib/format';
+
+interface Plan {
+  date: Date;
+  dateLabel?: string;
+  title: string;
+  detail?: string;
+  basis: 'announced' | 'derived';
+  source: string;
+}
+
+interface Props {
+  plans: Plan[];
+}
+
+const { plans } = Astro.props;
+const sorted = [...plans].sort((a, b) => a.date.getTime() - b.date.getTime());
+---
+
+<ol class="timeline timeline--plans">
+  {sorted.map((plan) => (
+    <li class="tl-item" data-kind="plan">
+      <div class="tl-item__date">
+        <time datetime={fmtISO(plan.date)}>{plan.dateLabel ?? fmtMonth(plan.date)}</time>
+        <span class="tl-item__kind">{plan.basis === 'derived' ? '推算' : '公告'}</span>
+        <span class="chip chip--soft">尚未发生</span>
+      </div>
+      <h3>{plan.title}</h3>
+      {plan.detail && <p>{plan.detail}</p>}
+      <a href={plan.source} target="_blank" rel="noopener noreferrer">来源 ↗</a>
+    </li>
+  ))}
+</ol>

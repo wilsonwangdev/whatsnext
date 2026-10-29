@@ -56,25 +56,23 @@ timeline:
     title: Deno 1.0 发布
     kind: product
     source: https://en.wikipedia.org/wiki/Deno_(software)
-  - date: 2022-06-01
-    dateLabel: 2022 年 6 月
-    title: Deno Deploy 推出
-    kind: product
-    source: https://deno.com/blog/cloudflare
   - date: 2026-10-09
     title: 团队整体加入 Cloudflare
     detail: 双方联合公告；未披露对价与法律结构。
     kind: deal
     source: https://deno.com/blog/cloudflare
-  - date: 2027-04-09
-    title: Deploy 计划关停
-    detail: 公告给出的时间是六个月后；付费客户迁移至 Cloudflare Workers。
-    kind: shutdown
+plans:
+  - date: 2027-04-01
+    dateLabel: 2027 年 4 月
+    title: Deno Deploy 关停
+    detail: 按 2026-10-09 公告给出的“六个月”期限推算；付费客户迁移至 Cloudflare Workers。具体日期以官方后续通知为准。
+    basis: derived
     source: https://deno.com/blog/cloudflare
-  - date: 2027-10-09
-    title: 运行时计划停止开发
-    detail: 一年支持期内每月发布 bug 修复与安全更新；之后结束开发，代码保持开源。
-    kind: shutdown
+  - date: 2027-10-01
+    dateLabel: 2027 年 10 月
+    title: Deno 运行时停止开发
+    detail: 按公告的一年支持期推算；支持期内每月发布 bug 修复与安全更新，之后代码保持开源。
+    basis: derived
     source: https://deno.com/blog/cloudflare
 promises:
   - claim: Deno 运行时再支持一年，每月发布 bug 修复与安全更新。
@@ -103,7 +101,7 @@ openQuestions:
 
 ## 背景：修掉 Node 的遗憾
 
-2018 年，Node.js 的作者 Ryan Dahl 与 Bert Belder 发起 Deno，试图修掉 Node 的一些设计遗憾：默认安全、原生 TypeScript、URL 模块、内置工具链。Deno 1.0 于 2020 年 5 月发布，随后又推出 Deno Deploy（2022 年）和 JSR（2024 年）。
+2018 年，Node.js 的作者 Ryan Dahl 与 Bert Belder 发起 Deno，试图修掉 Node 的一些设计遗憾：默认安全、原生 TypeScript、URL 模块、内置工具链。Deno 1.0 于 2020 年 5 月发布，后来又推出托管平台 Deno Deploy 与包注册表 JSR。
 
 但 Deno 一直面对一个结构性问题：运行时本身很难赚钱，托管平台又要和 Cloudflare Workers、Vercel 等正面竞争。团队把越来越多精力放在 Deploy 上，后来又转向一个新的分布式应用框架 celld——它直接构建在 Cloudflare Workers 的编程模型之上。
 

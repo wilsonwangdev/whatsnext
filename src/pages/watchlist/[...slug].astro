@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Timeline from '../../components/Timeline.astro';
 import SourceList from '../../components/SourceList.astro';
+import PlanList from '../../components/PlanList.astro';
 import { SITE, WATCH_STATUS_LABEL } from '../../data/site';
 import { fmtDate, sortByDateDesc } from '../../lib/format';
 import { withBase } from '../../lib/paths';
@@ -152,12 +153,29 @@ const jsonLd = {
     </div>
   </div>
 
+  {w.plans.length > 0 && (
+    <section class="section section-rule">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-head__left">
+            <span class="section-head__num">PLAN</span>
+            <div>
+              <h2>已公布的计划</h2>
+              <p>尚未发生。日期来自官方公告，或按公告给出的期限推算。</p>
+            </div>
+          </div>
+        </div>
+        <PlanList plans={w.plans} />
+      </div>
+    </section>
+  )}
+
   {w.timeline.length > 0 && (
     <section class="section section-rule">
       <div class="wrap">
         <div class="section-head">
           <div class="section-head__left">
-            <span class="section-head__num">↳</span>
+            <span class="section-head__num">LOG</span>
             <div>
               <h2>关键节点</h2>
               <p>只记录可核验的公开事件。</p>

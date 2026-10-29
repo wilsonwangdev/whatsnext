@@ -77,7 +77,9 @@ src/
 | `announcedAt` / `completedAt` | 公告日与交割日分开记录 |
 | `amount` | 只填官方披露的金额；未披露写明 `disclosed: false` |
 | `evidence` | A：双方一手来源；B：单方或权威媒体；C：仅二手报道 |
-| `timeline` | 可核验事件；只有年份时用 `dateLabel` 标注精度 |
+| `timeline` | 只记录已发生的事件；只有年份时用 `dateLabel` 标注精度 |
+| `plans` | 已公布但尚未发生的日期；标注 `announced` / `derived` 与来源 |
+| `checks` | 某个时点的状态核查（如许可证现状），不混入时间线 |
 | `promises` | 公告里的可检验承诺及兑现情况 |
 | `openQuestions` | 明确写出还不知道什么 |
 
