@@ -66,7 +66,9 @@ const jsonLd = {
       <div>
         <div class="cluster" style="margin-bottom:18px">
           <StatusChip status={c.status} />
-          <span class="chip">{DEAL_TYPE_LABEL[c.dealType]}</span>
+          {DEAL_TYPE_LABEL[c.dealType] !== STATUS_LABEL[c.status] && (
+            <span class="chip">{DEAL_TYPE_LABEL[c.dealType]}</span>
+          )}
           <EvidenceBadge level={c.evidence} withLabel />
           {age && <span class="chip chip--soft">距今 {age}</span>}
         </div>

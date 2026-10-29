@@ -1498,6 +1498,15 @@ samp {
   color: var(--ink-3);
 }
 
+.plan-quote {
+  margin-top: 6px;
+  padding-left: 10px;
+  border-left: 2px solid var(--rule);
+  font-size: 0.8rem;
+  color: var(--ink-3);
+  font-style: italic;
+}
+
 /* year groups on timeline page */
 .tl-year {
   display: grid;

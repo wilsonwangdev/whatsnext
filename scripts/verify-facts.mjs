@@ -264,6 +264,9 @@ function checkPlans(data, file) {
     if (plan.basis === 'derived' && !/推算|按公告|期限|据此/.test(String(plan.detail ?? ''))) {
       report('error', file, 'PLAN-04', `${where} 是推算日期，detail 必须说明推算依据`);
     }
+    if (plan.basis === 'derived' && !String(plan.quote ?? '').trim()) {
+      report('error', file, 'PLAN-05', `${where} 是推算日期，必须引用来源原句（quote）`);
+    }
   }
 }
 

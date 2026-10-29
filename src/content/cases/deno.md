@@ -67,12 +67,14 @@ plans:
     title: Deno Deploy 关停
     detail: 按 2026-10-09 公告给出的“六个月”期限推算；付费客户迁移至 Cloudflare Workers。具体日期以官方后续通知为准。
     basis: derived
+    quote: Deno Deploy will continue operating for six months before shutting down.
     source: https://deno.com/blog/cloudflare
   - date: 2027-10-01
     dateLabel: 2027 年 10 月
     title: Deno 运行时停止开发
     detail: 按公告的一年支持期推算；支持期内每月发布 bug 修复与安全更新，之后代码保持开源。
     basis: derived
+    quote: We will support the Deno runtime for another year with monthly releases containing bug fixes and security updates.
     source: https://deno.com/blog/cloudflare
 promises:
   - claim: Deno 运行时再支持一年，每月发布 bug 修复与安全更新。

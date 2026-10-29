@@ -7,6 +7,7 @@ interface Plan {
   title: string;
   detail?: string;
   basis: 'announced' | 'derived';
+  quote?: string;
   source: string;
 }
 
@@ -28,6 +29,7 @@ const sorted = [...plans].sort((a, b) => a.date.getTime() - b.date.getTime());
       </div>
       <h3>{plan.title}</h3>
       {plan.detail && <p>{plan.detail}</p>}
+      {plan.quote && <p class="plan-quote">“{plan.quote}”</p>}
       <a href={plan.source} target="_blank" rel="noopener noreferrer">来源 ↗</a>
     </li>
   ))}

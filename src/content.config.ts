@@ -33,6 +33,8 @@ const plan = z.object({
   detail: z.string().optional(),
   /** announced：公告给出了具体日期；derived：按公告给出的期限推算 */
   basis: z.enum(['announced', 'derived']).default('announced'),
+  /** 来源中的原句，便于读者核对 */
+  quote: z.string().optional(),
   source: z.string().url(),
 });
 
