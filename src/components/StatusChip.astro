@@ -1,0 +1,14 @@
+---
+import { STATUS_LABEL } from '../data/site';
+
+interface Props {
+  status: string;
+  dealType?: string;
+  small?: boolean;
+}
+
+const { status } = Astro.props;
+const label = STATUS_LABEL[status] ?? status;
+---
+
+<span class:list={['chip', 'chip--status', `chip--${status}`]}>{label}</span>

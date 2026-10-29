@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import StatusChip from './StatusChip.astro';
+import EvidenceBadge from './EvidenceBadge.astro';
+import { DEAL_TYPE_LABEL } from '../data/site';
+import { fmtShort, fmtAmount } from '../lib/format';
+import { withBase } from '../lib/paths';
+
+interface Props {
+  entry: CollectionEntry<'cases'>;
+  index?: string;
+  featured?: boolean;
+}
+
+const { entry, index, featured = false } = Astro.props;
+const c = entry.data;
+const date = c.completedAt ?? c.announcedAt;
+const amount = c.amount.disclosed ? fmtAmount(c.amount.value, c.amount.currency) : '未披露';
+---
+
+<article class:list={['case-card', { 'case-card--featured': featured }]}>
+  <a class="case-card__link" href={withBase(`/cases/${entry.id}`)}>
+    <div class="case-card__top">
+      <span class="case-card__index">{index ?? '—'} / {DEAL_TYPE_LABEL[c.dealType]}</span>
+      <StatusChip status={c.status} />
+    </div>
+    <h3>{c.name}</h3>
+    <p class="case-card__deal">
+      <span class="arrow" aria-hidden="true">→</span>
+      <span>{c.acquirer}</span>
+    </p>
+    <p class="case-card__summary">{c.summary}</p>
+    <div class="case-card__foot">
+      <span>{fmtShort(date)}</span>
+      <span>{amount}</span>
+      <EvidenceBadge level={c.evidence} />
+    </div>
+  </a>
+</article>

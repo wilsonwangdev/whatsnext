@@ -1,0 +1,14 @@
+---
+import { EVIDENCE_LABEL } from '../data/site';
+
+interface Props {
+  level: 'A' | 'B' | 'C';
+  withLabel?: boolean;
+}
+
+const { level, withLabel = false } = Astro.props;
+---
+
+<span class="chip chip--soft" title={`证据等级 ${level}`}>
+  {withLabel ? EVIDENCE_LABEL[level] : `证据 ${level}`}
+</span>

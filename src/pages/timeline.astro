@@ -1,0 +1,167 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { EVENT_KIND_LABEL } from '../data/site';
+import { fmtShort } from '../lib/format';
+import { withBase } from '../lib/paths';
+
+const cases = await getCollection('cases');
+const watchlist = await getCollection('watchlist');
+
+type Row = {
+  date: Date;
+  dateLabel?: string;
+  title: string;
+  detail?: string;
+  kind: string;
+  source?: string;
+  subject: string;
+  href: string;
+  subjectType: 'case' | 'watch';
+};
+
+const rows: Row[] = [
+  ...cases.flatMap((c) =>
+    c.data.timeline.map((e) => ({
+      ...e,
+      subject: c.data.name,
+      href: `/cases/${c.id}`,
+      subjectType: 'case' as const,
+    })),
+  ),
+  ...watchlist.flatMap((w) =>
+    w.data.timeline.map((e) => ({
+      ...e,
+      subject: w.data.name,
+      href: `/watchlist/${w.id}`,
+      subjectType: 'watch' as const,
+    })),
+  ),
+].sort((a, b) => b.date.getTime() - a.date.getTime());
+
+const groups = new Map<number, Row[]>();
+for (const row of rows) {
+  const year = row.date.getUTCFullYear();
+  const list = groups.get(year) ?? [];
+  list.push(row);
+  groups.set(year, list);
+}
+const years = [...groups.entries()].sort((a, b) => b[0] - a[0]);
+
+const filters = [
+  { value: 'all', label: '全部' },
+  { value: 'deal', label: '交易' },
+  { value: 'aftermath', label: '后续' },
+  { value: 'shutdown', label: '停运' },
+  { value: 'license', label: '许可与治理' },
+] as const;
+
+const total = rows.length;
+const now = new Date();
+---
+
+<BaseLayout title="时间线" description="所有案例与观察对象的关键事件，按年份排列，附来源。">
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">时间线 / Timeline</p>
+      <h1>所有事件，按年份排开。</h1>
+      <p class="lede">
+        交易、产品变化、停运、许可证调整与治理变动，来自案例库和观察名单。
+        这不是一篇叙事，而是一份可筛选的年表——每一条都能点回它的来源。
+      </p>
+      <div class="page-head__meta">
+        <span>{total} 条事件</span>
+        <span>{years.length} 个年份</span>
+        <span>按日期倒序</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="filterbar" data-filter-root>
+    <div class="wrap">
+      <div class="filterbar__row">
+        <span class="filterbar__label">类型</span>
+        {filters.map((f) => (
+          <button class="fchip" type="button" data-group="kind" data-value={f.value} aria-pressed={f.value === 'all' ? 'true' : 'false'}>
+            {f.label}
+          </button>
+        ))}
+        <span class="filterbar__count" data-count aria-live="polite">{total} / {total}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" data-items>
+    {years.map(([year, events]) => (
+      <div class="tl-year" data-year-group>
+        <div class="tl-year__label">
+          {year}
+          <span>{events.length} 条</span>
+        </div>
+        <div>
+          {events.map((e) => (
+            <div class="tl-event" data-item data-kind={e.kind}>
+              <div class="tl-event__date">{fmtShort(e.date)}</div>
+              <div class="tl-event__body">
+                <h3>
+                  <a href={withBase(e.href)} style="text-decoration:none">{e.subject}</a>
+                  <span class="muted" style="font-weight:400"> · {e.title}</span>
+                  <span class="chip chip--soft" style="margin-left:6px;font-size:0.58rem">{EVENT_KIND_LABEL[e.kind] ?? e.kind}</span>
+                  {e.date > now && <span class="chip chip--soft" style="margin-left:4px;font-size:0.58rem">计划</span>}
+                </h3>
+                {e.detail && <p>{e.detail}</p>}
+                {e.source && (
+                  <a class="tl-event__src" href={e.source} target="_blank" rel="noopener noreferrer">来源 ↗</a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</BaseLayout>
+
+<script>
+  const root = document.querySelector('[data-filter-root]');
+  const container = document.querySelector('[data-items]');
+  if (root && container) {
+    const items = Array.from(container.querySelectorAll<HTMLElement>('[data-item]'));
+    const groups = Array.from(container.querySelectorAll<HTMLElement>('[data-year-group]'));
+    const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-group]'));
+    const countEl = root.querySelector('[data-count]');
+    let filter = 'all';
+
+    const isAftermath = (k: string) => ['aftermath', 'product', 'funding', 'founding'].includes(k);
+    const isLicense = (k: string) => ['license', 'governance'].includes(k);
+    const match = (kind: string) => {
+      if (filter === 'all') return true;
+      if (filter === 'aftermath') return isAftermath(kind);
+      if (filter === 'license') return isLicense(kind);
+      return kind === filter;
+    };
+
+    const apply = () => {
+      let shown = 0;
+      for (const item of items) {
+        const visible = match(item.dataset.kind || '');
+        item.hidden = !visible;
+        if (visible) shown += 1;
+      }
+      for (const group of groups) {
+        const visible = group.querySelectorAll('[data-item]:not([hidden])').length;
+        group.hidden = visible === 0;
+      }
+      if (countEl) countEl.textContent = `${shown} / ${items.length}`;
+    };
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filter = btn.dataset.value || 'all';
+        buttons.forEach((b) => b.setAttribute('aria-pressed', String((b.dataset.value || 'all') === filter)));
+        apply();
+      });
+    });
+    apply();
+  }
+</script>

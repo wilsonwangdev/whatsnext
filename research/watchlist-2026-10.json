@@ -1,0 +1,579 @@
+[
+  {
+    "name": "tldraw",
+    "slug": "tldraw",
+    "url": "https://tldraw.dev",
+    "founded": 2022,
+    "founders": [
+      "Steve Ruiz"
+    ],
+    "location": "London, United Kingdom",
+    "ownership": "Independent, VC-backed. Founded 2022 by Steve Ruiz; Seed (2022), insider extension (2023) and Series A (2025). No acquisition found as of 2026-10-29.",
+    "funding": [
+      {
+        "date": "2022-11-30",
+        "round": "Seed",
+        "amount": "$2.7M",
+        "investors": [
+          "Lux Capital (lead)",
+          "Amplify Partners",
+          "Sabrina Hahn",
+          "Guillermo Rauch",
+          "Tom Preston-Werner",
+          "NP-Hard Ventures",
+          "Soleio",
+          "Adam Wiggins",
+          "Brian Lovin",
+          "and other angels"
+        ],
+        "source": "https://tldraw.dev/blog/announcing-tldraws-seed-round"
+      },
+      {
+        "date": "2023-11-22",
+        "round": "Seed extension (insider round)",
+        "amount": "$2M",
+        "investors": [
+          "Amplify Partners",
+          "Lux Capital",
+          "Preston-Werner Ventures"
+        ],
+        "source": "https://tldraw.dev/blog/tldraw-raised-another-2m"
+      },
+      {
+        "date": "2025-04-09",
+        "round": "Series A",
+        "amount": "$10M",
+        "investors": [
+          "Lux Capital",
+          "Definition"
+        ],
+        "source": "https://tldraw.dev/blog/announcing-tldraw-series-a"
+      }
+    ],
+    "license": "tldraw license (source-available, not OSI-approved)",
+    "licenseNotes": "The SDK is 'source available' on GitHub but explicitly not open source by OSI definition. Under the current license the SDK may only be used in development environments; production use requires a trial, commercial or hobby license, enforced by client-side license keys. License history: v3.0.0 (2024-09-13) introduced a watermark-based model (free commercial and non-commercial use if a 'Made with tldraw' watermark is shown, with paid Business Licenses to remove it); v4.0.0 (2025-09-18) replaced that with the development-only default plus license keys and a free 100-day trial. Starter kits, examples and demos are MIT.",
+    "businessModel": "Annual commercial SDK licenses sold on value-based pricing (multiplayer 'tldraw sync' included), plus a free 100-day trial, a discretionary free hobby license for non-commercial projects, discounted startup pricing, and a free consumer whiteboard at tldraw.com that serves as the flagship demo.",
+    "transparency": "Publishes company financial detail in its funding posts (e.g. 'just under $1M' of license revenue in its first year of sales, customers named as ClickUp, Padlet, Craft and Jam); ships public release notes for every major version; documents license changes and their rationale in blog posts ('Fate and capital both demand that tldraw be a sustainable project'); runs build-in-public demos such as make real and tldraw.computer; company page lists the full team.",
+    "events": [
+      {
+        "date": "2024-09-13",
+        "title": "SDK v3.0.0 ships a revised, watermark-based license",
+        "detail": "The release notes describe 'a revised licensing model': use permitted in commercial and non-commercial projects when a 'Made with tldraw' watermark is displayed, with paid Business Licenses to remove it.",
+        "source": "https://tldraw.dev/releases/v3.0.0"
+      },
+      {
+        "date": "2025-04-09",
+        "title": "$10M Series A led by Lux Capital and Definition",
+        "detail": "Announced alongside disclosure of just under $1M in first-year license deals (ClickUp, Padlet, Craft, Jam) and a team of 'nearly twenty people across London, Europe, and the United States'.",
+        "source": "https://tldraw.dev/blog/announcing-tldraw-series-a"
+      },
+      {
+        "date": "2025-09-18",
+        "title": "SDK 4.0 makes unlicensed production use impossible",
+        "detail": "New license restricts the SDK to development environments; production requires a trial, commercial or hobby license, enforced through license keys. The post also cites 2,000 PRs, 40,000 GitHub stars and 70,000 weekly installs.",
+        "source": "https://tldraw.dev/blog/tldraw-sdk-4-0"
+      },
+      {
+        "date": "2026-05-06",
+        "title": "SDK 5.0 released",
+        "detail": "First-class theme system, OverlayUtil overlay system, custom record types and new @tldraw/driver and @tldraw/mermaid packages. The release notes announce no licensing change, so the v4 terms still apply.",
+        "source": "https://tldraw.dev/releases/v5.0.0"
+      }
+    ],
+    "whyWatch": "tldraw is the clearest live test of the 'source-available, paid-for-production' model: it has now rewritten its license twice in two years to convert free adopters into license revenue while keeping the code publicly readable. For anyone studying indie sustainability, it shows the commercial and reputational cost of monetizing a library that developers can read but not freely ship.",
+    "sources": [
+      {
+        "title": "Company",
+        "url": "https://tldraw.dev/company",
+        "publisher": "tldraw",
+        "date": null,
+        "supports": "Founded 2022 by Steve Ruiz; London-based; investors Lux Capital, Amplify Partners, Definition Capital; commercial product is the tldraw SDK."
+      },
+      {
+        "title": "tldraw raises $10M to build the infinite canvas for developers",
+        "url": "https://tldraw.dev/blog/announcing-tldraw-series-a",
+        "publisher": "tldraw",
+        "date": "2025-04-09",
+        "supports": "Series A amount, date and leads; first-year license revenue; customer names; team size."
+      },
+      {
+        "title": "Announcing tldraw SDK 4.0",
+        "url": "https://tldraw.dev/blog/tldraw-sdk-4-0",
+        "publisher": "tldraw",
+        "date": "2025-09-18",
+        "supports": "License change to development-only plus license keys; 100-day trial; London-based startup description; 2025 growth metrics."
+      },
+      {
+        "title": "License",
+        "url": "https://tldraw.dev/community/license",
+        "publisher": "tldraw",
+        "date": "2023-09-13 (page last-edited metadata)",
+        "supports": "Current license mechanics: development-only default, trial/commercial/hobby licenses, client-side license keys, 'source available' but not open source."
+      }
+    ],
+    "confidence": "high",
+    "openQuestions": [
+      "Current ARR, headcount and valuation after the April 2025 Series A are not disclosed in any primary source found.",
+      "No primary source indicates a further round or any acquisition in 2026.",
+      "Whether the license will tighten again at SDK 6.0 is unknown; the 5.0 notes contain no licensing section."
+    ]
+  },
+  {
+    "name": "AFFiNE",
+    "slug": "affine",
+    "url": "https://affine.pro",
+    "founded": 2022,
+    "founders": [
+      "JiaChen He (贺嘉琛), founder and CEO until May 2026",
+      "Zhang Chi (张驰), co-founder and CTO",
+      "Wang Yifeng (王译锋), co-founder and chief architect",
+      "Wei Yipei (魏伊培), co-founder and COO"
+    ],
+    "location": "Singapore (TOEVERYTHING PTE. LTD.)",
+    "ownership": "Independent, VC-backed (Pre-A 2023). Still operating but in transition: founder JiaChen He stepped away in May 2026 and Vincent Chen now leads as CEO. No acquisition found.",
+    "funding": [
+      {
+        "date": "2023-02",
+        "round": "Pre-A",
+        "amount": "~$10M (announced in Chinese as 千万美元, 'tens of millions of USD')",
+        "investors": [
+          "China Growth Capital / 华创资本 (co-lead)",
+          "Redpoint China / 红点中国 (co-lead)",
+          "Innovation Works / 创新工场 (co-lead)",
+          "MiraclePlus / 奇绩创坛 (existing investor, follow-on)"
+        ],
+        "source": "http://www.chinagrowthcapital.com/Index/article/id/1633"
+      }
+    ],
+    "license": "MIT for most of the repository, with the backend under a source-available AFFiNE Enterprise Edition (EE) license",
+    "licenseNotes": "The repo LICENSE states that everything outside packages/backend and packages/common/native is MIT, while the backend server is licensed under the 'AFFiNE Enterprise Edition (EE) License', which permits production use only with a valid EE subscription. On 2026-05-13 the CEO announced a plan to 'move AFFiNE from an open-core model toward a fully open-source repository under Apache 2.0' and to separate enterprise permission/admin controls from the core; as of 2026-10-29 the repository still carries the MIT + EE split, so the change is announced but not completed.",
+    "businessModel": "Open-core SaaS: free Community Edition and self-hosting, paid AFFiNE Pro cloud plans, Team/Enterprise tiers (private cloud, self-hosted deployments, licensing), and an AFFiNE AI add-on priced at $8.9/month billed annually. Also sells an OEM/whitelabel code license.",
+    "transparency": "Develops in public on GitHub (73,956 stars as of 2026-10-29) with open issues and canary releases; published a candid leadership-transition post naming the departing founder and his new project, Bridge; its About page explicitly refuses to publish unverified claims ('without inventing user counts, funding claims, or press milestones that are not verified here').",
+    "events": [
+      {
+        "date": "2024-03-04",
+        "title": "AFFiNE AI enters early access",
+        "detail": "Announced on day 3 of the 0.12.0 launch week, alongside a self-host release and a preview of 0.13; the same post notes second place as Product of the Day on Product Hunt.",
+        "source": "https://affine.pro/blog/affine-0-12-0-launch-week-day-3-early-access-affine-ai-self-host-upcoming-0-13-unveiled"
+      },
+      {
+        "date": "2025-02-17",
+        "title": "Japan retail launch via SourceNext",
+        "detail": "Japanese distributor SourceNext began selling AFFiNE 1-year licenses (¥11,414) and an AI plan (¥29,109), a distribution milestone for the open-source product.",
+        "source": "https://sourcenext.co.jp/pressrelease_html/JS/2025/2025021701"
+      },
+      {
+        "date": "2026-05-13",
+        "title": "Founder departs, CEO change, pivot to Apache 2.0",
+        "detail": "JiaChen He stepped away to build Bridge, an agent-native product; Vincent Chen became CEO. The post commits to Markdown as a first-class file format, BYOK AI, agent interoperability and moving from open-core to a fully open-source repository under Apache 2.0, citing 68.3k GitHub stars and more than 7 million downloads.",
+        "source": "https://affine.pro/blog/next-chapter-of-affine"
+      }
+    ],
+    "whyWatch": "AFFiNE is a case study in the arc from viral open-source launch (1,000 stars in 72 hours, 10,000 in 43 days per its investor) to open-core monetization and then founder exit, with a promised relicense to Apache 2.0 still unfulfilled. Watching whether the Apache 2.0 promise ships is a direct test of how much a community can rely on open-source commitments made during a transition.",
+    "sources": [
+      {
+        "title": "AFFiNE's Next Chapter: Open Files, Open Source, and Agent-Ready Workflows",
+        "url": "https://affine.pro/blog/next-chapter-of-affine",
+        "publisher": "AFFiNE (Vincent Chen, CEO)",
+        "date": "2026-05-13",
+        "supports": "Leadership transition and founder departure; Apache 2.0 plan; BYOK and Markdown-first roadmap; 68.3k stars and 7M+ downloads."
+      },
+      {
+        "title": "开源软件 AFFiNE 完成 Pre-A 轮融资，华创资本联合领投",
+        "url": "http://www.chinagrowthcapital.com/Index/article/id/1633",
+        "publisher": "China Growth Capital (华创资本)",
+        "date": "2023-02-14",
+        "supports": "Pre-A round and investors; Singapore HQ; founder and co-founder names/roles; 2022 open-sourcing timeline and early growth metrics."
+      },
+      {
+        "title": "AFFiNE LICENSE (canary branch)",
+        "url": "https://github.com/toeverything/AFFiNE/blob/canary/LICENSE",
+        "publisher": "GitHub / Toeverything Pte. Ltd.",
+        "date": null,
+        "supports": "MIT for most of the repo plus the Enterprise Edition license for the backend; confirms the Apache 2.0 move has not yet landed."
+      },
+      {
+        "title": "About AFFiNE / Pricing",
+        "url": "https://affine.pro/pricing",
+        "publisher": "AFFiNE",
+        "date": null,
+        "supports": "Business model and pricing (AI add-on $8.9/month, Pro/self-hosted tiers); 'MIT editor, source-available backend' positioning."
+      }
+    ],
+    "confidence": "medium",
+    "openQuestions": [
+      "No primary source confirms any funding after the February 2023 Pre-A; later rounds reported in secondary outlets are unverified.",
+      "The exact Pre-A amount is stated only as 千万美元; a precise dollar figure could not be verified.",
+      "Whether the Apache 2.0 relicense has actually shipped is unresolved as of 2026-10-29 (repo still MIT + EE).",
+      "Current headcount and revenue are undisclosed; the '200K+ Pro users' figure on the pricing page is a vendor marketing claim.",
+      "Community posts from March 2026 alleging a single active maintainer could not be checked at source (V2EX blocked automated access), and GitHub shows continued weekly commits."
+    ]
+  },
+  {
+    "name": "Excalidraw",
+    "slug": "excalidraw",
+    "url": "https://excalidraw.com",
+    "founded": 2020,
+    "founders": [
+      "Christopher Chedeau (creator, 2020-01-01)",
+      "David Luzar",
+      "Milos Vetesnik"
+    ],
+    "location": "Brno, Czech Republic (Excalidraw s.r.o.)",
+    "ownership": "Independent. Operated by Excalidraw s.r.o., a Czech company incorporated in Brno in May 2021. No acquisition and no outside funding found as of 2026-10-29.",
+    "funding": [],
+    "license": "MIT (editor and npm package)",
+    "licenseNotes": "The excalidraw.com editor and the @excalidraw/excalidraw npm package are MIT-licensed; no license change found. The commercial hosted product, Excalidraw+, is a separate proprietary service. Because the core is MIT and self-hostable, the free product survives any future ownership change.",
+    "businessModel": "Free MIT editor plus a paid Excalidraw+ subscription ($6 per user per month billed annually) that adds unlimited cloud scenes, access management, comments, presentations, SOC 2 Type 2 controls, higher AI limits and MCP/REST APIs; the free tier includes 10 AI requests a day and unlimited collaborators.",
+    "transparency": "Publishes long technical deep dives on how features are built (e.g. two-part elbow-arrows series, CJK font splitting with Web Workers) and annual public reviews with real usage numbers (about 850,000 monthly active users and 89,000 GitHub stars reported for 2024); keeps a public roadmap and a monthly changelog; ships the whole editor as readable MIT code.",
+    "events": [
+      {
+        "date": "2024-11-07",
+        "title": "First-class Chinese/Japanese/Korean text support",
+        "detail": "Added the hand-drawn Xiaolai CJK font as an Excalifont fallback, split into 209 lazy-loaded chunks, with client-side glyph subsetting in Web Workers for exports.",
+        "source": "https://plus.excalidraw.com/blog/adding-hand-drawn-font-for-chinese-japanese-korean"
+      },
+      {
+        "date": "2025-01-09",
+        "title": "2024 review: ~850k monthly users, 89k GitHub stars",
+        "detail": "The team reported roughly 850,000 monthly active users on excalidraw.com, 89,000 GitHub stars (then the 75th most popular repo on GitHub) and 30,000 X followers, alongside features such as elbow arrows and the undo/redo rewrite.",
+        "source": "https://plus.excalidraw.com/blog/excalidraw-in-2024"
+      },
+      {
+        "date": "2026-09-30",
+        "title": "Presentations animations and a sticky-note tool",
+        "detail": "The September 2026 release added a presentation animation engine, a dedicated sticky-note tool, draggable arrow labels and domain capture for enterprise workspaces, showing continued independent development.",
+        "source": "https://plus.excalidraw.com/changelog"
+      }
+    ],
+    "whyWatch": "Excalidraw is the strongest counter-example in this set: a fully MIT, self-hostable product whose company monetizes only the hosted layer, so adoption and revenue do not depend on restricting the code. For indie sustainability it shows a business that can grow to hundreds of thousands of monthly users without venture funding or a license change.",
+    "sources": [
+      {
+        "title": "Excalidraw (encyclopedia entry)",
+        "url": "https://en.wikipedia.org/wiki/Excalidraw",
+        "publisher": "Wikipedia",
+        "date": "accessed 2026-10-29",
+        "supports": "Creation on 2020-01-01 by Christopher Chedeau; Czech team (David Luzar, Milos Vetesnik) taking over operations; Excalidraw s.r.o. incorporated in Brno in May 2021; MIT license. Used only for orientation on history/founders, not for figures."
+      },
+      {
+        "title": "excalidraw/excalidraw repository",
+        "url": "https://github.com/excalidraw/excalidraw",
+        "publisher": "GitHub",
+        "date": "accessed 2026-10-29",
+        "supports": "MIT license; 134,788 stars; last push 2026-10-28 (active development)."
+      },
+      {
+        "title": "Excalidraw in 2024",
+        "url": "https://plus.excalidraw.com/blog/excalidraw-in-2024",
+        "publisher": "Excalidraw",
+        "date": "2025-01-09",
+        "supports": "~850,000 monthly active users; 89,000 GitHub stars; 2024 feature list; Excalidraw+ roadmap."
+      },
+      {
+        "title": "Excalidraw+ pricing",
+        "url": "https://plus.excalidraw.com/pricing",
+        "publisher": "Excalidraw",
+        "date": "accessed 2026-10-29",
+        "supports": "Free tier limits; Plus plan at $6 per user per month billed annually; SOC 2 Type 2; AI request quotas."
+      }
+    ],
+    "confidence": "high",
+    "openQuestions": [
+      "No published funding history exists; whether Excalidraw s.r.o. has any outside investors is unknown.",
+      "Revenue and headcount are not disclosed.",
+      "The founders' exact equity/role split is not documented in a primary source; the founder list relies on Wikipedia for the Czech co-founders.",
+      "No evidence of any acquisition; secondary articles that describe Excalidraw as MIT 'core' are correct, but claims tying it to Miro's 2026 ownership change were not verifiable from primary sources."
+    ]
+  },
+  {
+    "name": "Obsidian",
+    "slug": "obsidian",
+    "url": "https://obsidian.md",
+    "founded": 2020,
+    "founders": [
+      "Erica Xu (co-founder, COO)",
+      "Shida Li (co-founder, CTO)",
+      "Steph Ango (CEO, joined later)"
+    ],
+    "location": "Canada — legal entity Dynalist Inc., Ontario governing law; remote-first team",
+    "ownership": "Independent and bootstrapped. The company states it is '100% supported by our users, not investors'; no outside funding found.",
+    "funding": [],
+    "license": "Proprietary (closed source), free to use for any purpose",
+    "licenseNotes": "The app is proprietary and free for personal, commercial, non-profit, educational and government use. Until 2025-02-20 a Commercial license was required for work use; that day Obsidian made it optional ('Obsidian is now free for work'), keeping it as a support mechanism. Plugins and themes are community-developed under their own licenses.",
+    "businessModel": "Free app with optional paid services: Obsidian Sync at $4/user/month (annual) or $5 monthly, Obsidian Publish at $8/site/month (annual) or $10 monthly, a one-time $25 Catalyst license for early beta access, and an optional $50/user/year Commercial license; Enterprise tier on top. No ads, no account required, no telemetry.",
+    "transparency": "Publishes third-party security audits and their findings (Cure53 app audits in Jan 2024 and Dec 2024; Cure53 and Trail of Bits audits of the Sync API, server and cryptography published 2026-05-13), maintains a public roadmap and a detailed changelog, documents its no-telemetry/local-file design, writes up its supply-chain threat model, and runs the annual 'Obsidian October' community build-in-public event plus a State of Obsidian survey.",
+    "events": [
+      {
+        "date": "2025-02-20",
+        "title": "Commercial license becomes optional",
+        "detail": "'Obsidian is now free for work' — anyone can use Obsidian for work for free; the Commercial license is now a support purchase rather than a requirement. The post cites people in over 10,000 organizations, including Amazon and Google employees, and says the old terms were 'confusing'.",
+        "source": "https://obsidian.md/blog/free-for-work/"
+      },
+      {
+        "date": "2026-05-13",
+        "title": "Obsidian Sync audits published (Cure53, Trail of Bits)",
+        "detail": "Two audits of the Sync API, server and cryptography — Cure53 (October 2024) and Trail of Bits (December 2025) — were released, with all findings remediated and validated by the auditors.",
+        "source": "https://obsidian.md/blog/cure53-tob-sync-audits/"
+      },
+      {
+        "date": "2026-10-01",
+        "title": "Obsidian October 2026",
+        "detail": "The annual community event asks users to take the State of Obsidian survey and 'build in public' on plugins, themes and community projects.",
+        "source": "https://obsidian.md/blog/"
+      }
+    ],
+    "whyWatch": "Obsidian is the reference case for user-funded sustainability: a team of fewer than ten people, no venture capital, and revenue from optional sync/publish subscriptions rather than lock-in. Its 2025 decision to make the commercial license optional is a rare experiment in charging for software without enforcing payment.",
+    "sources": [
+      {
+        "title": "About Obsidian",
+        "url": "https://obsidian.md/about",
+        "publisher": "Obsidian",
+        "date": null,
+        "supports": "Founders and CEO; 'Erica started Obsidian in 2020'; 'we are 100% supported by our users, not investors'; small team."
+      },
+      {
+        "title": "Pricing",
+        "url": "https://obsidian.md/pricing",
+        "publisher": "Obsidian",
+        "date": "accessed 2026-10-29",
+        "supports": "Sync $4/$5, Publish $8/$10, Catalyst $25 one-time, Commercial $50/user/year; commercial license not required; no telemetry."
+      },
+      {
+        "title": "License overview",
+        "url": "https://obsidian.md/license",
+        "publisher": "Obsidian",
+        "date": "2025-02-20 (last updated)",
+        "supports": "Free for all purposes including commercial; proprietary content ownership; optional Commercial and Catalyst licenses."
+      },
+      {
+        "title": "Obsidian is now free for work",
+        "url": "https://obsidian.md/blog/free-for-work/",
+        "publisher": "Obsidian (kepano)",
+        "date": "2025-02-20",
+        "supports": "Commercial license made optional; 10,000+ organizations; rationale for the change."
+      }
+    ],
+    "confidence": "high",
+    "openQuestions": [
+      "Revenue and valuation are not disclosed; a widely circulated '$350M valuation' figure (36Kr, April 2026) has no primary source and is treated as unverified.",
+      "The exact current headcount is unclear; the About page lists eight people plus an office cat.",
+      "Whether Obsidian has ever sold secondary equity is unknown; the company states it has no investors."
+    ]
+  },
+  {
+    "name": "Raycast",
+    "slug": "raycast",
+    "url": "https://raycast.com",
+    "founded": 2020,
+    "founders": [
+      "Thomas Paul Mann (CEO)",
+      "Petr Nikolaev (CTO)"
+    ],
+    "location": "United Kingdom — Raycast Technologies Ltd., registered in England and Wales; fully remote team",
+    "ownership": "Independent, VC-backed (Seed 2020, Series A 2021, Series B 2024). No acquisition found.",
+    "funding": [
+      {
+        "date": "2020",
+        "round": "Seed",
+        "amount": "$2.7M",
+        "investors": [
+          "Accel"
+        ],
+        "source": "https://www.raycast.com/careers"
+      },
+      {
+        "date": "2021-11-30",
+        "round": "Series A",
+        "amount": "$15M",
+        "investors": [
+          "Accel",
+          "Coatue",
+          "Koen Bok",
+          "Karri Saarinen",
+          "David Cramer",
+          "and other angels"
+        ],
+        "source": "https://www.raycast.com/blog/series-a"
+      },
+      {
+        "date": "2024-09-25",
+        "round": "Series B",
+        "amount": "$30M",
+        "investors": [
+          "Atomico (lead)"
+        ],
+        "source": "https://www.raycast.com/blog/series-b"
+      }
+    ],
+    "license": "Proprietary (closed source); public extension API and Store",
+    "licenseNotes": "The Raycast app is proprietary. Extensions are built against a public React/TypeScript API and distributed through the Raycast Store; no license change found for the app itself.",
+    "businessModel": "Freemium subscription: free core launcher; Raycast Pro $10/month (500 AI credits), Pro+ $20/month (3,000 credits), Max $50/month (7,500 credits), plus Teams and Enterprise plans. Since 2026-09-10 AI is usage-based via credits while subscription prices stayed flat; users can bring their own Claude/ChatGPT subscription or API key. A 30% affiliate program pays commission on Pro payments.",
+    "transparency": "Publishes a public product timeline and headcount on its careers page ('we are a team of 39 folks'), explains pricing changes in detail with the underlying cost reasoning ('we can't subsidize it the way the big model labs can'), publishes its equal-pay policy ('Why we pay equal salaries, wherever you work'), and documents weekly hack days and launch weeks on the blog.",
+    "events": [
+      {
+        "date": "2025-04-30",
+        "title": "Raycast for iOS launches",
+        "detail": "Extended the launcher beyond macOS to iPhone; the 2024 Series B announcement had named iOS as one of the two platforms the round was raised to fund.",
+        "source": "https://www.raycast.com/blog"
+      },
+      {
+        "date": "2025-11-20",
+        "title": "Raycast for Windows enters public beta",
+        "detail": "The Windows client, first promised with the Series B, shipped as a public beta.",
+        "source": "https://www.raycast.com/blog"
+      },
+      {
+        "date": "2026-05-14",
+        "title": "The New Raycast: rebuilt from the ground up",
+        "detail": "A from-scratch rewrite for macOS Tahoe with its own disk indexer replacing Spotlight, system-wide dictation, and a new hotkey recorder; shipped as a public beta.",
+        "source": "https://www.raycast.com/blog/the-new-raycast"
+      },
+      {
+        "date": "2026-09-10",
+        "title": "AI pricing moves from rate limits to usage-based credits",
+        "detail": "Plans keep their prices but gain credit allowances (Pro 500, Pro+ 3,000, new Max 7,500 at $50/month); bring-your-own Claude/ChatGPT subscription or API key now requires a paid plan. Raycast says it can no longer absorb AI inference costs.",
+        "source": "https://www.raycast.com/blog/changing-how-raycast-ai-is-priced"
+      }
+    ],
+    "whyWatch": "Raycast shows the economics of an indie-style productivity app after venture funding: a launcher that became a subscription suite across macOS, Windows and iOS, then had to re-price AI in 2026 because inference costs outgrew flat subscriptions. It is a clean case study of how AI features break per-seat pricing.",
+    "sources": [
+      {
+        "title": "Careers at Raycast (company timeline)",
+        "url": "https://www.raycast.com/careers",
+        "publisher": "Raycast",
+        "date": "accessed 2026-10-29",
+        "supports": "Founded 2020 via Y Combinator W20 by Thomas (CEO) and Petr (CTO); $2.7M seed from Accel; $30M Series B led by Atomico; team of 39; fully remote; product timeline 2020-2025."
+      },
+      {
+        "title": "$30M Series B to bring Raycast to new platforms",
+        "url": "https://www.raycast.com/blog/series-b",
+        "publisher": "Raycast (Thomas Paul Mann)",
+        "date": "2024-09-25",
+        "supports": "Series B amount and date; Windows and iOS plans; 'Raycast started in 2020'."
+      },
+      {
+        "title": "Why We're Changing How Raycast AI Is Priced",
+        "url": "https://www.raycast.com/blog/changing-how-raycast-ai-is-priced",
+        "publisher": "Raycast (Thomas Paul Mann)",
+        "date": "2026-09-10",
+        "supports": "Credit-based AI pricing, plan prices and allowances, BYO-key policy, cost rationale."
+      },
+      {
+        "title": "The New Raycast",
+        "url": "https://www.raycast.com/blog/the-new-raycast",
+        "publisher": "Raycast (Thomas Paul Mann)",
+        "date": "2026-05-14",
+        "supports": "May 2026 rewrite, custom indexer, dictation, public beta status."
+      }
+    ],
+    "confidence": "high",
+    "openQuestions": [
+      "No Series C or later round found; total raised is at least $47.7M but current valuation and revenue are undisclosed.",
+      "$15M Series A investor list beyond Accel and Coatue is only partially named in the announcement.",
+      "The seed round's exact date within 2020 is not stated.",
+      "Whether the 'Glaze' app builder (announced March/July 2026) is a separate company or a Raycast product line is not explicit in the posts reviewed."
+    ]
+  },
+  {
+    "name": "Zed",
+    "slug": "zed",
+    "url": "https://zed.dev",
+    "founded": 2021,
+    "founders": [
+      "Nathan Sobo (CEO)",
+      "Antonio Scandurra",
+      "Max Brunsfeld"
+    ],
+    "location": "United States — Zed Industries, Inc.; fully remote team (described as San Francisco-based in its 2023 Series A announcement)",
+    "ownership": "Independent, VC-backed (Series A 2023, Series B 2025). No acquisition found.",
+    "funding": [
+      {
+        "date": "2023-03",
+        "round": "Series A",
+        "amount": "$10M",
+        "investors": [
+          "Redpoint Ventures (lead)"
+        ],
+        "source": "https://www.goodwinlaw.com/en/news-and-events/news/2023/03/03_17-redpoint-ventures-leads-zed-10-million-series-a"
+      },
+      {
+        "date": "2025-08-20",
+        "round": "Series B",
+        "amount": "$32M",
+        "investors": [
+          "Sequoia Capital (lead)",
+          "existing investors"
+        ],
+        "source": "https://zed.dev/blog/sequoia-backs-zed"
+      }
+    ],
+    "license": "GPL-3.0-or-later (editor), with Apache-2.0 components such as GPUI where marked",
+    "licenseNotes": "Zed was closed source until 2024-01-24, when it open sourced 100% of its code: 'GPL for the editor, AGPL for server-side components', with the GPUI UI framework under Apache 2.0. The current repository README states the code is 'licensed primarily under GPL-3.0-or-later, with Apache-2.0 components where marked'; the repo ships LICENSE-GPL and LICENSE-APACHE, and no AGPL file is present at the root today.",
+    "businessModel": "Open-core with hosted services: free Personal plan (bring your own API keys or external agents), Pro at $10/month with unlimited edit predictions and $5 of included tokens then usage-based billing, and Business at $30/seat/month with org-wide AI policies, data governance and role-based access controls. Also building a paid hosted service around DeltaDB.",
+    "transparency": "Open-sources the whole editor under copyleft and writes publicly about the business rationale ('We're never going to show you a banner ad in your code editor, and if we do, you can always build Zed from source'); runs public 'Fireside Hacks' coding sessions in shared channels; publishes weekly releases, public roadmaps, architecture deep dives (CRDTs, GPUI, Zeta2) and a public list of investors.",
+    "events": [
+      {
+        "date": "2024-01-24",
+        "title": "Zed becomes open source",
+        "detail": "All code released under copyleft: GPL for the editor, AGPL for server-side components, Apache 2.0 for GPUI. The post explains the monetization plan (paid collaboration and AI services) and promises proprietary code will stay 'a tiny fraction'.",
+        "source": "https://zed.dev/blog/zed-is-now-open-source"
+      },
+      {
+        "date": "2025-08-20",
+        "title": "$32M Series B led by Sequoia",
+        "detail": "Brings total funding to over $42M and funds DeltaDB, an operation-level version control system built on CRDTs intended to interoperate with Git.",
+        "source": "https://zed.dev/blog/sequoia-backs-zed"
+      },
+      {
+        "date": "2026-04-29",
+        "title": "Zed reaches 1.0 and launches Zed for Business",
+        "detail": "After five years and 'more than a million lines of code' across macOS, Windows and Linux, Zed declares 1.0 and adds a Business tier with centralized billing and role-based controls.",
+        "source": "https://zed.dev/blog/zed-1-0"
+      },
+      {
+        "date": "2026-09-16",
+        "title": "Delta enters public beta",
+        "detail": "Zed's attempt to 'replace PRs' with operation-level review built on DeltaDB moves from preview to public beta, the first commercial test of its post-Git collaboration thesis.",
+        "source": "https://zed.dev/blog/delta-public-beta"
+      }
+    ],
+    "whyWatch": "Zed is the rare company trying to fund a GPL editor with hosted services rather than license restrictions, which makes it the most direct experiment in copyleft-compatible sustainability at venture scale. Its DeltaDB/Delta bet also tests whether a small team can replace part of GitHub's workflow and charge for it.",
+    "sources": [
+      {
+        "title": "Sequoia Backs Zed's Vision for Collaborative Coding",
+        "url": "https://zed.dev/blog/sequoia-backs-zed",
+        "publisher": "Zed Industries (Nathan Sobo)",
+        "date": "2025-08-20",
+        "supports": "Series B amount/date/lead; total funding over $42M; DeltaDB plan; open-source plus optional paid offering."
+      },
+      {
+        "title": "Zed is now open source",
+        "url": "https://zed.dev/blog/zed-is-now-open-source",
+        "publisher": "Zed Industries (Nathan Sobo)",
+        "date": "2024-01-24",
+        "supports": "Open-sourcing date; GPL/AGPL/Apache split; monetization rationale and promises."
+      },
+      {
+        "title": "Redpoint Ventures Leads Zed's $10 Million Series A",
+        "url": "https://www.goodwinlaw.com/en/news-and-events/news/2023/03/03_17-redpoint-ventures-leads-zed-10-million-series-a",
+        "publisher": "Goodwin Procter LLP",
+        "date": "2023-03-17",
+        "supports": "Series A amount, date, lead investor; San Francisco description."
+      },
+      {
+        "title": "Zed is 1.0",
+        "url": "https://zed.dev/blog/zed-1-0",
+        "publisher": "Zed Industries (Nathan Sobo)",
+        "date": "2026-04-29",
+        "supports": "1.0 date; five-year build; cross-platform claims; Zed for Business launch."
+      }
+    ],
+    "confidence": "high",
+    "openQuestions": [
+      "Total funding is stated only as 'over $42M'; the seed round before the 2023 Series A is not documented in a primary source.",
+      "Valuation and revenue are undisclosed.",
+      "The current licensing status of server-side components is ambiguous: the 2024 post promised AGPL, but the repository root now ships only LICENSE-GPL and LICENSE-APACHE.",
+      "Zed's headquarters city is unclear — 'San Francisco' appears in the 2023 Series A release, while the company describes itself as fully remote."
+    ]
+  }
+]

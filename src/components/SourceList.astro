@@ -1,0 +1,44 @@
+---
+import { fmtShort } from '../lib/format';
+
+interface Source {
+  title: string;
+  url: string;
+  publisher: string;
+  date?: Date;
+  type: string;
+  note?: string;
+}
+
+interface Props {
+  sources: Source[];
+  heading?: string;
+}
+
+const { sources, heading = '来源' } = Astro.props;
+
+const TYPE_LABEL: Record<string, string> = {
+  primary: '一手',
+  filing: '披露',
+  press: '媒体',
+  analysis: '分析',
+  community: '社区',
+  data: '数据',
+};
+---
+
+<div class="panel">
+  <h2>{heading}</h2>
+  <ul class="source-list">
+    {sources.map((source) => (
+      <li>
+        <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a>
+        <span class="src-meta">
+          <span>{source.publisher}</span>
+          {source.date && <span>{fmtShort(source.date)}</span>}
+          <span>{TYPE_LABEL[source.type] ?? source.type}</span>
+        </span>
+      </li>
+    ))}
+  </ul>
+</div>

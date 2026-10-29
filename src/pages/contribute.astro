@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+import { withBase } from '../lib/paths';
+---
+
+<BaseLayout
+  title="参与贡献"
+  description="如何提名案例、提交纠错、补充后续：流程、字段清单、证据标准与表述准则。"
+>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">参与 / Contribute</p>
+      <h1>让记录比叙事更可靠。</h1>
+      <p class="lede">
+        这份档案的长期价值，取决于它能否被持续核对。你可以提名一个新案例、纠正一条过期事实，
+        或者补上某个产品在收购之后的后续。所有修改都通过公开流程完成，并留下来源。
+      </p>
+      <div class="page-head__meta">
+        <span>Issue 提名 → 核验 → PR 入库</span>
+        <span>内容 CC BY-SA 4.0</span>
+        <span><a href={SITE.repo} target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap section">
+    <div class="doc-grid">
+      <nav class="doc-side" aria-label="本页目录">
+        <h2>目录</h2>
+        <ol>
+          <li><a href="#ways">三种参与方式</a></li>
+          <li><a href="#flow">流程</a></li>
+          <li><a href="#fields">需要提交什么</a></li>
+          <li><a href="#evidence">证据要求</a></li>
+          <li><a href="#tone">表述准则</a></li>
+          <li><a href="#local">本地开发</a></li>
+        </ol>
+      </nav>
+
+      <div>
+        <section class="doc-section" id="ways">
+          <h2>01 / 三种参与方式</h2>
+          <table class="spec">
+            <tbody>
+              <tr>
+                <th>提名案例</th>
+                <td>
+                  你知道一笔未被收录的交易，且能找到至少一个一手来源。使用
+                  <a href={`${SITE.repo}/issues/new?template=case-proposal.yml`} target="_blank" rel="noopener noreferrer">案例提名表单</a>。
+                </td>
+              </tr>
+              <tr>
+                <th>提交纠错</th>
+                <td>
+                  某条事实有误、日期不对、来源失效。使用
+                  <a href={`${SITE.repo}/issues/new?template=correction.yml`} target="_blank" rel="noopener noreferrer">纠错表单</a>，
+                  注明页面与错误类型。
+                </td>
+              </tr>
+              <tr>
+                <th>补充后续</th>
+                <td>
+                  已知某个案例在收购后发生了新事件（停运、改许可、二次收购、团队变动）。
+                  直接在对应页面点“提供新信息”，或提交 PR 更新 <code>timeline</code> 与 <code>lastVerified</code>。
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section" id="flow">
+          <h2>02 / 流程</h2>
+          <ol class="steps">
+            <li>
+              <div>
+                <strong>提名</strong>
+                在 Issue 中填写标的、收购方、日期、交易结构与来源链接。不需要写完整文章。
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>核验</strong>
+                维护者核对一手来源，确认交易结构（整体收购 / 团队加入 / 人才收购）与日期精度；
+                必要时补充监管文件或联系当事方。
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>入库</strong>
+                以 PR 提交结构化 Markdown，包含 frontmatter 字段、时间线、来源与“待核验问题”。
+                CI 会执行构建与 schema 校验。
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>复核</strong>
+                合并后记录核验日期；90 天内至少回查一次是否有新进展。
+              </div>
+            </li>
+          </ol>
+          <p style="margin-top:1em">
+            争议较大的案例会先在 Discussion 中公开讨论，再决定是否入库。我们允许“存疑”的条目存在，
+            但必须在页面上明确标注证据等级与未解决问题。
+          </p>
+        </section>
+
+        <section class="doc-section" id="fields">
+          <h2>03 / 需要提交什么</h2>
+          <p>每个案例至少需要以下字段。缺失的字段留空，不要猜测：</p>
+          <table class="spec">
+            <tbody>
+              <tr><th>name</th><td>产品/公司名，使用公开常用名。</td></tr>
+              <tr><th>acquirer</th><td>收购方；如为团队加入，也填接收方。</td></tr>
+              <tr><th>status</th><td><code>completed</code> / <code>announced</code> / <code>team-join</code> / <code>terminated</code>。</td></tr>
+              <tr><th>dealType</th><td><code>acquisition</code> / <code>majority-stake</code> / <code>acquihire</code> / <code>team-join</code> / <code>asset-sale</code>。</td></tr>
+              <tr><th>announcedAt / completedAt</th><td>公告日与交割日分开；未知就不填。</td></tr>
+              <tr><th>amount</th><td>只填官方披露的金额；未披露写 <code>disclosed: false</code>，可在 note 中说明媒体口径。</td></tr>
+              <tr><th>evidence</th><td>A / B / C，标准见<a href={withBase('/method#evidence')}>方法页</a>。</td></tr>
+              <tr><th>sources</th><td>至少一条；优先一手公告、监管文件，其次权威媒体。</td></tr>
+              <tr><th>timeline</th><td>只放可核验事件；只有年份时用 <code>dateLabel</code> 标注精度。</td></tr>
+              <tr><th>openQuestions</th><td>明确写出还不知道什么，比装作知道更有价值。</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="doc-section" id="evidence">
+          <h2>04 / 证据要求</h2>
+          <ul>
+            <li><strong>一手优先：</strong>公司公告、监管文件（20-F、8-K、招股书）、工商登记、官方博客。</li>
+            <li><strong>媒体只作补充：</strong>权威媒体基于登记记录的报道可作 B 级证据；转载与聚合不算新来源。</li>
+            <li><strong>区分宣布与完成：</strong>“宣布收购”与“完成交割”是两条时间线，不能合并。</li>
+            <li><strong>不要用融资额冒充收购价：</strong>这是本档案最常纠正的错误。</li>
+            <li><strong>来源失效要处理：</strong>链接失效时补充存档链接（Wayback Machine），而不是删掉来源。</li>
+          </ul>
+        </section>
+
+        <section class="doc-section" id="tone">
+          <h2>05 / 表述准则</h2>
+          <p>这份档案要经得起当事方与读者的质疑，因此：</p>
+          <ul>
+            <li>不使用“首个”“最大”“唯一”等无法证伪的定位；</li>
+            <li>不臆测交易动机，只引用公开表述并注明是谁说的；</li>
+            <li>不把“团队加入”写成“收购公司”，也不把“收购”降级为“合作”；</li>
+            <li>对未兑现的承诺，描述事实与日期，不使用嘲讽或道德审判的语气；</li>
+            <li>涉及个人时，只写与交易相关的公开职业信息。</li>
+          </ul>
+          <div class="callout" style="margin-top:1.2em">
+            <strong>一条经验法则：</strong>如果一句话去掉形容词后信息量不变，就删掉形容词。
+          </div>
+        </section>
+
+        <section class="doc-section" id="local">
+          <h2>06 / 本地开发</h2>
+          <p>站点使用 Astro + Markdown 内容库，所有案例都是仓库里的一个文件。</p>
+          <pre style="background:var(--paper-2);padding:14px 16px;overflow:auto;font-family:var(--font-mono);font-size:0.8rem;line-height:1.7"><code>pnpm install
+pnpm dev      # 本地预览
+pnpm facts    # 事实核验：日期 / 金额 / 人数 / 来源
+pnpm build    # 构建，事实校验或 schema 不通过会失败</code></pre>
+          <p style="margin-top:1em">内容位置：</p>
+          <ul>
+            <li><code>src/content/cases/*.md</code>：已发生的交易；</li>
+            <li><code>src/content/watchlist/*.md</code>：尚未易主的观察对象；</li>
+            <li><code>src/content.config.ts</code>：字段与校验规则。</li>
+          </ul>
+          <p>
+            提交前请运行 <code>pnpm facts --strict</code> 与 <code>pnpm build</code>。
+            通过意味着字段完整、日期精度与来源匹配、带数字的结构化信号都有来源。
+            正文里的数字会以 info 形式列出，仍需逐条回查来源。
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

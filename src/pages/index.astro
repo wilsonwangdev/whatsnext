@@ -1,0 +1,207 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CaseCard from '../components/CaseCard.astro';
+import WatchCard from '../components/WatchCard.astro';
+import { SITE } from '../data/site';
+import { fmtAmount, fmtShort, sortByDateDesc } from '../lib/format';
+import { withBase } from '../lib/paths';
+
+const allCases = await getCollection('cases');
+const cases = sortByDateDesc(allCases, (c) => c.data.completedAt ?? c.data.announcedAt);
+const watchlist = await getCollection('watchlist');
+
+const featured = cases.filter((c) => c.data.featured).slice(0, 3);
+const now = new Date();
+const watchFeatured = [...watchlist].sort(
+  (a, b) => Number(b.data.featured) - Number(a.data.featured) || a.data.name.localeCompare(b.data.name),
+);
+
+const allEvents = [
+  ...cases.flatMap((c) =>
+    c.data.timeline.map((e) => ({
+      ...e,
+      subject: c.data.name,
+      href: `/cases/${c.id}`,
+    })),
+  ),
+  ...watchlist.flatMap((w) =>
+    w.data.timeline.map((e) => ({
+      ...e,
+      subject: w.data.name,
+      href: `/watchlist/${w.id}`,
+    })),
+  ),
+].sort((a, b) => a.date.getTime() - b.date.getTime());
+const recentEvents = allEvents
+  .filter((e) => e.date <= now)
+  .filter((e) => ['deal', 'aftermath', 'shutdown', 'license', 'governance'].includes(e.kind))
+  .sort((a, b) => b.date.getTime() - a.date.getTime())
+  .slice(0, 6);
+
+const dealTicker = cases.slice(0, 6).map((c) => ({
+  date: c.data.completedAt ?? c.data.announcedAt,
+  name: c.data.name,
+  acquirer: c.data.acquirer,
+  id: c.id,
+}));
+
+const years = cases.map((c) => (c.data.completedAt ?? c.data.announcedAt).getUTCFullYear());
+const earliestYear = Math.min(...years);
+const latest = cases[0];
+const disclosed = cases.filter((c) => c.data.amount.disclosed && c.data.status !== 'terminated');
+const disclosedTotal = disclosed.reduce((sum, c) => sum + (c.data.amount.value ?? 0), 0);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.title,
+  url: SITE.url,
+  description: SITE.description,
+  inLanguage: 'zh-CN',
+  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+};
+
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+
+<BaseLayout jsonLd={jsonLd}>
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="eyebrow">软件收购与团队归属档案 · 2019—2026</p>
+        <h1>
+          记录软件易主的时刻，<br />
+          <span class="accent">以及之后。</span>
+        </h1>
+        <p class="hero__sub">
+          收购公告只讲愿景。这里记录愿景之后：产品是否还在、许可证有没有变、团队去了哪里、
+          当初的承诺兑现了多少。每个结论都附来源，并注明核验日期。
+        </p>
+        <div class="hero__actions">
+          <a class="btn" href={withBase('/cases')}>
+            浏览案例库
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+          <a class="btn btn--ghost" href={withBase('/method')}>收录标准与证据等级</a>
+        </div>
+      </div>
+
+      <aside class="hero__index" aria-label="档案速览">
+        <h2>档案速览 / Index</h2>
+        <div class="index-list">
+          <div class="index-row"><span>已收录案例</span><strong>{pad(cases.length)}</strong></div>
+          <div class="index-row"><span>观察对象</span><strong>{pad(watchlist.length)}</strong></div>
+          <div class="index-row"><span>时间线事件</span><strong>{pad(allEvents.length)}</strong></div>
+          <div class="index-row"><span>最早一笔</span><strong>{earliestYear}</strong></div>
+        </div>
+        <p class="hero__latest">
+          最近更新 ·
+          <a href={withBase(`/cases/${latest.id}`)}>{latest.data.name} → {latest.data.acquirer}</a><br />
+          {fmtShort(latest.data.completedAt ?? latest.data.announcedAt)} · 已交割案例披露对价合计
+          {disclosedTotal > 0 ? ` ${fmtAmount(disclosedTotal)}` : ' —'}
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <div class="ticker" aria-label="最近的交易">
+    <div class="wrap ticker__inner">
+      {dealTicker.map((e) => (
+        <a class="ticker__item" href={withBase(`/cases/${e.id}`)}>
+          <span class="ticker__date">{fmtShort(e.date)}</span>
+          <span>{e.name} → {e.acquirer}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__left">
+          <span class="section-head__num">01</span>
+          <div>
+            <h2>精选案例</h2>
+            <p>交易结构不同，结局也不同。先看这几条。</p>
+          </div>
+        </div>
+        <a class="link-more" href={withBase('/cases')}>全部 {cases.length} 条 →</a>
+      </div>
+      <div class="card-grid">
+        {featured.map((entry, i) => (
+          <CaseCard entry={entry} index={pad(i + 1)} featured={i === 0} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-rule">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__left">
+          <span class="section-head__num">02</span>
+          <div>
+            <h2>尚未易主的软件</h2>
+            <p>不是又一个工具清单。我们记录它们的归属状态、资金结构与独立性。</p>
+          </div>
+        </div>
+        <a class="link-more" href={withBase('/watchlist')}>观察名单 →</a>
+      </div>
+      <div class="card-grid">
+        {watchFeatured.map((entry) => <WatchCard entry={entry} />)}
+      </div>
+      <p class="muted" style="margin-top:20px;font-size:0.86rem;max-width:70ch">
+        这份名单只收我们认为值得长期观察的项目：它们的产品、社区或商业模式，能说明独立开发者软件如何活下去。
+        每条记录都包含可核验的“独立性信号”，而不是主观推荐。
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-rule">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__left">
+          <span class="section-head__num">03</span>
+          <div>
+            <h2>最近发生</h2>
+            <p>来自案例库与观察名单的最新事件。</p>
+          </div>
+        </div>
+        <a class="link-more" href={withBase('/timeline')}>完整时间线 →</a>
+      </div>
+      <div class="card-grid" style="grid-template-columns:1fr">
+        {recentEvents.map((e) => (
+          <div class="tl-event tl-event--recent">
+            <div class="tl-event__date">{fmtShort(e.date)}</div>
+            <div class="tl-event__body">
+              <h3>
+                <a href={withBase(e.href)} style="text-decoration:none">{e.subject}</a>
+                <span class="muted" style="font-weight:400"> · {e.title}</span>
+              </h3>
+              {e.detail && <p>{e.detail}</p>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap cta-band__inner">
+      <div>
+        <h2>这条档案需要更多眼睛。</h2>
+        <p>
+          如果你知道一笔未被收录的交易、发现某条事实过期，或者不同意我们的表述，欢迎提交线索。
+          我们采用“提名 → 核验 → 入库”的流程，所有修改都留痕。
+        </p>
+      </div>
+      <div class="cluster">
+        <a class="btn" href={withBase('/contribute')}>参与贡献</a>
+        <a class="btn btn--ghost" href={withBase('/method')}>先读收录标准</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

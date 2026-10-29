@@ -1,0 +1,171 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Timeline from '../../components/Timeline.astro';
+import SourceList from '../../components/SourceList.astro';
+import { SITE, WATCH_STATUS_LABEL } from '../../data/site';
+import { fmtDate, sortByDateDesc } from '../../lib/format';
+import { withBase } from '../../lib/paths';
+
+export async function getStaticPaths() {
+  const all = sortByDateDesc(await getCollection('watchlist'), (w) => w.data.lastVerified);
+  return all.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: { entry, prev: all[i + 1], next: all[i - 1] },
+  }));
+}
+
+const { entry, prev, next } = Astro.props;
+const w = entry.data;
+const { Content } = await render(entry);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: `${w.name}：尚未易主的开发者软件`,
+  description: w.summary,
+  dateModified: w.lastVerified.toISOString(),
+  inLanguage: 'zh-CN',
+  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+};
+---
+
+<BaseLayout title={w.name} description={w.summary} jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="面包屑">
+      <a href={withBase('/watchlist')}>观察名单</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{w.name}</span>
+    </nav>
+
+    <header class="case-head">
+      <div>
+        <div class="cluster" style="margin-bottom:18px">
+          <span class="chip chip--status">{WATCH_STATUS_LABEL[w.status]}</span>
+          {w.founded && <span class="chip">始于 {w.founded}</span>}
+          {w.license && <span class="chip">{w.license}</span>}
+          <span class="chip chip--soft">最后核验 {fmtDate(w.lastVerified)}</span>
+        </div>
+        <h1>
+          {w.name}
+          <span class="of">{w.tagline}</span>
+        </h1>
+        <p class="lede">{w.summary}</p>
+      </div>
+      <div class="amount-box">
+        <span class="label">归属状态 / Ownership</span>
+        <strong style="font-size:clamp(1.6rem,3vw,2.2rem)">{WATCH_STATUS_LABEL[w.status]}</strong>
+        <span class="note">
+          {w.signals.find((s) => s.label === '归属状态')?.value ?? w.businessModel ?? '商业模式未在此页展开。'}
+        </span>
+      </div>
+    </header>
+
+    <dl class="meta-strip">
+      <div>
+        <dt>创始团队</dt>
+        <dd>{w.founders.length > 0 ? w.founders.join('、') : '—'}</dd>
+      </div>
+      <div>
+        <dt>所在地</dt>
+        <dd>{w.location ?? '—'}</dd>
+      </div>
+      <div>
+        <dt>类别</dt>
+        <dd>{w.categories.join(' / ')}</dd>
+      </div>
+      <div>
+        <dt>许可证</dt>
+        <dd>{w.license ?? '专有'}</dd>
+      </div>
+      <div>
+        <dt>官网</dt>
+        <dd>{w.url ? <a href={w.url} target="_blank" rel="noopener noreferrer">访问 ↗</a> : '—'}</dd>
+      </div>
+      <div>
+        <dt>核验</dt>
+        <dd>{fmtDate(w.lastVerified)}</dd>
+      </div>
+    </dl>
+
+    <div class="detail-grid">
+      <div>
+        <section>
+          <h2 class="mono" style="color:var(--ink-3);font-size:0.65rem;letter-spacing:.12em;margin-bottom:14px">
+            为什么在名单里 / Why watch
+          </h2>
+          <ol class="reason-list">
+            {w.watchReasons.map((reason) => <li>{reason}</li>)}
+          </ol>
+        </section>
+
+        <article class="prose" style="margin-top:44px">
+          <Content />
+        </article>
+
+        <div class="verified-note">
+          <span>最后核验于 {fmtDate(w.lastVerified)} · 归属状态会随公开信息更新</span>
+          <a href={`${SITE.repo}/issues/new?template=correction.yml&title=${encodeURIComponent(`更新：${w.name}`)}`} target="_blank" rel="noopener noreferrer">
+            提供新信息 ↗
+          </a>
+        </div>
+
+        <nav class="cluster" style="margin-top:32px;justify-content:space-between" aria-label="项目导航">
+          {prev ? <a class="link-more" href={withBase(`/watchlist/${prev.id}`)}>← {prev.data.name}</a> : <span />}
+          {next ? <a class="link-more" href={withBase(`/watchlist/${next.id}`)}>{next.data.name} →</a> : <span />}
+        </nav>
+      </div>
+
+      <aside class="detail-aside">
+        <div class="panel">
+          <h2>独立性档案</h2>
+          <dl>
+            {w.signals.map((signal) => (
+              <div>
+                <dt>{signal.label}</dt>
+                <dd>
+                  {signal.value}
+                  {signal.source && <a href={signal.source} target="_blank" rel="noopener noreferrer" style="margin-left:4px">↗</a>}
+                </dd>
+              </div>
+            ))}
+            {w.licenseNotes && (
+              <div>
+                <dt>许可证说明</dt>
+                <dd class="small">{w.licenseNotes}</dd>
+              </div>
+            )}
+          </dl>
+        </div>
+
+        <SourceList sources={w.sources} />
+
+        {w.openQuestions.length > 0 && (
+          <div class="panel">
+            <h2>待核验的问题</h2>
+            <ul>
+              {w.openQuestions.map((q) => <li><span class="small">{q}</span></li>)}
+            </ul>
+          </div>
+        )}
+      </aside>
+    </div>
+  </div>
+
+  {w.timeline.length > 0 && (
+    <section class="section section-rule">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-head__left">
+            <span class="section-head__num">↳</span>
+            <div>
+              <h2>关键节点</h2>
+              <p>只记录可核验的公开事件。</p>
+            </div>
+          </div>
+        </div>
+        <Timeline events={w.timeline} />
+      </div>
+    </section>
+  )}
+</BaseLayout>

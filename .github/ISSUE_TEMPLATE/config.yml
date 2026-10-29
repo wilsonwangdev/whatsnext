@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 讨论区
+    url: https://github.com/postclose/postclose/discussions
+    about: 证据不足、表述争议或追踪线索，适合先在讨论区提出。
+  - name: 收录标准与证据等级
+    url: https://postclose.dev/method
+    about: 提交前建议先读这一页。

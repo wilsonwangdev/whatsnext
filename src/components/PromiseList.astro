@@ -1,0 +1,38 @@
+---
+interface Promise {
+  claim: string;
+  status: string;
+  note?: string;
+  source?: string;
+}
+
+interface Props {
+  promises: Promise[];
+}
+
+const STATUS_LABEL: Record<string, string> = {
+  kept: '已兑现',
+  partial: '部分兑现',
+  pending: '待观察',
+  broken: '未兑现',
+  unclear: '无法判断',
+};
+
+const { promises } = Astro.props;
+---
+
+<div class="panel">
+  <h2>公开承诺核对</h2>
+  <div class="promise-list">
+    {promises.map((p) => (
+      <div class="promise" data-status={p.status}>
+        <p class="promise__claim">{p.claim}</p>
+        <p class="promise__meta">
+          <span>{STATUS_LABEL[p.status] ?? p.status}</span>
+          {p.source && <a href={p.source} target="_blank" rel="noopener noreferrer">出处 ↗</a>}
+        </p>
+        {p.note && <p class="promise__note">{p.note}</p>}
+      </div>
+    ))}
+  </div>
+</div>

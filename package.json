@@ -1,0 +1,28 @@
+{
+  "name": "postclose",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.4.4"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "node scripts/verify-facts.mjs && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "facts": "node scripts/verify-facts.mjs",
+    "facts:strict": "node scripts/verify-facts.mjs --strict",
+    "facts:links": "node scripts/verify-facts.mjs --links",
+    "verify": "astro check && node scripts/verify-facts.mjs",
+    "deploy": "node scripts/deploy-gh-pages.mjs"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "typescript": "^6.0.3",
+    "yaml": "^2.9.1"
+  }
+}

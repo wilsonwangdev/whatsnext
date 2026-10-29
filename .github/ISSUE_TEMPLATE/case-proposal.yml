@@ -1,0 +1,94 @@
+name: 提名案例
+description: 提名一笔值得收录的软件收购、团队加入或交易终止
+title: '[案例] '
+labels: ['case-proposal']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢提名。请尽量填写可核验的信息；不确定的字段留空，不要猜测。
+        收录标准见 [/method](https://postclose.dev/method)。
+
+  - type: input
+    id: target
+    attributes:
+      label: 标的（产品 / 公司 / 团队）
+      placeholder: 例如：Netless
+    validations:
+      required: true
+
+  - type: input
+    id: acquirer
+    attributes:
+      label: 收购方
+      placeholder: 例如：声网 Agora
+    validations:
+      required: true
+
+  - type: dropdown
+    id: structure
+    attributes:
+      label: 交易结构
+      options:
+        - 整体收购（100% 股权）
+        - 控股权收购
+        - 人才收购 / acquihire
+        - 团队加入（结构未披露）
+        - 资产收购
+        - 交易已终止
+        - 不确定
+    validations:
+      required: true
+
+  - type: input
+    id: announced
+    attributes:
+      label: 公告日期
+      placeholder: 2020-11-27；只知道年月也可以
+    validations:
+      required: true
+
+  - type: input
+    id: completed
+    attributes:
+      label: 完成 / 交割日期
+      placeholder: 未知可留空
+
+  - type: input
+    id: amount
+    attributes:
+      label: 对价（如已披露）
+      placeholder: 例如：约 400 万美元；未披露请写「未披露」
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: 来源
+      description: 至少一条一手来源（官方公告、监管文件、工商登记）。每行一条，注明标题与链接。
+      placeholder: |
+        官方公告：https://...
+        监管文件：https://...
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: 为什么值得收录
+      description: 一到两句话，说明它对开发者生态的影响或代表性。
+    validations:
+      required: true
+
+  - type: textarea
+    id: aftermath
+    attributes:
+      label: 收购后的已知变化（可选）
+      placeholder: 产品停运、许可证变更、团队去向、二次收购等
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认
+      options:
+        - label: 我确认以上信息来自公开来源，且没有把融资额当作收购价。
+          required: true

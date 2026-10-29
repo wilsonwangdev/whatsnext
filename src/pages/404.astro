@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
+---
+
+<BaseLayout title="页面不存在" noindex>
+  <section class="notfound">
+    <div class="wrap wrap--narrow">
+      <div class="code">404</div>
+      <h1>这条记录不存在。</h1>
+      <p>可能是链接过期，也可能是这个案例还没被收录。</p>
+      <div class="cluster">
+        <a class="btn" href={withBase('/cases')}>浏览案例库</a>
+        <a class="btn btn--ghost" href={withBase('/contribute')}>提名一个案例</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

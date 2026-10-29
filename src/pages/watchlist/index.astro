@@ -1,0 +1,127 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WatchCard from '../../components/WatchCard.astro';
+import { WATCH_STATUS_LABEL } from '../../data/site';
+
+const watchlist = (await getCollection('watchlist')).sort(
+  (a, b) => Number(b.data.featured) - Number(a.data.featured) || a.data.name.localeCompare(b.data.name),
+);
+const statuses = ['independent', 'venture-backed', 'bootstrapped', 'acquired'] as const;
+const countByStatus = (s: string) => watchlist.filter((w) => w.data.status === s).length;
+---
+
+<BaseLayout
+  title="观察名单"
+  description="尚未易主的开发者软件：独立性档案、资金结构、许可证与公开的归属表态。"
+>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">观察名单 / Watchlist</p>
+      <h1>尚未易主的软件，<br />以及它们如何保持独立。</h1>
+      <p class="lede">
+        这不是一份工具推荐清单。名单里的每个项目，都在回答同一个问题：一款开发者软件能不能不靠被收购活下去？
+        我们记录它的归属状态、资金结构、许可证、公开表态，以及可能改变这一切的变量。
+      </p>
+      <div class="page-head__meta">
+        <span>{watchlist.length} 个观察对象</span>
+        <span>只收甄选名单</span>
+        <span>每条含可核验信号</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="filterbar" data-filter-root>
+    <div class="wrap">
+      <div class="filterbar__row">
+        <span class="filterbar__label">归属</span>
+        <button class="fchip" type="button" data-group="status" data-value="all" aria-pressed="true">全部</button>
+        {statuses.map((s) => (
+          countByStatus(s) > 0 && (
+            <button class="fchip" type="button" data-group="status" data-value={s} aria-pressed="false">
+              {WATCH_STATUS_LABEL[s]} · {countByStatus(s)}
+            </button>
+          )
+        ))}
+        <label class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-4-4" />
+          </svg>
+          <input type="search" placeholder="搜索项目、语言、许可证…" data-search aria-label="搜索观察名单" />
+        </label>
+        <span class="filterbar__count" data-count aria-live="polite">{watchlist.length} / {watchlist.length}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="card-grid" data-items>
+      {watchlist.map((entry) => (
+        <div
+          class="filter-item"
+          data-item
+          data-status={entry.data.status}
+          data-text={`${entry.data.name} ${entry.data.tagline} ${entry.data.license ?? ''} ${entry.data.categories.join(' ')} ${entry.data.summary}`}
+        >
+          <WatchCard entry={entry} />
+        </div>
+      ))}
+    </div>
+    <p class="empty" data-empty hidden>没有匹配的项目。</p>
+  </div>
+
+  <section class="section section-rule">
+    <div class="wrap wrap--narrow">
+      <div class="callout">
+        <strong>为什么不是“未被收购的软件大全”？</strong>
+        因为“还没被收购”本身不构成信息。我们只收录那些能提供判断价值的项目：有明确的资金结构、公开的独立性表态、
+        许可证或治理上的变化，或者一个值得被记录的产品故事。名单宁少勿多，也不接受付费收录。
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-filter-root]');
+  const container = document.querySelector<HTMLElement>('[data-items]');
+  if (root && container) {
+    const items = Array.from(container.querySelectorAll<HTMLElement>('[data-item]'));
+    const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-group]'));
+    const search = root.querySelector<HTMLInputElement>('[data-search]');
+    const countEl = root.querySelector<HTMLElement>('[data-count]');
+    const emptyEl = document.querySelector<HTMLElement>('[data-empty]');
+    const active = new Set<string>();
+
+    const apply = () => {
+      const q = (search?.value ?? '').trim().toLowerCase();
+      let shown = 0;
+      for (const item of items) {
+        const statusOk = active.size === 0 || active.has(item.dataset.status ?? '');
+        const textOk = !q || (item.dataset.text ?? '').toLowerCase().includes(q);
+        const visible = statusOk && textOk;
+        item.hidden = !visible;
+        if (visible) shown += 1;
+      }
+      if (countEl) countEl.textContent = `${shown} / ${items.length}`;
+      if (emptyEl) emptyEl.hidden = shown !== 0;
+    };
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const value = btn.dataset.value ?? '';
+        if (value === 'all') active.clear();
+        else if (active.has(value)) active.delete(value);
+        else active.add(value);
+        buttons.forEach((b) => {
+          const v = b.dataset.value ?? '';
+          b.setAttribute('aria-pressed', String(v === 'all' ? active.size === 0 : active.has(v)));
+        });
+        apply();
+      });
+    });
+
+    search?.addEventListener('input', apply);
+    apply();
+  }
+</script>

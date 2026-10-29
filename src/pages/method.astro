@@ -1,0 +1,217 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { fmtDate } from '../lib/format';
+import { withBase } from '../lib/paths';
+
+const updated = new Date('2026-10-28T00:00:00Z');
+---
+
+<BaseLayout
+  title="方法"
+  description="PostClose 的收录标准、交易分层、证据等级、时间精度、承诺核对规则与纠错流程。"
+>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">方法 / Method</p>
+      <h1>先定义事实，再讲故事。</h1>
+      <p class="lede">
+        一份关于收购的档案，最容易犯的错误是把公告当结果、把传闻当事实、把融资额当交易价。
+        这一页说明我们如何分类、如何标注证据、如何处理不确定，以及如何纠错。
+      </p>
+      <div class="page-head__meta">
+        <span>版本 0.1</span>
+        <span>最后更新 {fmtDate(updated)}</span>
+        <span><a href={withBase('/contribute')}>参与贡献</a></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap section">
+    <div class="doc-grid">
+      <nav class="doc-side" aria-label="本页目录">
+        <h2>目录</h2>
+        <ol>
+          <li><a href="#scope">收录范围</a></li>
+          <li><a href="#structure">交易分层</a></li>
+          <li><a href="#evidence">证据等级</a></li>
+          <li><a href="#precision">时间精度</a></li>
+          <li><a href="#promises">承诺核对</a></li>
+          <li><a href="#watchlist">观察名单标准</a></li>
+          <li><a href="#corrections">更新与纠错</a></li>
+          <li><a href="#license">许可与数据</a></li>
+        </ol>
+      </nav>
+
+      <div>
+        <section class="doc-section" id="scope">
+          <h2>01 / 收录范围</h2>
+          <p>
+            本档案收录<strong>开发者软件、开源项目与相关团队</strong>的收购、控股权交易、人才收购、团队加入，
+            以及被公开终止的交易。判断标准不是交易金额，而是它对开发者生态有可观察的影响。
+          </p>
+          <p>我们优先收录满足以下任一条的案例：</p>
+          <ul>
+            <li>产品被大量开发者日常使用，或作为依赖出现在供应链中；</li>
+            <li>交易涉及开源许可证、治理结构或社区承诺的变化；</li>
+            <li>收购后的产品走向（继续、整合、停运）有明确的一手记录可追踪；</li>
+            <li>交易结构本身有代表性，能说明一类路径（例如上市后补强、平台整合、监管否决）。</li>
+          </ul>
+          <p>不收录：纯财务投资、无公开记录的传闻交易、以及无法核验的“据说”。</p>
+        </section>
+
+        <section class="doc-section" id="structure">
+          <h2>02 / 交易分层</h2>
+          <p>
+            把“被收购”当成一个统一说法，是这类记录最常见的失真来源。我们按公开可确认的程度分层：
+          </p>
+          <table class="spec">
+            <tbody>
+              <tr>
+                <th>整体收购</th>
+                <td>收购方取得标的公司 100% 股权。通常有双方公告或监管文件。</td>
+              </tr>
+              <tr>
+                <th>控股权</th>
+                <td>取得多数股权但保留少数股东；控制权转移，法律主体可能不变。</td>
+              </tr>
+              <tr>
+                <th>人才收购</th>
+                <td>以获取团队为主要目的，可能伴随技术授权或资产转让，但不一定收购公司主体。</td>
+              </tr>
+              <tr>
+                <th>团队加入</th>
+                <td>团队整体加入收购方，交易结构、对价与主体安排未披露。不能等同于公司被收购。</td>
+              </tr>
+              <tr>
+                <th>资产收购</th>
+                <td>只买代码、商标或特定业务，不承接公司主体与负债。</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="callout" style="margin-top:1.2em">
+            <strong>写作规则：</strong>如果公告只说“团队加入”，档案就写“团队加入”，并在状态栏标注；
+            不会因为收购方把它归入 Acquisitions 分类，就改写成“已收购”。
+          </p>
+        </section>
+
+        <section class="doc-section" id="evidence">
+          <h2>03 / 证据等级</h2>
+          <p>每条案例都标注一个证据等级，表示核心事实（交易、对价、时间）的可核验程度。</p>
+          <table class="spec">
+            <tbody>
+              <tr>
+                <th>A</th>
+                <td>
+                  交易双方均有一手公告，或存在监管文件（如 20-F、8-K、招股书）直接支持。
+                  可直接引用。
+                </td>
+              </tr>
+              <tr>
+                <th>B</th>
+                <td>
+                  一方有一手公告，或权威媒体基于工商登记、监管记录报道。引用时应说明另一方缺失。
+                </td>
+              </tr>
+              <tr>
+                <th>C</th>
+                <td>
+                  仅见二手报道，未找到一手来源。档案会保留该案例，但明确标注“待核验”，
+                  并限制结论强度。
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top:1em">
+            证据等级不是永久标签。找到新来源时可以升级，也可以在发现错误时降级——每次变更记录在提交历史里。
+          </p>
+        </section>
+
+        <section class="doc-section" id="precision">
+          <h2>04 / 时间精度</h2>
+          <p>
+            时间线只记录来源能支持的精度。如果只知道年份，就显示年份；只知道月份，就显示月份。
+            日期用于排序时统一记为当月或当年第一天，但显示时使用来源可支持的粒度。
+          </p>
+          <p>交易状态与日期分开记录：</p>
+          <ul>
+            <li><strong>公告日期</strong>：双方首次公开宣布的日期；</li>
+            <li><strong>完成日期</strong>：交割、工商变更或监管批准完成的日期；</li>
+            <li>两者可能相隔数月甚至一年以上，不能混用。</li>
+          </ul>
+        </section>
+
+        <section class="doc-section" id="promises">
+          <h2>05 / 承诺核对</h2>
+          <p>
+            收购公告里的承诺，是这份档案最有价值的部分，也是最容易被遗忘的部分。
+            我们把公告中的可检验表述摘出来，逐条跟踪：
+          </p>
+          <table class="spec">
+            <tbody>
+              <tr><th>已兑现</th><td>有明确证据表明承诺被完整执行。</td></tr>
+              <tr><th>部分兑现</th><td>方向一致，但范围、力度或时间表打了折扣。</td></tr>
+              <tr><th>待观察</th><td>承诺期未到，或暂时没有足够信息判断。</td></tr>
+              <tr><th>未兑现</th><td>承诺期已过，且有证据表明未执行。</td></tr>
+              <tr><th>无法判断</th><td>承诺本身模糊，或缺少可观察的指标。</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:1em">
+            “无法判断”是正常结论。把模糊承诺强行判成“已兑现”或“未兑现”，都会损害档案的可信度。
+          </p>
+        </section>
+
+        <section class="doc-section" id="watchlist">
+          <h2>06 / 观察名单标准</h2>
+          <p>
+            观察名单不是“未被收购的软件大全”。收录对象必须能提供判断价值，至少满足一条：
+          </p>
+          <ul>
+            <li>有可核验的资金结构（自筹、融资、基金会），且与产品策略相关；</li>
+            <li>创始团队有公开的独立性或退出表态；</li>
+            <li>许可证、治理或商业模式发生过值得记录的变化；</li>
+            <li>产品故事能说明一类独立软件的生存方式。</li>
+          </ul>
+          <p>
+            名单宁少勿多，不接受付费收录，也不以“推荐使用”为目的。归属状态变化时（被收购、关闭、转型），
+            会从观察名单移入案例库或标注为已退出。
+          </p>
+        </section>
+
+        <section class="doc-section" id="corrections">
+          <h2>07 / 更新与纠错</h2>
+          <p>
+            每个案例都有“最后核验”日期。核验间隔目标为 90 天，重大事件（停运、许可证变更、二次收购）
+            在发生后 30 天内更新。
+          </p>
+          <p>纠错流程：</p>
+          <ol>
+            <li>在 GitHub 提交 issue，说明哪条事实有误、正确信息是什么、来源在哪里；</li>
+            <li>维护者核对来源，必要时联系当事方或回查监管文件；</li>
+            <li>通过 PR 修改内容，提交信息中注明依据；</li>
+            <li>如涉及结论变化，同步更新证据等级与核验日期。</li>
+          </ol>
+          <p>
+            我们不删除有争议的记录，而是并列呈现不同来源与口径。删除只用于两种情况：来源本身失效，
+            或内容违反法律与隐私边界。
+          </p>
+        </section>
+
+        <section class="doc-section" id="license">
+          <h2>08 / 许可与数据</h2>
+          <p>
+            站点代码以 MIT 许可发布；案例文本与结构化数据以
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+            许可发布。转载或再创作时，请保留来源链接与“最后核验”日期。
+          </p>
+          <p>
+            结构化数据可从 <a href={withBase('/cases.json')}>/cases.json</a> 获取，字段与内容文件一致，便于复用与校对。
+          </p>
+          <p class="muted" style="font-size:0.86rem">
+            本站为独立项目，与文中提及的任何公司无隶属或赞助关系。商标归各自所有者。
+            内容不构成投资、法律或商业建议。
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,69 @@
+---
+import { NAV, SITE } from '../data/site';
+import { BASE, withBase } from '../lib/paths';
+
+const base = BASE.endsWith('/') ? BASE.slice(0, -1) : BASE;
+const path = Astro.url.pathname.startsWith(base)
+  ? Astro.url.pathname.slice(base.length) || '/'
+  : Astro.url.pathname;
+const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
+---
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href={withBase('/')} aria-label={`${SITE.name} 首页`}>
+      <svg class="brand__mark" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+        <rect x="0.5" y="0.5" width="25" height="25" stroke="currentColor" />
+        <path d="M0.5 0.5L25.5 25.5" stroke="currentColor" stroke-width="0.75" />
+        <path class="mark-accent" d="M13 0.5H25.5V13L13 0.5Z" />
+        <path d="M13 25.5H0.5V13L13 25.5Z" stroke="currentColor" stroke-width="0.75" />
+      </svg>
+      <span class="brand__text">
+        <span class="brand__name">{SITE.name}</span>
+        <span class="brand__sub">{SITE.nameZh} · Archive</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+    <nav class="site-nav" aria-label="主导航">
+      {NAV.map((item) => (
+        <a href={withBase(item.href)} aria-current={isActive(item.href) ? 'page' : undefined}>
+          {item.label}
+        </a>
+      ))}
+      <a href={withBase('/contribute')} class="nav-contribute">参与</a>
+    </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换深色模式">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2" />
+          <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6" />
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M20 14.5A8.2 8.2 0 0 1 9.5 4a8.3 8.3 0 1 0 10.5 10.5Z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+  const root = document.documentElement;
+  const sync = () => {
+    if (btn) {
+      btn.setAttribute('aria-pressed', String(root.dataset.theme === 'dark'));
+      btn.setAttribute('aria-label', root.dataset.theme === 'dark' ? '切换浅色模式' : '切换深色模式');
+    }
+  };
+  btn?.addEventListener('click', () => {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try {
+      localStorage.setItem('postclose-theme', next);
+    } catch {
+      /* ignore */
+    }
+    sync();
+  });
+  sync();
+</script>

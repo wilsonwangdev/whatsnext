@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { WATCH_STATUS_LABEL } from '../data/site';
+import { withBase } from '../lib/paths';
+
+interface Props {
+  entry: CollectionEntry<'watchlist'>;
+}
+
+const { entry } = Astro.props;
+const w = entry.data;
+---
+
+<a class="watch-card" href={withBase(`/watchlist/${entry.id}`)}>
+  <div class="watch-card__head">
+    <h3>{w.name}</h3>
+    <span class="chip chip--soft">{WATCH_STATUS_LABEL[w.status]}</span>
+  </div>
+  <p class="watch-card__note">{w.tagline}</p>
+  <p class="watch-card__why">{w.watchReasons[0]}</p>
+  <div class="watch-card__meta">
+    {w.license && <span class="chip">{w.license}</span>}
+    {w.founded && <span class="chip">始于 {w.founded}</span>}
+    {w.categories.slice(0, 2).map((cat) => <span class="chip">{cat}</span>)}
+  </div>
+</a>

@@ -1,0 +1,163 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseCard from '../../components/CaseCard.astro';
+import { DEAL_TYPE_LABEL, STATUS_LABEL } from '../../data/site';
+import { sortByDateDesc } from '../../lib/format';
+import { withBase } from '../../lib/paths';
+
+const cases = sortByDateDesc(
+  await getCollection('cases'),
+  (c) => c.data.completedAt ?? c.data.announcedAt,
+);
+
+const dealTypes = ['acquisition', 'acquihire', 'team-join'] as const;
+const statuses = ['completed', 'team-join', 'terminated'] as const;
+const countByType = (t: string) => cases.filter((c) => c.data.dealType === t).length;
+const countByStatus = (s: string) => cases.filter((c) => c.data.status === s).length;
+
+const pad = (n: number) => String(n).padStart(2, '0');
+---
+
+<BaseLayout
+  title="案例库"
+  description="已核验的软件收购、团队加入与交易终止案例：交易事实、公开承诺与收购后的实际走向。"
+>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">案例库 / Cases</p>
+      <h1>交易、承诺，<br />以及之后发生的事。</h1>
+      <p class="lede">
+        每条案例都按同一套字段记录：交易结构、日期、对价、证据等级、公开承诺与后续事件。
+        默认按时间倒序排列；可以用结构、状态或关键词筛选。
+      </p>
+      <div class="page-head__meta">
+        <span>{cases.length} 条案例</span>
+        <span>跨度 {Math.min(...cases.map((c) => (c.data.completedAt ?? c.data.announcedAt).getUTCFullYear()))}—2026</span>
+        <span>100% 附来源</span>
+        <span><a href={withBase('/method#evidence')}>证据等级说明</a></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="filterbar" data-filter-root>
+    <div class="wrap">
+      <div class="filterbar__row">
+        <div class="filter-group">
+          <span class="filterbar__label">结构</span>
+          <button class="fchip" type="button" data-group="type" data-value="all" aria-pressed="true">
+            全部
+          </button>
+          {dealTypes.map((t) => (
+            <button class="fchip" type="button" data-group="type" data-value={t} aria-pressed="false">
+              {DEAL_TYPE_LABEL[t]} · {countByType(t)}
+            </button>
+          ))}
+        </div>
+        <div class="filter-group">
+          <span class="filterbar__label">状态</span>
+          <button class="fchip" type="button" data-group="status" data-value="all" aria-pressed="true">
+            全部
+          </button>
+          {statuses.map((s) => (
+            <button class="fchip" type="button" data-group="status" data-value={s} aria-pressed="false">
+              {STATUS_LABEL[s]} · {countByStatus(s)}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div class="filterbar__row">
+        <label class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-4-4" />
+          </svg>
+          <input type="search" placeholder="搜索公司、产品、行业…" data-search aria-label="搜索案例" />
+        </label>
+        <span class="filterbar__count" data-count aria-live="polite">{cases.length} / {cases.length}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="card-grid" data-items>
+      {cases.map((entry, i) => (
+        <div
+          class="filter-item"
+          data-item
+          data-type={entry.data.dealType}
+          data-status={entry.data.status}
+          data-text={`${entry.data.name} ${entry.data.acquirer} ${entry.data.tagline} ${entry.data.summary} ${entry.data.categories.join(' ')}`}
+        >
+          <CaseCard entry={entry} index={pad(i + 1)} />
+        </div>
+      ))}
+    </div>
+    <p class="empty" data-empty hidden>没有匹配的案例。换个关键词，或清除筛选。</p>
+  </div>
+
+  <section class="section section-rule">
+    <div class="wrap wrap--narrow">
+      <div class="callout">
+        <strong>关于“对价”一栏：</strong>
+        未披露就是未披露。我们不会用融资额、估值或媒体报道的上限值来填充交易价格；
+        如果媒体口径与官方披露冲突，会在注释中并列说明。
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-filter-root]');
+  const container = document.querySelector<HTMLElement>('[data-items]');
+  if (root && container) {
+    const items = Array.from(container.querySelectorAll<HTMLElement>('[data-item]'));
+    const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-group]'));
+    const search = root.querySelector<HTMLInputElement>('[data-search]');
+    const countEl = root.querySelector<HTMLElement>('[data-count]');
+    const emptyEl = document.querySelector<HTMLElement>('[data-empty]');
+    const active: Record<string, Set<string>> = { type: new Set(), status: new Set() };
+
+    const apply = () => {
+      const q = (search?.value ?? '').trim().toLowerCase();
+      let shown = 0;
+      for (const item of items) {
+        const typeOk = active.type.size === 0 || active.type.has(item.dataset.type ?? '');
+        const statusOk = active.status.size === 0 || active.status.has(item.dataset.status ?? '');
+        const textOk = !q || (item.dataset.text ?? '').toLowerCase().includes(q);
+        const visible = typeOk && statusOk && textOk;
+        item.hidden = !visible;
+        if (visible) shown += 1;
+      }
+      if (countEl) countEl.textContent = `${shown} / ${items.length}`;
+      if (emptyEl) emptyEl.hidden = shown !== 0;
+    };
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const group = btn.dataset.group ?? '';
+        const value = btn.dataset.value ?? '';
+        const set = active[group];
+        if (!set) return;
+        if (value === 'all') {
+          set.clear();
+        } else if (set.has(value)) {
+          set.delete(value);
+        } else {
+          set.add(value);
+        }
+        buttons
+          .filter((b) => b.dataset.group === group)
+          .forEach((b) => {
+            const v = b.dataset.value ?? '';
+            const pressed = v === 'all' ? set.size === 0 : set.has(v);
+            b.setAttribute('aria-pressed', String(pressed));
+          });
+        apply();
+      });
+    });
+
+    search?.addEventListener('input', apply);
+    apply();
+  }
+</script>

@@ -1,0 +1,198 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StatusChip from '../../components/StatusChip.astro';
+import EvidenceBadge from '../../components/EvidenceBadge.astro';
+import Timeline from '../../components/Timeline.astro';
+import SourceList from '../../components/SourceList.astro';
+import PromiseList from '../../components/PromiseList.astro';
+import { DEAL_TYPE_LABEL, EVIDENCE_LABEL, EVIDENCE_NOTE, SITE, STATUS_LABEL } from '../../data/site';
+import { elapsed, fmtAmount, fmtDate, sortByDateDesc } from '../../lib/format';
+import { withBase } from '../../lib/paths';
+
+export async function getStaticPaths() {
+  const all = sortByDateDesc(
+    await getCollection('cases'),
+    (c) => c.data.completedAt ?? c.data.announcedAt,
+  );
+  return all.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: { entry, prev: all[i + 1], next: all[i - 1] },
+  }));
+}
+
+const { entry, prev, next } = Astro.props;
+const c = entry.data;
+const { Content } = await render(entry);
+
+const verb = (() => {
+  if (c.status === 'terminated') return `与 ${c.acquirer} 的交易已终止`;
+  if (c.status === 'team-join') return `团队加入 ${c.acquirer}`;
+  if (c.dealType === 'acquihire') return `被 ${c.acquirer} 收走团队`;
+  if (c.status === 'announced') return `宣布被 ${c.acquirer} 收购`;
+  return `被 ${c.acquirer} 收购`;
+})();
+
+const amountValue = c.amount.disclosed ? fmtAmount(c.amount.value, c.amount.currency) : '未披露';
+const dealDate = c.completedAt ?? c.announcedAt;
+const age = c.status === 'terminated' ? '' : elapsed(dealDate);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: `${c.name}：${verb}`,
+  description: c.summary,
+  datePublished: c.announcedAt.toISOString(),
+  dateModified: c.lastVerified.toISOString(),
+  inLanguage: 'zh-CN',
+  about: { '@type': 'Organization', name: c.name },
+  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  citation: c.sources.map((s) => s.url),
+};
+---
+
+<BaseLayout title={`${c.name} → ${c.acquirer}`} description={c.summary} jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="面包屑">
+      <a href={withBase('/cases')}>案例库</a>
+      <span aria-hidden="true">/</span>
+      <span>{c.acquirer}</span>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{c.name}</span>
+    </nav>
+
+    <header class="case-head">
+      <div>
+        <div class="cluster" style="margin-bottom:18px">
+          <StatusChip status={c.status} />
+          <span class="chip">{DEAL_TYPE_LABEL[c.dealType]}</span>
+          <EvidenceBadge level={c.evidence} withLabel />
+          {age && <span class="chip chip--soft">{age}前</span>}
+        </div>
+        <h1>
+          {c.name}
+          <span class="of">
+            <b>{c.acquirer}</b> ·
+            {c.status === 'terminated' ? '交易终止' : c.status === 'team-join' ? '团队加入' : DEAL_TYPE_LABEL[c.dealType]}
+          </span>
+        </h1>
+        <p class="lede">{c.summary}</p>
+      </div>
+
+      <div class="amount-box">
+        <span class="label">对价 / Consideration</span>
+        <strong>{amountValue}</strong>
+        <span class="note">{c.amount.note ?? (c.amount.disclosed ? '据官方公告。' : '交易对价未公开披露。')}</span>
+      </div>
+    </header>
+
+    <dl class="meta-strip">
+      <div>
+        <dt>公告日期</dt>
+        <dd>{fmtDate(c.announcedAt)}</dd>
+      </div>
+      <div>
+        <dt>完成日期</dt>
+        <dd>{c.completedAt ? fmtDate(c.completedAt) : '未完成'}</dd>
+      </div>
+      <div>
+        <dt>状态</dt>
+        <dd>{STATUS_LABEL[c.status]}</dd>
+      </div>
+      <div>
+        <dt>所在地</dt>
+        <dd>{c.country}</dd>
+      </div>
+      <div>
+        <dt>许可证</dt>
+        <dd>{c.license ?? '—'}{c.licenseAfter && c.licenseAfter !== c.license ? ` → ${c.licenseAfter}` : ''}</dd>
+      </div>
+      <div>
+        <dt>最后核验</dt>
+        <dd>{fmtDate(c.lastVerified)}</dd>
+      </div>
+    </dl>
+
+    <div class="detail-grid">
+      <div>
+        <article class="prose">
+          <Content />
+        </article>
+
+        <div class="verified-note">
+          <span>
+            最后核验于 {fmtDate(c.lastVerified)} · 证据等级 {c.evidence}
+          </span>
+          <a href={`${SITE.repo}/issues/new?template=correction.yml&title=${encodeURIComponent(`纠错：${c.name}`)}`} target="_blank" rel="noopener noreferrer">
+            发现事实错误？提交纠错 ↗
+          </a>
+        </div>
+
+        <nav class="cluster" style="margin-top:32px;justify-content:space-between" aria-label="案例导航">
+          {prev ? <a class="link-more" href={withBase(`/cases/${prev.id}`)}>← {prev.data.name}</a> : <span />}
+          {next ? <a class="link-more" href={withBase(`/cases/${next.id}`)}>{next.data.name} →</a> : <span />}
+        </nav>
+      </div>
+
+      <aside class="detail-aside">
+        <div class="panel">
+          <h2>交易速览</h2>
+          <dl>
+            <div>
+              <dt>收购方</dt>
+              <dd>{c.acquirer}</dd>
+            </div>
+            <div>
+              <dt>标的</dt>
+              <dd>{c.name}{c.founded ? ` · 始于 ${c.founded}` : ''}</dd>
+            </div>
+            <div>
+              <dt>结构</dt>
+              <dd>{DEAL_TYPE_LABEL[c.dealType]}</dd>
+            </div>
+            <div>
+              <dt>行业</dt>
+              <dd>{c.categories.join(' / ')}</dd>
+            </div>
+            <div>
+              <dt>证据</dt>
+              <dd>{EVIDENCE_LABEL[c.evidence]}<br /><span class="small">{EVIDENCE_NOTE[c.evidence]}</span></dd>
+            </div>
+          </dl>
+        </div>
+
+        {c.promises.length > 0 && <PromiseList promises={c.promises} />}
+
+        <SourceList sources={c.sources} />
+
+        {c.openQuestions.length > 0 && (
+          <div class="panel">
+            <h2>待核验的问题</h2>
+            <ul>
+              {c.openQuestions.map((q) => (
+                <li><span class="small">{q}</span></li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </aside>
+    </div>
+  </div>
+
+  {c.timeline.length > 0 && (
+    <section class="section section-rule">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-head__left">
+            <span class="section-head__num">↳</span>
+            <div>
+              <h2>完整时间线</h2>
+              <p>从创立到最近一条可核验的后续。悬停来源可查看出处。</p>
+            </div>
+          </div>
+        </div>
+        <Timeline events={c.timeline} />
+      </div>
+    </section>
+  )}
+</BaseLayout>

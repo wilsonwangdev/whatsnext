@@ -1,0 +1,39 @@
+---
+import { EVENT_KIND_LABEL } from '../data/site';
+import { fmtISO, fmtMonth } from '../lib/format';
+
+interface Event {
+  date: Date;
+  dateLabel?: string;
+  title: string;
+  detail?: string;
+  kind: string;
+  source?: string;
+}
+
+interface Props {
+  events: Event[];
+  showSource?: boolean;
+}
+
+const { events, showSource = true } = Astro.props;
+const sorted = [...events].sort((a, b) => a.date.getTime() - b.date.getTime());
+const now = new Date();
+---
+
+<ol class="timeline">
+  {sorted.map((event) => (
+    <li class="tl-item" data-kind={event.kind}>
+      <div class="tl-item__date">
+        <time datetime={fmtISO(event.date)}>{event.dateLabel ?? fmtMonth(event.date)}</time>
+        <span class="tl-item__kind">{EVENT_KIND_LABEL[event.kind] ?? event.kind}</span>
+        {event.date > now && <span class="tl-item__kind">计划</span>}
+      </div>
+      <h3>{event.title}</h3>
+      {event.detail && <p>{event.detail}</p>}
+      {showSource && event.source && (
+        <a href={event.source} target="_blank" rel="noopener noreferrer">来源 ↗</a>
+      )}
+    </li>
+  ))}
+</ol>
