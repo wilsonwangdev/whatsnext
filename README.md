@@ -1,5 +1,8 @@
 # PostClose · 交割之后
 
+[![verify](https://github.com/wilsonwangdev/postclose/actions/workflows/verify.yml/badge.svg)](https://github.com/wilsonwangdev/postclose/actions/workflows/verify.yml)
+[站点](https://wilsonwangdev.github.io/postclose/)
+
 > 开发者软件、开源项目与团队归属的公开档案：记录收购与团队加入的事实、公开承诺，以及之后真正发生了什么。
 
 收购公告只讲愿景。这个项目想记录愿景之后的部分：产品是否还在、许可证有没有变、团队去了哪里、当初的承诺兑现了多少。
