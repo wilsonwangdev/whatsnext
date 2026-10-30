@@ -378,6 +378,34 @@ samp {
   transform: scaleX(1);
 }
 
+.hero__actions .btn svg {
+  flex: none;
+}
+
+.gh-link {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.gh-link:hover {
+  border-color: var(--ink-3);
+  color: var(--ink);
+}
+
+.gh-link svg {
+  display: block;
+  width: 15px;
+  height: 15px;
+}
+
 .theme-toggle {
   flex: none;
   width: 34px;
@@ -2201,6 +2229,16 @@ table.spec th {
   .site-nav a {
     font-size: 0.78rem;
     white-space: nowrap;
+  }
+
+  .gh-link {
+    padding-inline: 0;
+    width: 34px;
+    justify-content: center;
+  }
+
+  .gh-link__text {
+    display: none;
   }
 
   .theme-toggle {

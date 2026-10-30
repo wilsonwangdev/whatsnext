@@ -38,7 +38,10 @@ const y = buildDate.getUTCFullYear();
       </div>
     </div>
     <div class="site-footer__bottom">
-      <span>© {y} {SITE.name} · 内容 CC BY-SA 4.0 · 代码 MIT</span>
+      <span>
+        © {y} {SITE.name} · 内容 CC BY-SA 4.0 · 代码 MIT ·
+        <a href={SITE.repo} target="_blank" rel="noopener">源码在 GitHub</a>
+      </span>
       <span>不构成投资建议 · 所有事实以来源为准</span>
       <span>构建于 {buildDate.toISOString().slice(0, 10)}</span>
     </div>

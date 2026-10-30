@@ -1,15 +1,15 @@
 // 部署前请把 url 与 repo 改为你自己的域名与仓库地址。
 export const SITE = {
-  name: 'PostClose',
-  nameZh: '交割之后',
-  title: 'PostClose · 交割之后',
+  name: "What's Next",
+  nameZh: '下一个是谁',
+  title: "What's Next · 下一个是谁",
   description:
-    '开发者软件、开源项目与团队归属的公开档案：记录收购与团队加入的事实、公开承诺，以及之后真正发生了什么。每条事实附来源，每次更新注明核验日期。',
-  tagline: '开发者软件的收购、团队加入与后续档案',
-  url: 'https://wilsonwangdev.github.io/postclose',
+    '开发者软件的代际更替档案：一个产品被收购、归于平静、或就此无声之后，谁接手了它的位置。记录每一代的结局与下一代的登场，每条事实附公开来源与核验日期。',
+  tagline: '软件产品的代际更替：谁退场，谁接手，下一个是谁',
+  url: 'https://wilsonwangdev.github.io/whatsnext',
   locale: 'zh-CN',
-  author: 'PostClose 维护者',
-  repo: 'https://github.com/wilsonwangdev/postclose',
+  author: "What's Next 维护者",
+  repo: 'https://github.com/wilsonwangdev/whatsnext',
 } as const;
 
 export const NAV = [

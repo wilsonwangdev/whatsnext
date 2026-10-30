@@ -34,6 +34,14 @@ const verb = (() => {
   return `被 ${c.acquirer} 收购`;
 })();
 
+// title 里要带可被搜索的交易类型词——没人搜「Figma → Adobe」，但很多人搜「Figma 收购」
+const dealLabel =
+  c.status === 'terminated' ? '收购案（已终止）'
+  : c.status === 'team-join' ? '团队加入'
+  : c.dealType === 'acquihire' ? '人才收购'
+  : c.dealType === 'majority-stake' ? '控股权变更'
+  : '收购案';
+
 const amountValue = c.amount.disclosed ? fmtAmount(c.amount.value, c.amount.currency) : '未披露';
 const dealDate = c.completedAt ?? c.announcedAt;
 const age = c.status === 'terminated' ? '' : elapsed(dealDate);
@@ -52,7 +60,11 @@ const jsonLd = {
 };
 ---
 
-<BaseLayout title={`${c.name} → ${c.acquirer}`} description={c.summary} jsonLd={jsonLd}>
+<BaseLayout
+  title={`${c.name} → ${c.acquirer} ${dealLabel}`}
+  description={c.summary}
+  jsonLd={jsonLd}
+>
   <div class="wrap">
     <nav class="crumbs" aria-label="面包屑">
       <a href={withBase('/cases')}>案例库</a>
