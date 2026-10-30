@@ -2,9 +2,9 @@
 /**
  * 每周维护活跃度监测：产出 markdown 片段，供 watch.yml 拼进周报 issue。
  *
- * 与 team-signals.mjs 的区别：
- *   team-signals.mjs  采集原始数据，人工判断后写入 checks（一次性）
- *   watch-team.mjs    只做阈值告警，每周跑，不需要人工介入（持续性）
+ * 覆盖两组对象：
+ *   case       已发生的交易（关注收购后维护是否退坡）
+ *   watchlist  尚未易主、值得长期观察的项目（关注维护是否停滞——那往往是被收购或走向没落的前兆）
  *
  * 用 fetch + GITHUB_TOKEN 而不是 gh CLI——GitHub Actions 的 runner 镜像
  * 没有预装 gh，用 CLI 会静默失败（空输出追加进报告，看不出错）。
@@ -18,6 +18,9 @@
  * 不需要历史基线：绝对阈值就能发现「已经停了」。
  * 「正在变慢」需要人工看趋势，报告里会列出当前数值供对比。
  *
+ * 闭源项目（Obsidian、Raycast）没有可观察的公开仓库，显式列出说明为什么不监测，
+ * 而不是假装覆盖了。
+ *
  * 用法：
  *   GITHUB_TOKEN=xxx node scripts/watch-team.mjs
  *   GITHUB_TOKEN=xxx node scripts/watch-team.mjs --json
@@ -25,15 +28,24 @@
 const AS_JSON = process.argv.includes('--json');
 const TOKEN = process.env.GITHUB_TOKEN ?? process.env.GH_TOKEN;
 
-/** slug → 仓库。新增案例时在这里加一行即可。 */
-const REPOS = {
-  bun: 'oven-sh/bun',
-  deno: 'denoland/deno',
-  dioxus: 'DioxusLabs/dioxus',
-  hashicorp: 'hashicorp/terraform',
-  npm: 'npm/cli',
-  netless: 'netless-io/flat',
+/** slug → 仓库与归类。新增案例或在观察名单加项目时，在这里加一行。 */
+const TARGETS = {
+  // 已发生的交易
+  bun: { repo: 'oven-sh/bun', kind: 'case' },
+  deno: { repo: 'denoland/deno', kind: 'case' },
+  dioxus: { repo: 'DioxusLabs/dioxus', kind: 'case' },
+  hashicorp: { repo: 'hashicorp/terraform', kind: 'case' },
+  npm: { repo: 'npm/cli', kind: 'case' },
+  netless: { repo: 'netless-io/flat', kind: 'case' },
+  // 观察名单
+  affine: { repo: 'toeverything/AFFiNE', kind: 'watchlist' },
+  excalidraw: { repo: 'excalidraw/excalidraw', kind: 'watchlist' },
+  tldraw: { repo: 'tldraw/tldraw', kind: 'watchlist' },
+  zed: { repo: 'zed-industries/zed', kind: 'watchlist' },
 };
+
+/** 闭源项目：没有可观察的公开仓库，报告里显式说明。 */
+const CLOSED_SOURCE = ['obsidian', 'raycast'];
 
 async function api(path, attempt = 0) {
   const headers = { Accept: 'application/vnd.github+json', 'User-Agent': 'WhatsNext-Watch/1.0' };
@@ -63,9 +75,9 @@ async function api(path, attempt = 0) {
 
 const daysAgoISO = (n) => new Date(Date.now() - n * 86_400_000).toISOString();
 
-async function inspect(slug, repo) {
+async function inspect(slug, { repo, kind }) {
   const info = await api(`/repos/${repo}`);
-  if (info.__error) return { slug, repo, error: info.__error };
+  if (info.__error) return { slug, repo, kind, error: info.__error };
 
   const commits = await api(`/repos/${repo}/commits?since=${daysAgoISO(90)}&per_page=100`);
   const commitCount = Array.isArray(commits) ? (commits.length >= 100 ? 100 : commits.length) : 0;
@@ -85,50 +97,62 @@ async function inspect(slug, repo) {
   else if (commitCount < 5) alerts.push({ level: 'yellow', msg: `最近 90 天仅 ${commitCount} 次提交` });
   if (releases12m === 0) alerts.push({ level: 'yellow', msg: '最近 12 个月 0 次发布' });
 
-  return { slug, repo, archived: info.archived, commitCount, releases12m, lastRelease, alerts };
+  return { slug, repo, kind, archived: info.archived, commitCount, releases12m, lastRelease, alerts };
 }
 
 const results = [];
-for (const [slug, repo] of Object.entries(REPOS)) {
-  results.push(await inspect(slug, repo));
+for (const [slug, target] of Object.entries(TARGETS)) {
+  results.push(await inspect(slug, target));
 }
 
 if (AS_JSON) {
-  console.log(JSON.stringify(results, null, 2));
+  console.log(JSON.stringify({ results, closedSource: CLOSED_SOURCE }, null, 2));
   process.exit(0);
 }
 
+const cases = results.filter((r) => r.kind === 'case');
+const watching = results.filter((r) => r.kind === 'watchlist');
 const flagged = results.filter((r) => r.alerts?.length);
 const errors = results.filter((r) => r.error);
 
-const lines = ['', '## 维护活跃度', ''];
-
-if (flagged.length === 0 && errors.length === 0) {
-  lines.push('本周无异常。');
-} else if (flagged.length > 0) {
-  lines.push('| 案例 | 90 天提交 | 12 月发布 | 最后一次发布 | 告警 |');
-  lines.push('| --- | --- | --- | --- | --- |');
-  for (const r of flagged) {
-    const icon = r.alerts.some((a) => a.level === 'red') ? '🔴' : '🟡';
-    const msgs = r.alerts.map((a) => a.msg).join('；');
-    lines.push(
+const table = (rows) => {
+  const out = [
+    '| 项目 | 90 天提交 | 12 月发布 | 最后一次发布 | 告警 |',
+    '| --- | --- | --- | --- | --- |',
+  ];
+  for (const r of rows) {
+    if (r.error) {
+      out.push(`| ${r.slug} | — | — | — | ⚠️ 采集失败：${r.error} |`);
+      continue;
+    }
+    const icon = r.alerts.length ? (r.alerts.some((a) => a.level === 'red') ? '🔴' : '🟡') : '—';
+    const msgs = r.alerts.map((a) => a.msg).join('；') || '正常';
+    out.push(
       `| ${r.slug} | ${r.commitCount} | ${r.releases12m} | ${r.lastRelease ?? '无'} | ${icon} ${msgs} |`,
     );
   }
+  return out;
+};
+
+const lines = ['', '## 维护活跃度', ''];
+lines.push(`**本周告警 ${flagged.length} 项**（共监测 ${results.length} 个仓库）`, '');
+lines.push(...table(results));
+
+if (CLOSED_SOURCE.length) {
+  lines.push(
+    '',
+    `闭源项目不在此监测范围（无可观察的公开仓库）：${CLOSED_SOURCE.join('、')}。`,
+  );
 }
+
+lines.push('', '<details><summary>按组查看</summary>', '');
+lines.push('**已发生的交易**', '', ...table(cases), '');
+lines.push('**观察名单**', '', ...table(watching));
+lines.push('', '</details>');
 
 if (errors.length) {
   lines.push('', '采集失败：');
   for (const e of errors) lines.push(`- ${e.slug} (${e.repo}): ${e.error}`);
 }
-
-lines.push('', '<details><summary>全部案例当前数值</summary>', '');
-lines.push('| 案例 | 90 天提交 | 12 月发布 | 最后发布 |');
-lines.push('| --- | --- | --- | --- |');
-for (const r of results) {
-  if (r.error) continue;
-  lines.push(`| ${r.slug} | ${r.commitCount} | ${r.releases12m} | ${r.lastRelease ?? '无'} |`);
-}
-lines.push('', '</details>');
 
 console.log(lines.join('\n'));
