@@ -58,6 +58,11 @@ timeline:
     detail: 约 20 万美元开发技术（五年摊销）与约 310 万美元商誉，商誉归因于与实时互动平台的协同。
     kind: aftermath
     source: https://vectorshift.ai/research/deals/agora-netless-2020
+checks:
+  - date: 2026-10-30
+    label: 维护活跃度
+    value: 维护显著减弱：flat 仓库最近 90 天 0 次提交，最后一次发布是 2025-01 的 v2.3.6（21 个月前），最后提交停在 2026-07-08
+    source: https://github.com/netless-io/flat
 openQuestions:
   - Netless 团队加入声网后的具体去向与存续时间，缺少公开记录。
   - 声网互动白板产品线的最终状态（继续售卖、合并或停运）没有一手公告。

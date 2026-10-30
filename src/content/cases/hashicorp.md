@@ -83,6 +83,10 @@ timeline:
     kind: deal
     source: https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp,-creates-comprehensive,-end-to-end-hybrid-cloud-platform
 checks:
+  - date: 2026-10-30
+    label: 维护活跃度
+    value: 最近 90 天 100+ 次提交、12 个月 63 次发布；提交集中在 SarahFrench(49) 与 jbardin(30)
+    source: https://github.com/hashicorp/terraform
   - date: 2024-01-31
     label: 维护团队规模（交割前）
     value: 2,200 人（2024 财年，SEC 10-K 口径；官方 about 页同口径）

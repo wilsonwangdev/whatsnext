@@ -51,6 +51,11 @@ timeline:
     detail: Beri 统计，Blitz 核心 crate 的全部 owner、Taffy 三位 owner 中的两位目前在 Cognition 工作。
     kind: governance
     source: https://www.beri.net/article/cognition-dioxus-acquihire-blitz-taffy-crate-owners-kitesurf-dependency
+checks:
+  - date: 2026-10-30
+    label: 维护活跃度
+    value: 最近 90 天 68 次提交、12 个月 16 次发布；nicoburns 一人提交 51 次，集中度高
+    source: https://github.com/DioxusLabs/dioxus
 promises:
   - claim: 继续支持 Dioxus、Blitz、Taffy 和 Subsecond 的开源工作。
     status: pending

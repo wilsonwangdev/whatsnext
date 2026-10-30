@@ -70,6 +70,11 @@ timeline:
     title: npm Enterprise 支持结束
     kind: shutdown
     source: https://docs.npmjs.com/enterprise
+checks:
+  - date: 2026-10-30
+    label: 维护活跃度
+    value: 最近 90 天 39 次提交、12 个月 100+ 次发布；提交分布分散，无单一主导维护者
+    source: https://github.com/npm/cli
 promises:
   - claim: 公共 npm registry 将永远可用、永远免费。
     status: kept

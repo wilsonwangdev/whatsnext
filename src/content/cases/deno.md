@@ -76,6 +76,11 @@ plans:
     basis: derived
     quote: We will support the Deno runtime for another year with monthly releases containing bug fixes and security updates.
     source: https://deno.com/blog/cloudflare
+checks:
+  - date: 2026-10-30
+    label: 维护活跃度
+    value: 最近 90 天 100+ 次提交、12 个月 40 次发布；核心维护者 bartlomieju 提交 41 次
+    source: https://github.com/denoland/deno
 promises:
   - claim: Deno 运行时再支持一年，每月发布 bug 修复与安全更新。
     status: pending

@@ -75,6 +75,11 @@ timeline:
     title: 1.4.4 发布
     kind: product
     source: https://en.wikipedia.org/wiki/Bun_(software)
+checks:
+  - date: 2026-10-30
+    label: 维护活跃度
+    value: 最近 90 天 100+ 次提交、12 个月 18 次发布；创始人 Jarred-Sumner 仍在高频提交（90 天内 22 次）
+    source: https://github.com/oven-sh/bun
 promises:
   - claim: Bun 将继续保持开源。
     status: kept
