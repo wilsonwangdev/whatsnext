@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wilsonwangdev.github.io/whatsnext/sitemap-index.xml

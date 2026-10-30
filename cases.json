@@ -1,0 +1,2068 @@
+{
+  "generatedAt": "2026-10-30T06:37:21.199Z",
+  "site": "https://wilsonwangdev.github.io/whatsnext/",
+  "license": "CC BY-SA 4.0",
+  "counts": {
+    "cases": 9,
+    "watchlist": 6
+  },
+  "cases": [
+    {
+      "id": "bun",
+      "name": "Bun",
+      "tagline": "一个人的 JavaScript 运行时，成为 Claude Code 的基础设施",
+      "acquirer": "Anthropic",
+      "status": "completed",
+      "dealType": "acquisition",
+      "announcedAt": "2025-12-02T00:00:00.000Z",
+      "completedAt": "2025-12-02T00:00:00.000Z",
+      "amount": {
+        "disclosed": false,
+        "currency": "USD",
+        "note": "对价未披露。"
+      },
+      "country": "美国",
+      "founded": 2021,
+      "categories": [
+        "运行时",
+        "JavaScript",
+        "开发者工具"
+      ],
+      "license": "MIT",
+      "licenseAfter": "MIT",
+      "evidence": "A",
+      "featured": true,
+      "summary": "Anthropic 于 2025 年 12 月收购 Bun，理由是 Claude Code 的基础设施需要更快的运行时。MIT 许可证保留，但 2026 年 5 月的一次 AI 辅助 Rust 重写改变了项目的技术路线。",
+      "lastVerified": "2026-10-28T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "Anthropic acquires Bun as Claude Code reaches $1B milestone",
+          "url": "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone",
+          "publisher": "Anthropic",
+          "date": "2025-12-03T00:00:00.000Z",
+          "type": "primary",
+          "note": "官方公告，确认收购、MIT 许可承诺与 Claude Code 的 10 亿美元年化收入。"
+        },
+        {
+          "title": "Bun is joining Anthropic",
+          "url": "https://bun.sh/blog/bun-joins-anthropic",
+          "publisher": "Bun",
+          "date": "2025-12-02T00:00:00.000Z",
+          "type": "primary",
+          "note": "Bun 侧的官方公告，确认被收购并承诺继续开源。"
+        },
+        {
+          "title": "Bun (software) — Acquisition",
+          "url": "https://en.wikipedia.org/wiki/Bun_(software)",
+          "publisher": "Wikipedia",
+          "date": "2026-10-22T00:00:00.000Z",
+          "type": "analysis",
+          "note": "汇总收购、2026 年 Rust 重写与版本发布；引用前建议回查其原始来源。"
+        },
+        {
+          "title": "What Bun Can Tell Us About AI, Open Source and Anthropic",
+          "url": "https://redmonk.com/sogrady/2026/06/04/bun-two-lessons/",
+          "publisher": "RedMonk",
+          "date": "2026-06-04T00:00:00.000Z",
+          "type": "analysis",
+          "note": "对收购后开源治理与 AI 公司角色的评论。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2021-09-14T00:00:00.000Z",
+          "title": "首次发布",
+          "kind": "product",
+          "source": "https://en.wikipedia.org/wiki/Bun_(software)"
+        },
+        {
+          "date": "2022-08-24T00:00:00.000Z",
+          "title": "Oven 完成 700 万美元融资",
+          "detail": "Kleiner Perkins 领投，Guillermo Rauch、Y Combinator 等参投。",
+          "kind": "funding",
+          "source": "https://en.wikipedia.org/wiki/Bun_(software)"
+        },
+        {
+          "date": "2023-09-08T00:00:00.000Z",
+          "title": "1.0 发布",
+          "kind": "product",
+          "source": "https://en.wikipedia.org/wiki/Bun_(software)"
+        },
+        {
+          "date": "2025-12-02T00:00:00.000Z",
+          "title": "Anthropic 宣布收购 Bun",
+          "detail": "官方称 Bun 已支撑 Claude Code 的基础设施与原生安装器；Bun 月下载超过 700 万次，GitHub 星标超过 8.2 万。",
+          "kind": "deal",
+          "source": "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone"
+        },
+        {
+          "date": "2026-05-01T00:00:00.000Z",
+          "title": "Sumner 用 AI 工具把 Bun 从 Zig 重写为 Rust",
+          "detail": "重写超过一百万行，几天后合并进主线并通过测试套件；引发关于 AI 改写开源的争论。",
+          "kind": "product",
+          "source": "https://en.wikipedia.org/wiki/Bun_(software)"
+        },
+        {
+          "date": "2026-10-22T00:00:00.000Z",
+          "title": "1.4.4 发布",
+          "kind": "product",
+          "source": "https://en.wikipedia.org/wiki/Bun_(software)"
+        }
+      ],
+      "plans": [],
+      "checks": [
+        {
+          "date": "2026-10-30T00:00:00.000Z",
+          "label": "维护活跃度",
+          "value": "最近 90 天 100+ 次提交、12 个月 18 次发布；创始人 Jarred-Sumner 仍在高频提交（90 天内 22 次）",
+          "source": "https://github.com/oven-sh/bun"
+        }
+      ],
+      "promises": [
+        {
+          "claim": "Bun 将继续保持开源。",
+          "status": "kept",
+          "note": "截至 2026-10，仓库仍公开，持续发布新版本。",
+          "source": "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone"
+        },
+        {
+          "claim": "Bun 将继续采用 MIT 许可证。",
+          "status": "kept",
+          "note": "收购公告明确承诺；在线仓库与文档仍标注 MIT。",
+          "source": "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone"
+        },
+        {
+          "claim": "继续投入，让 Bun 成为 JavaScript/TypeScript 开发者首选的运行时、打包器、包管理器和测试运行器。",
+          "status": "pending",
+          "note": "需要更长时间观察路线是否围绕 Anthropic 内部需求收敛。",
+          "source": "https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone"
+        }
+      ],
+      "openQuestions": [
+        "收购对价与交易结构未披露。",
+        "Rust 重写后，Bun 对 Zig 生态与既有贡献者的长期影响仍待观察。",
+        "Anthropic 内部需求与外部用户需求出现冲突时，项目如何决策，尚无公开治理说明。",
+        "团队规模无公开记录：Oven 从未披露员工人数，收购公告亦未提及。"
+      ],
+      "body": "## 背景：一个人的运行时\n\n2021 年，Jarred Sumner 开始写 Bun：用 Zig 实现、以 JavaScriptCore 为引擎，把运行时、包管理器、打包器和测试运行器塞进一个二进制。它的卖点非常直接——比 Node.js 快得多，而且不用装一堆工具。\n\n2022 年 8 月，Oven 完成 700 万美元融资，Kleiner Perkins 领投；2023 年 9 月，Bun 1.0 发布。到 2025 年底，Bun 月下载超过 700 万次，GitHub 星标超过 8.2 万。它的成长方式也很“开发者原生”：创始人在 X 上高频发布进展，性能基准、兼容性清单和失败都摊在台面上。\n\n## 交易：Claude Code 需要一条更快的跑道\n\n2025 年 12 月 2 日，Anthropic 宣布收购 Bun。官方给出的理由不是云、不是平台，而是 Claude Code：Bun 已经是 Claude Code 基础设施的一部分，并支撑了它的原生安装器。同一篇公告里，Anthropic 提到 Claude Code 在 2025 年 11 月达到 10 亿美元年化收入。对价未披露。\n\nAnthropic 同时给出两条承诺：Bun 继续保持开源，继续采用 MIT 许可证。这两条后来都被遵守了。\n\n## 之后：许可证没变，代码变了\n\n真正的变化不在许可证，而在技术路线。2026 年 5 月，Sumner 用大量 AI 工具把 Bun 从 Zig 重写为 Rust，理由是“系统性地防止内存 bug 复发”。重写超过一百万行，最初被称为实验，几天后合并进主线，并通过了测试套件。\n\n这次重写把 Bun 推到了 AI 与开源争论的中心。Zig 作者 Andrew Kelley 公开回应，认为针对 Zig 语言与社区的指责并不公平。对 Bun 的用户来说，短期影响是版本继续发（1.4.4 于 2026 年 10 月 22 日发布）；长期影响则是：一个被 AI 公司收购的运行时，它的路线图会越来越围绕收购方的工程需求展开。\n\n## 为什么值得研究\n\n- **AI 实验室正在收购基础设施。** 收购动机不是财务回报，而是让自己的产品跑得更快；这会改变被收购项目的优先级。\n- **“保持开源”的边界。** 许可证不变，不等于治理、技术路线和贡献者结构不变。档案需要同时记录这两层。\n- **单人主导项目的脆弱性。** Bun 的路线高度依赖创始人判断；被收购后，这种集中决策既带来了速度，也带来了争议。"
+    },
+    {
+      "id": "deno",
+      "name": "Deno",
+      "tagline": "整个团队加入 Cloudflare，运行时进入一年倒计时",
+      "acquirer": "Cloudflare",
+      "status": "team-join",
+      "dealType": "team-join",
+      "announcedAt": "2026-10-09T00:00:00.000Z",
+      "completedAt": "2026-10-09T00:00:00.000Z",
+      "amount": {
+        "disclosed": false,
+        "currency": "USD",
+        "note": "双方均未披露对价与法律交易结构；Cloudflare 将其归入 Acquisitions 分类。"
+      },
+      "country": "美国",
+      "founded": 2018,
+      "categories": [
+        "运行时",
+        "JavaScript",
+        "Serverless"
+      ],
+      "license": "MIT",
+      "licenseAfter": "MIT",
+      "evidence": "A",
+      "featured": true,
+      "summary": "2026 年 10 月，Deno 团队整体加入 Cloudflare。运行时再支持一年后停止开发，Deno Deploy 六个月后关停，JSR 迁移到 Cloudflare。一个开源运行时给出了明确的退场时间表。",
+      "lastVerified": "2026-10-28T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "Deno is joining Cloudflare",
+          "url": "https://deno.com/blog/cloudflare",
+          "publisher": "Deno",
+          "date": "2026-10-09T00:00:00.000Z",
+          "type": "primary",
+          "note": "一手公告，列明运行时、Deploy、JSR 与 rusty_v8 的具体安排。"
+        },
+        {
+          "title": "Deno is joining Cloudflare",
+          "url": "https://blog.cloudflare.com/deno-joins-cloudflare",
+          "publisher": "Cloudflare",
+          "date": "2026-10-09T00:00:00.000Z",
+          "type": "primary",
+          "note": "联合公告，说明团队将投入 Workers、Durable Objects 与 celld。"
+        },
+        {
+          "title": "Deno (software) — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Deno_(software)",
+          "publisher": "Wikipedia",
+          "type": "analysis",
+          "note": "创立与版本发布时间线，仅用于背景。"
+        },
+        {
+          "title": "Deno is joining Cloudflare",
+          "url": "https://simonwillison.net/2026/Oct/9/deno-is-joining-cloudflare/",
+          "publisher": "Simon Willison",
+          "date": "2026-10-09T00:00:00.000Z",
+          "type": "analysis",
+          "note": "对公告要点的整理与评论。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2018-01-01T00:00:00.000Z",
+          "dateLabel": "2018 年",
+          "title": "Ryan Dahl 与 Bert Belder 发起 Deno",
+          "kind": "founding",
+          "source": "https://en.wikipedia.org/wiki/Deno_(software)"
+        },
+        {
+          "date": "2020-05-13T00:00:00.000Z",
+          "title": "Deno 1.0 发布",
+          "kind": "product",
+          "source": "https://en.wikipedia.org/wiki/Deno_(software)"
+        },
+        {
+          "date": "2026-10-09T00:00:00.000Z",
+          "title": "团队整体加入 Cloudflare",
+          "detail": "双方联合公告；未披露对价与法律结构。",
+          "kind": "deal",
+          "source": "https://deno.com/blog/cloudflare"
+        }
+      ],
+      "plans": [
+        {
+          "date": "2027-04-01T00:00:00.000Z",
+          "dateLabel": "2027 年 4 月",
+          "title": "Deno Deploy 关停",
+          "detail": "按 2026-10-09 公告给出的“六个月”期限推算；付费客户迁移至 Cloudflare Workers。具体日期以官方后续通知为准。",
+          "basis": "derived",
+          "quote": "Deno Deploy will continue operating for six months before shutting down.",
+          "source": "https://deno.com/blog/cloudflare"
+        },
+        {
+          "date": "2027-10-01T00:00:00.000Z",
+          "dateLabel": "2027 年 10 月",
+          "title": "Deno 运行时停止开发",
+          "detail": "按公告的一年支持期推算；支持期内每月发布 bug 修复与安全更新，之后代码保持开源。",
+          "basis": "derived",
+          "quote": "We will support the Deno runtime for another year with monthly releases containing bug fixes and security updates.",
+          "source": "https://deno.com/blog/cloudflare"
+        }
+      ],
+      "checks": [
+        {
+          "date": "2026-10-30T00:00:00.000Z",
+          "label": "维护活跃度",
+          "value": "最近 90 天 100+ 次提交、12 个月 40 次发布；核心维护者 bartlomieju 提交 41 次",
+          "source": "https://github.com/denoland/deno"
+        }
+      ],
+      "promises": [
+        {
+          "claim": "Deno 运行时再支持一年，每月发布 bug 修复与安全更新。",
+          "status": "pending",
+          "note": "承诺期到 2027 年 10 月；本页将持续核对月度发布是否兑现。",
+          "source": "https://deno.com/blog/cloudflare"
+        },
+        {
+          "claim": "一年后结束 Deno 运行时开发，但代码保持开源，欢迎他人接手。",
+          "status": "pending",
+          "note": "截至 2026-10 尚未到期。",
+          "source": "https://deno.com/blog/cloudflare"
+        },
+        {
+          "claim": "Deno Deploy 继续运营六个月后关停，为付费客户提供迁移支持。",
+          "status": "pending",
+          "note": "关停时间约为 2027 年 4 月。",
+          "source": "https://deno.com/blog/cloudflare"
+        },
+        {
+          "claim": "JSR 继续运营，基础设施迁移到 Cloudflare。",
+          "status": "pending",
+          "source": "https://deno.com/blog/cloudflare"
+        },
+        {
+          "claim": "继续支持 rusty_v8，并推进集成进 workerd。",
+          "status": "pending",
+          "source": "https://deno.com/blog/cloudflare"
+        }
+      ],
+      "openQuestions": [
+        "交易的法律结构（团队加入、资产收购还是公司收购）未披露。",
+        "Deno 公司主体与商标、域名、JSR 的归属如何安排，没有公开说明。",
+        "一年支持期结束后，是否会有基金会或社区接手运行时。",
+        "团队规模无公开记录：Deno Land 未披露员工人数；「团队整体加入」的表述没有对应的绝对人数。"
+      ],
+      "body": "## 背景：修掉 Node 的遗憾\n\n2018 年，Node.js 的作者 Ryan Dahl 与 Bert Belder 发起 Deno，试图修掉 Node 的一些设计遗憾：默认安全、原生 TypeScript、URL 模块、内置工具链。Deno 1.0 于 2020 年 5 月发布，后来又推出托管平台 Deno Deploy 与包注册表 JSR。\n\n但 Deno 一直面对一个结构性问题：运行时本身很难赚钱，托管平台又要和 Cloudflare Workers、Vercel 等正面竞争。团队把越来越多精力放在 Deploy 上，后来又转向一个新的分布式应用框架 celld——它直接构建在 Cloudflare Workers 的编程模型之上。\n\n## 交易：团队加入，而不是公司被买下\n\n2026 年 10 月 9 日，Deno 与 Cloudflare 同时发布公告：**整个 Deno 团队加入 Cloudflare**。Cloudflare 把这笔交易归入 Acquisitions 分类，但双方都没有披露对价、法律结构，也没有说明 Deno 公司主体如何处理。因此本档案把它记为“团队加入（team-join）”，而不是“已证实的整体收购”。\n\n公告没有停留在“我们会继续支持”这种模糊表述上，而是给出了具体安排：\n\n- **Deno 运行时**：再支持一年，每月发布包含 bug 修复和安全更新的版本；一年后停止开发。代码保持开源，欢迎其他人接手。\n- **Deno Deploy**：继续运营六个月，然后关停；为付费客户提供迁移到 Cloudflare Workers 的支持。\n- **JSR**：继续运营，基础设施迁移到 Cloudflare。\n- **rusty_v8**：继续支持，并推进集成进 workerd。\n\n这几乎是一份“有序退场”清单。\n\n## 之后：一个开源项目如何体面地结束\n\n团队加入后，工作重心转向 Cloudflare 的 Workers、Durable Objects 和 celld。对 Deno 的用户来说，最重要的不是“谁买了谁”，而是三个日期：Deploy 的六个月、运行时的十二个月、以及 JSR 的迁移。\n\n这份档案会在 2027 年 4 月和 10 月回来核对：月度发布是否真的持续、Deploy 是否按时关停、JSR 的迁移是否平滑、以及有没有社区分叉接手运行时。\n\n## 为什么值得研究\n\n- **团队加入 ≠ 公司收购。** 法律结构决定了谁对用户负责、商标和基础设施归谁；公告里不写，档案就不能替它写。\n- **“继续开源”和“继续开发”是两件事。** Deno 的代码会留下，但官方开发会停止。对依赖它的团队来说，这两者的风险完全不同。\n- **平台型公司吸收运行时团队。** Cloudflare 要的是把 JavaScript 容器模型做成默认；运行时的独立命运，不在这个目标里。"
+    },
+    {
+      "id": "dioxus",
+      "name": "Dioxus",
+      "tagline": "Rust 跨平台 UI 框架，团队整体加入 Cognition",
+      "acquirer": "Cognition",
+      "status": "team-join",
+      "dealType": "acquihire",
+      "announcedAt": "2026-09-10T00:00:00.000Z",
+      "completedAt": "2026-09-10T00:00:00.000Z",
+      "amount": {
+        "disclosed": false,
+        "currency": "USD",
+        "note": "公告未使用\"收购\"一词，也未披露对价或法律结构。"
+      },
+      "country": "美国",
+      "categories": [
+        "Rust",
+        "UI 框架",
+        "开源"
+      ],
+      "license": "MIT / Apache-2.0",
+      "licenseAfter": "MIT / Apache-2.0",
+      "evidence": "A",
+      "featured": false,
+      "summary": "2026 年 9 月，Cognition 宣布 Dioxus 团队整体加入，继续支持 Dioxus、Blitz、Taffy 与 Subsecond。交易没有改变许可证，却让多个关键 crate 的发布权限转移到了收购方。",
+      "lastVerified": "2026-10-28T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "Welcoming Dioxus to Cognition",
+          "url": "https://cognition.com/blog/welcoming-dioxus",
+          "publisher": "Cognition",
+          "date": "2026-09-10T00:00:00.000Z",
+          "type": "primary",
+          "note": "官方公告，确认团队加入、继续支持的开源项目与 Devin 相关分工。"
+        },
+        {
+          "title": "Dioxus Labs is joining Cognition",
+          "url": "https://dioxuslabs.com/blog/joining-cognition",
+          "publisher": "Dioxus Labs",
+          "date": "2026-09-10T00:00:00.000Z",
+          "type": "primary",
+          "note": "Dioxus 侧的官方公告，确认团队加入与继续维护的开源项目。"
+        },
+        {
+          "title": "Cognition Hired Dioxus. Blitz's Publishers Went With It.",
+          "url": "https://www.beri.net/article/cognition-dioxus-acquihire-blitz-taffy-crate-owners-kitesurf-dependency",
+          "publisher": "Beri",
+          "date": "2026-09-14T00:00:00.000Z",
+          "type": "analysis",
+          "note": "统计 crates.io owner 的变化，并指出 Cloudflare Kitesurf 构建于 Blitz 之上。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-09-10T00:00:00.000Z",
+          "title": "Cognition 宣布 Dioxus 团队整体加入",
+          "detail": "Jonathan Kelley 与团队加入；官方称将继续支持 Dioxus、Blitz、Taffy、Subsecond，并加大对 Dioxus-Native 与 Blitz 的投入。",
+          "kind": "deal",
+          "source": "https://cognition.com/blog/welcoming-dioxus"
+        },
+        {
+          "date": "2026-09-14T00:00:00.000Z",
+          "title": "分析指出 Blitz 与 Taffy 的 crate owner 已转移",
+          "detail": "Beri 统计，Blitz 核心 crate 的全部 owner、Taffy 三位 owner 中的两位目前在 Cognition 工作。",
+          "kind": "governance",
+          "source": "https://www.beri.net/article/cognition-dioxus-acquihire-blitz-taffy-crate-owners-kitesurf-dependency"
+        }
+      ],
+      "plans": [],
+      "checks": [
+        {
+          "date": "2026-10-30T00:00:00.000Z",
+          "label": "维护活跃度",
+          "value": "最近 90 天 68 次提交、12 个月 16 次发布；nicoburns 一人提交 51 次，集中度高",
+          "source": "https://github.com/DioxusLabs/dioxus"
+        }
+      ],
+      "promises": [
+        {
+          "claim": "继续支持 Dioxus、Blitz、Taffy 和 Subsecond 的开源工作。",
+          "status": "pending",
+          "note": "公告发布仅一个多月，需观察后续发布节奏与维护者结构。",
+          "source": "https://cognition.com/blog/welcoming-dioxus"
+        },
+        {
+          "claim": "增加对 Dioxus-Native 和 Blitz 的投入。",
+          "status": "pending",
+          "source": "https://cognition.com/blog/welcoming-dioxus"
+        }
+      ],
+      "openQuestions": [
+        "交易的法律结构（人才收购、资产收购或团队加入）未披露。",
+        "Dioxus 项目是否仍由独立基金会或社区治理，没有公开说明。",
+        "其他下游使用者（如 Zed、Bevy、Slint）如何评估 Taffy 的治理变化。",
+        "团队规模无公开记录：Dioxus 为小规模维护团队，从未披露人数，人才收购的规模无法量化。"
+      ],
+      "body": "## 背景：Rust 生态里的跨平台 UI\n\nDioxus 是 Jonathan Kelley 发起的 Rust UI 框架，目标是用一套代码构建 Web、桌面和移动应用。它不是一个孤立的库，而是一组项目：Dioxus 本体、原生渲染器 Blitz、布局引擎 Taffy、热重载工具 Subsecond。\n\n这些子项目在生态里的位置比 Dioxus 本身更关键：Taffy 被 Zed 的 GPUI、Bevy、Slint 等采用；Blitz 则被 Cloudflare 用于其 Kitesurf 浏览器。换句话说，Dioxus 团队维护的不只是自己的框架，还有一段其他公司依赖的公共基础设施。\n\n## 交易：Cognition 把整个团队招走\n\n2026 年 9 月 10 日，Cognition 发布公告：“欢迎 Jonathan Kelley 和整个 Dioxus 团队加入。”公告没有使用“收购”一词，也没有披露对价或法律结构，只说明团队会参与 Devin 的虚拟机、computer use 和测试能力，同时继续支持 Dioxus、Blitz、Taffy 和 Subsecond，并加大对 Dioxus-Native 与 Blitz 的投入。\n\n本档案因此把它记为“团队加入 / 人才收购”，而不是“收购了 Dioxus 公司”。\n\n## 之后：代码没动，所有权动了\n\n真正值得记录的变化发生在 crates.io 上。据 Beri 在 9 月 14 日的分析，Blitz 核心 crate 的全部 crates.io owner、以及 Taffy 三位 owner 中的两位，现在都在 Cognition 工作。\n\n这意味着：许可证没变、仓库没搬、代码也没删，但**发布权限——也就是供应链上的实际控制权——转移了**。对使用 Blitz 或 Taffy 的团队来说，这是需要重新评估的依赖风险；对 Cognition 来说，这是不用买公司就能获得维护权的低成本路径。\n\n## 为什么值得研究\n\n- **人才收购改变的是治理，不是许可证。** 开源项目的“所有权”分散在仓库、商标、crate 发布权和维护者时间里，收购往往只动最后一层。\n- **crates.io owner 是隐性的控制权。** 它不体现在任何许可证文本里，却能决定下一个版本由谁发布。\n- **下游公司会被动卷入。** Cloudflare 的浏览器构建在 Blitz 上，Zed 的 UI 依赖 Taffy；上游团队加入一家 AI 公司，下游必须重新做风险评估。"
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "tagline": "200 亿美元的交易被监管拦下，两年后它以 676 亿美元上市",
+      "acquirer": "Adobe",
+      "status": "terminated",
+      "dealType": "acquisition",
+      "announcedAt": "2022-09-15T00:00:00.000Z",
+      "amount": {
+        "disclosed": true,
+        "value": 20000000000,
+        "currency": "USD",
+        "note": "约 200 亿美元，一半现金、一半股票；交易于 2023 年 12 月终止，未完成交割。"
+      },
+      "country": "美国",
+      "founded": 2012,
+      "categories": [
+        "设计工具",
+        "协作",
+        "SaaS"
+      ],
+      "license": "专有软件",
+      "evidence": "A",
+      "featured": true,
+      "summary": "Adobe 于 2022 年宣布以约 200 亿美元收购 Figma，15 个月后因监管受阻终止。Figma 保持独立，并于 2025 年 7 月上市，首日市值约 676 亿美元。",
+      "lastVerified": "2026-10-28T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "Adobe to Acquire Figma",
+          "url": "https://news.adobe.com/news/news-details/2022/adobe-to-acquire-figma",
+          "publisher": "Adobe",
+          "date": "2022-09-15T00:00:00.000Z",
+          "type": "primary",
+          "note": "官方公告，确认约 200 亿美元的对价结构与交易预期。"
+        },
+        {
+          "title": "Adobe and Figma Mutually Agree to Terminate Merger Agreement",
+          "url": "https://news.adobe.com/news/news-details/2023/adobe-and-figma-mutually-agree-to-terminate-merger-agreement",
+          "publisher": "Adobe",
+          "date": "2023-12-18T00:00:00.000Z",
+          "type": "primary",
+          "note": "终止公告，说明欧盟委员会与英国 CMA 的审批障碍，以及支付此前约定的终止费。"
+        },
+        {
+          "title": "Figma and Adobe are abandoning our proposed merger",
+          "url": "https://www.figma.com/blog/figma-adobe-abandon-proposed-merger/",
+          "publisher": "Figma",
+          "date": "2023-12-18T00:00:00.000Z",
+          "type": "primary",
+          "note": "Dylan Field 的公开信。"
+        },
+        {
+          "title": "Figma — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Figma",
+          "publisher": "Wikipedia",
+          "type": "analysis",
+          "note": "创立时间与创始人的二手汇总，仅用于背景。"
+        },
+        {
+          "title": "Figma Announces Pricing of Initial Public Offering",
+          "url": "https://investor.figma.com/news-events/news/news-details/2025/Figma-Announces-Pricing-of-Initial-Public-Offering/default.aspx",
+          "publisher": "Figma",
+          "date": "2025-07-30T00:00:00.000Z",
+          "type": "primary",
+          "note": "发行价 33 美元，7 月 31 日在纽交所开始交易，代码 FIG。"
+        },
+        {
+          "title": "250%！Figma 上市首日股价暴涨",
+          "url": "https://stcn.com/article/detail/2868105.html",
+          "publisher": "证券时报",
+          "date": "2025-08-01T00:00:00.000Z",
+          "type": "press",
+          "note": "首日收盘 115.5 美元、涨幅约 250%、市值约 676 亿美元。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2012-01-01T00:00:00.000Z",
+          "dateLabel": "2012 年",
+          "title": "Dylan Field 与 Evan Wallace 创立 Figma",
+          "kind": "founding",
+          "source": "https://en.wikipedia.org/wiki/Figma"
+        },
+        {
+          "date": "2022-09-15T00:00:00.000Z",
+          "title": "Adobe 宣布以约 200 亿美元收购 Figma",
+          "detail": "一半现金、一半股票，是 Adobe 历史上最大的交易。",
+          "kind": "deal",
+          "source": "https://news.adobe.com/news/news-details/2022/adobe-to-acquire-figma"
+        },
+        {
+          "date": "2023-12-18T00:00:00.000Z",
+          "title": "双方宣布终止合并协议",
+          "detail": "欧盟委员会与英国 CMA 的审批被视为无法在合理时间内通过；Adobe 支付此前约定的终止费。",
+          "kind": "deal",
+          "source": "https://news.adobe.com/news/news-details/2023/adobe-and-figma-mutually-agree-to-terminate-merger-agreement"
+        },
+        {
+          "date": "2025-07-31T00:00:00.000Z",
+          "title": "Figma 在纽交所上市，首日上涨约 250%",
+          "detail": "发行价 33 美元，首日收盘 115.5 美元，市值约 676 亿美元。",
+          "kind": "aftermath",
+          "source": "https://stcn.com/article/detail/2868105.html"
+        }
+      ],
+      "plans": [],
+      "checks": [],
+      "promises": [],
+      "openQuestions": [
+        "反向终止费的具体金额未在 Adobe 公告中披露。",
+        "Figma 上市后的锁定期与早期股东减持安排不在本档案范围内。",
+        "团队规模无公开记录：Figma 在收购案期间未披露员工总数，仅见「宣布交易后员工增长约 60%、新增约 500 人」的媒体口径，缺基数，不予采信。"
+      ],
+      "body": "## 背景：把设计工具搬进浏览器\n\n2012 年，Dylan Field 与 Evan Wallace 创立 Figma。它把设计工具从桌面软件搬到浏览器里，用多人实时协作重做设计流程——多个设计师可以同时在一个文件里工作，评论、原型、交付都在同一个画布上完成。\n\n到 2022 年，Figma 已经是产品设计领域的事实标准。也正因为如此，Adobe 提出收购时，监管机构的反应比大多数人预想的更强烈。\n\n## 交易：200 亿美元，然后被拦住\n\n2022 年 9 月 15 日，Adobe 宣布以约 200 亿美元收购 Figma，一半现金、一半股票。这是 Adobe 历史上最大的一笔交易。\n\n此后 15 个月，交易在欧盟委员会和英国竞争与市场管理局（CMA）受阻。2023 年 12 月 18 日，双方宣布终止合并协议，理由是“没有明确的路径获得必要的监管批准”。Adobe 依终止协议支付了此前约定的反向终止费，具体金额没有在公告中披露。\n\n## 之后：独立，然后上市\n\nFigma 继续独立运营。2025 年 7 月 31 日，它在纽交所上市，发行价 33 美元，首日收盘 115.5 美元，涨幅约 250%，市值约 676 亿美元——超过 2023 年交易终止时约 200 亿美元的估值。\n\n这个结果对“被收购是唯一退出路径”的叙事是一个反例。监管拦下交易，短期看是挫败；两年后，Figma 用 IPO 展示了独立路线的另一种可能。当然，这个结论有幸存者偏差：不是每家公司都能在交易失败后等到一个更好的资本市场。\n\n## 为什么值得研究\n\n- **监管否决不等于公司受损。** 交易失败后，Figma 的产品节奏没有停，估值反而更高。\n- **终止费是交易不确定性的一部分。** 它补偿的是时间与机会成本，而不是失败本身。\n- **独立上市是另一种退出。** 在“被收购”之外，IPO 仍然是一条可选路径，尽管它对市场窗口极其敏感。"
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "tagline": "微软以 75 亿美元买下的「独立运营」承诺，七年后终结于 CoreAI 重组",
+      "acquirer": "微软",
+      "status": "completed",
+      "dealType": "acquisition",
+      "announcedAt": "2018-06-04T00:00:00.000Z",
+      "completedAt": "2018-10-26T00:00:00.000Z",
+      "amount": {
+        "disclosed": true,
+        "value": 7500000000,
+        "currency": "USD",
+        "note": "全股票交易，公告与 8-K 均确认为 75 亿美元。"
+      },
+      "country": "美国",
+      "founded": 2008,
+      "categories": [
+        "代码托管",
+        "开发者平台",
+        "开源基础设施"
+      ],
+      "license": "专有（平台本身；托管仓库的许可证由各项目自定）",
+      "evidence": "A",
+      "featured": true,
+      "summary": "微软以 75 亿美元全股票收购 GitHub，明确承诺「独立运营、保持开发者优先、维持开放平台」。七年后，GitHub 被并入微软 CoreAI 组织，CEO 离职且不再补位——三条承诺里最硬的那一条，以重组的形式结束。",
+      "lastVerified": "2026-10-30T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "Microsoft to acquire GitHub for $7.5 billion",
+          "url": "https://news.microsoft.com/source/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/",
+          "publisher": "Microsoft",
+          "date": "2018-06-04T00:00:00.000Z",
+          "retrieved": "2026-10-30T00:00:00.000Z",
+          "type": "primary",
+          "note": "收购公告，确认 75 亿美元全股票对价。"
+        },
+        {
+          "title": "Form 8-K — Microsoft Corporation",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312518182975/d600091d8k.htm",
+          "publisher": "SEC",
+          "date": "2018-06-04T00:00:00.000Z",
+          "retrieved": "2026-10-30T00:00:00.000Z",
+          "type": "filing",
+          "note": "监管备案，确认已签署最终协议。"
+        },
+        {
+          "title": "Microsoft + GitHub investor presentation (Exhibit 99.2)",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312518182975/d600091dex992.htm",
+          "publisher": "SEC",
+          "date": "2018-06-04T00:00:00.000Z",
+          "retrieved": "2026-10-30T00:00:00.000Z",
+          "type": "filing",
+          "note": "承诺原文出处——\"GitHub will retain its developer-first ethos, operate independently and remain an open platform\"。"
+        },
+        {
+          "title": "Microsoft + GitHub = Empowering Developers",
+          "url": "https://blogs.microsoft.com/blog/2018/06/04/microsoft-github-empowering-developers/",
+          "publisher": "Microsoft",
+          "date": "2018-06-04T00:00:00.000Z",
+          "retrieved": "2026-10-30T00:00:00.000Z",
+          "type": "primary",
+          "note": "Nadella 的公告博文，陈述收购理由。"
+        },
+        {
+          "title": "GitHub and Microsoft",
+          "url": "https://github.blog/2018-10-26-github-and-microsoft/",
+          "publisher": "GitHub",
+          "date": "2018-10-26T00:00:00.000Z",
+          "retrieved": "2026-10-30T00:00:00.000Z",
+          "type": "primary",
+          "note": "交割完成公告，Nat Friedman 就任 CEO。"
+        },
+        {
+          "title": "New year, new GitHub — unlimited free private repositories",
+          "url": "https://github.blog/2019-01-07-new-year-new-github/",
+          "publisher": "GitHub",
+          "date": "2019-01-07T00:00:00.000Z",
+          "retrieved": "2026-10-30T00:00:00.000Z",
+          "type": "primary",
+          "note": "收购三个月后宣布免费用户可用无限私有仓库，是承诺兑现的正面记录。"
+        },
+        {
+          "title": "GitHub Copilot is generally available to all developers",
+          "url": "https://github.blog/news-insights/company-news/github-copilot-is-generally-available-to-all-developers/",
+          "publisher": "GitHub",
+          "date": "2022-06-21T00:00:00.000Z",
+          "retrieved": "2026-10-30T00:00:00.000Z",
+          "type": "primary",
+          "note": "Copilot 正式商用，定价 10 美元/月起，成为后续争议的起点。"
+        },
+        {
+          "title": "GitHub Copilot lawsuit alleges AI tool violates open-source licenses",
+          "url": "https://www.theverge.com/2022/11/3/23438604/github-copilot-lawsuit-class-action",
+          "publisher": "The Verge",
+          "date": "2022-11-03T00:00:00.000Z",
+          "retrieved": "2026-10-30T00:00:00.000Z",
+          "type": "press",
+          "note": "集体诉讼报道，原告主张 Copilot 违反开源许可证。"
+        },
+        {
+          "title": "GitHub is laying off 10% of staff and cutting down office space",
+          "url": "https://fortune.com/2023/02/09/github-is-laying-off-10-of-staff-and-cutting-down-office-space/",
+          "publisher": "Fortune",
+          "date": "2023-02-09T00:00:00.000Z",
+          "retrieved": "2026-10-30T00:00:00.000Z",
+          "type": "press",
+          "note": "裁员 10% 并全面远程办公，绝对人数未披露。"
+        },
+        {
+          "title": "Introducing CoreAI – Platform and Tools",
+          "url": "https://blogs.microsoft.com/blog/2025/01/13/introducing-core-ai-platform-and-tools/",
+          "publisher": "Microsoft",
+          "date": "2025-01-13T00:00:00.000Z",
+          "retrieved": "2026-10-30T00:00:00.000Z",
+          "type": "primary",
+          "note": "Nadella 宣布成立 CoreAI 组织，明确点名 GitHub 属于其中的开发者工具组合。"
+        },
+        {
+          "title": "Auf Wiedersehen, GitHub",
+          "url": "https://github.blog/news-insights/company-news/goodbye-github/",
+          "publisher": "GitHub",
+          "date": "2025-08-11T00:00:00.000Z",
+          "retrieved": "2026-10-30T00:00:00.000Z",
+          "type": "primary",
+          "note": "CEO Thomas Dohmke 宣布离职，并写明「GitHub 及其领导团队将作为微软 CoreAI 组织的一部分继续其使命」。"
+        },
+        {
+          "title": "About GitHub",
+          "url": "https://github.com/about",
+          "publisher": "GitHub",
+          "retrieved": "2026-10-30T00:00:00.000Z",
+          "type": "primary",
+          "note": "规模数据来源（开发者与仓库数量）。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2018-06-04T00:00:00.000Z",
+          "dateLabel": "2018 年 6 月（公告时点的存量数据）",
+          "title": "收购公告披露的平台规模：2,800 万开发者",
+          "detail": "作为对比基线——七年后官方口径为 1.5 亿开发者。",
+          "kind": "product",
+          "source": "https://news.microsoft.com/source/2018/06/04/microsoft-to-acquire-github-for-7-5-billion/"
+        },
+        {
+          "date": "2018-06-04T00:00:00.000Z",
+          "title": "微软宣布以 75 亿美元全股票收购 GitHub",
+          "detail": "投资人演示材料写明「保持开发者优先、独立运营、维持开放平台」。",
+          "kind": "deal",
+          "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312518182975/d600091dex992.htm"
+        },
+        {
+          "date": "2018-10-26T00:00:00.000Z",
+          "title": "交易完成，Nat Friedman 就任 GitHub CEO",
+          "detail": "微软以独立子公司形式持有 GitHub，原 CEO 转为微软 Technical Fellow。",
+          "kind": "deal",
+          "source": "https://github.blog/2018-10-26-github-and-microsoft/"
+        },
+        {
+          "date": "2019-01-07T00:00:00.000Z",
+          "title": "免费用户获得无限私有仓库",
+          "detail": "收购后第一个产品决策，与「开发者优先」的承诺方向一致。",
+          "kind": "product",
+          "source": "https://github.blog/2019-01-07-new-year-new-github/"
+        },
+        {
+          "date": "2022-06-21T00:00:00.000Z",
+          "title": "GitHub Copilot 正式商用",
+          "detail": "定价 10 美元/月起，训练数据来自公开仓库，引发开源许可证争议。",
+          "kind": "product",
+          "source": "https://github.blog/news-insights/company-news/github-copilot-is-generally-available-to-all-developers/"
+        },
+        {
+          "date": "2022-11-03T00:00:00.000Z",
+          "title": "Copilot 面临集体诉讼",
+          "detail": "原告主张 Copilot 在未满足署名与许可证条款的情况下复制开源代码。",
+          "kind": "governance",
+          "source": "https://www.theverge.com/2022/11/3/23438604/github-copilot-lawsuit-class-action"
+        },
+        {
+          "date": "2023-02-09T00:00:00.000Z",
+          "title": "裁员 10%，全面转为远程办公",
+          "detail": "官方未披露受影响人数的绝对值。",
+          "kind": "aftermath",
+          "source": "https://fortune.com/2023/02/09/github-is-laying-off-10-of-staff-and-cutting-down-office-space/"
+        },
+        {
+          "date": "2025-01-13T00:00:00.000Z",
+          "title": "微软成立 CoreAI 组织，GitHub 被列入其开发者工具组合",
+          "kind": "governance",
+          "source": "https://blogs.microsoft.com/blog/2025/01/13/introducing-core-ai-platform-and-tools/"
+        },
+        {
+          "date": "2025-08-11T00:00:00.000Z",
+          "title": "CEO Dohmke 宣布离职，GitHub 并入 CoreAI",
+          "detail": "备忘录明确写「作为微软 CoreAI 组织的一部分继续其使命」，七年的独立运营期结束。",
+          "kind": "governance",
+          "source": "https://github.blog/news-insights/company-news/goodbye-github/"
+        }
+      ],
+      "plans": [],
+      "checks": [
+        {
+          "date": "2025-08-11T00:00:00.000Z",
+          "label": "组织独立性",
+          "value": "并入微软 CoreAI 组织，不再设独立 CEO",
+          "source": "https://github.blog/news-insights/company-news/goodbye-github/"
+        },
+        {
+          "date": "2025-08-11T00:00:00.000Z",
+          "label": "平台规模",
+          "value": "超过 10 亿仓库与 fork，超过 1.5 亿开发者",
+          "source": "https://github.blog/news-insights/company-news/goodbye-github/"
+        },
+        {
+          "date": "2023-02-09T00:00:00.000Z",
+          "label": "维护团队规模",
+          "value": "裁员 10%（官方未披露绝对人数，第三方估算口径差异过大，不予采信）",
+          "source": "https://fortune.com/2023/02/09/github-is-laying-off-10-of-staff-and-cutting-down-office-space/"
+        }
+      ],
+      "promises": [
+        {
+          "claim": "GitHub 将保持独立运营（operate independently）。",
+          "status": "broken",
+          "note": "2025 年 8 月 11 日，GitHub 被并入微软 CoreAI 组织；CEO 离职且未任命继任者，独立运营的实体边界消失。",
+          "source": "https://github.blog/news-insights/company-news/goodbye-github/"
+        },
+        {
+          "claim": "GitHub 将保持开放的开发者平台（remain an open platform）。",
+          "status": "kept",
+          "note": "平台仍对全行业开放，2025 年 8 月官方口径为 1.5 亿开发者、10 亿仓库；免费额度与公开仓库政策未收紧。",
+          "source": "https://github.blog/news-insights/company-news/goodbye-github/"
+        },
+        {
+          "claim": "GitHub 将保留开发者优先的理念（retain its developer-first ethos）。",
+          "status": "partial",
+          "note": "2019 年免费私有仓库、Actions 免费额度等方向一致；但 Copilot 以公开代码训练并商用，触发 2022 年集体诉讼，部分开发者认为与「开发者优先」相冲突。",
+          "source": "https://www.theverge.com/2022/11/3/23438604/github-copilot-lawsuit-class-action"
+        },
+        {
+          "claim": "收购不会改变 GitHub 的定价与开放性（公告与高管公开表态）。",
+          "status": "kept",
+          "note": "免费层持续扩大而非收缩，是这笔交易里兑现程度最高的部分。",
+          "source": "https://github.blog/2019-01-07-new-year-new-github/"
+        }
+      ],
+      "openQuestions": [
+        "GitHub 的员工数没有官方披露。第三方估算差异极大（2,669 / 3,787 / 6,172 三种口径），无法判断哪个包含承包商或外包，因此本页不采用任何单一数字。",
+        "2023 年 2 月裁员 10% 的绝对人数未公开，无法计算团队规模的净变化。",
+        "并入 CoreAI 之后，GitHub 是否还保有独立的产品与定价决策权，目前没有公开说明。",
+        "Copilot 集体诉讼在 2024 年被驳回多数指控，剩余指控的最终结果尚未见公开判决记录。",
+        "「开发者优先」缺少可量化定义，判定为 partial 依赖具体事件而非指标。"
+      ],
+      "body": "## 背景：代码托管的事实标准\n\nGitHub 于 2008 年上线，把 Git 从命令行工具变成了社交化的协作平台：fork、pull request、issue、star，这套词汇后来成了整个行业的通用语。到 2018 年微软提出收购时，官方口径是 2,800 万开发者——它已经是绝大多数开源项目的默认家园，也是企业私有代码的主要托管地。\n\n这个位置带来一个结构性矛盾：**它是开发者的中立公共空间，但它是一家需要赚钱的公司。** 微软提出收购时，社区最担心的不是技术，而是这个中立性会不会被商业化侵蚀。\n\n## 交易：75 亿美元，全股票\n\n2018 年 6 月 4 日，微软宣布以 75 亿美元全股票收购 GitHub。10 月 26 日交割完成，GitHub 作为独立子公司运营，Nat Friedman 出任 CEO，联合创始人 Chris Wanstrath 转为微软 Technical Fellow。\n\n公告里最关键的是一句话，写在提交给 SEC 的投资人演示材料里：\n\n> GitHub will retain its developer-first ethos, operate independently and remain an open platform.\n\n**三个承诺：保持开发者优先、独立运营、维持开放平台。** 这句话后来成了所有「大公司收购开发者工具」交易的参照话术——几乎每一笔同类交易都会复述类似的三段式。\n\n## 之后：三条承诺，三种结局\n\n**独立运营 —— 已终结。** 2025 年 1 月，微软成立 CoreAI 组织，Nadella 明确把 GitHub 列为该组织下的开发者工具之一。8 月 11 日，CEO Thomas Dohmke 宣布离职创业，备忘录里写着：\n\n> GitHub and its leadership team will continue its mission as part of Microsoft's CoreAI organization.\n\n独立子公司变成一个大组织里的一个部门，独立运营的实体边界就此消失。这是三条承诺里最硬的一条，也是唯一有明确终止时点的一条。\n\n**开放平台 —— 基本兑现。** 平台没有对行业设限，2025 年 8 月的官方数据是 1.5 亿开发者和 10 亿仓库与 fork。免费层不但没收缩，2019 年 1 月还扩大到无限私有仓库。\n\n**开发者优先 —— 部分兑现。** 这一条最难判。正面证据是免费额度持续扩大、Actions 提供免费分钟数；反面证据是 Copilot：它用公开仓库的代码训练模型并商业化，2022 年 11 月引发集体诉讼，原告主张这违反了开源许可证的署名与条款要求。\n\n## 团队规模：一个必须承认查不到的数字\n\n按本站规则，团队规模应记录在 `checks` 里。**但这个案例查不到可靠数字。**\n\n微软从未在财报里单独披露 GitHub 的员工数。第三方劳动力数据给出的结果差异过大：Revelio Labs 报 2026 年 3 月约 2,669 人、2023 年 2,403 人；Wikipedia 引用 3,787 人；Unify 按职业档案统计到 6,172 人。三个数字最大相差 2.3 倍，口径里是否含承包商、外包、海外实体无法确认。\n\n**唯一能确认的是方向而非绝对值：2023 年 2 月裁员 10%，并全面转为远程办公，官方未披露受影响人数的绝对值。**\n\n所以这一页不写具体人数，只写「无官方披露」。这不是偷懒——在这个案例里，填一个看起来很精确的数字，比留空更误导。\n\n## 为什么值得研究\n\n- **这是「独立运营」承诺的起源样本。** 2018 年之后，几乎每一笔大公司收购开发者工具的交易都会复述这套话术。要判断后来者是否真诚，得先看清这一笔是怎么收场的。\n- **承诺的硬度差别很大。** 「开放平台」可以被平台数据验证，「独立运营」有明确的组织边界可查，而「开发者优先」至今没有可量化定义——**能被验证的承诺才可能被判为 broken，模糊的承诺永远停在 partial。**\n- **独立性的终结不需要出售。** GitHub 没有被转卖、没有关停、产品还在增长，但「独立运营」这条承诺在 2025 年 8 月结束了。对用户来说，组织架构调整和交易一样，都是实质性的所有权变化。"
+    },
+    {
+      "id": "hashicorp",
+      "name": "HashiCorp",
+      "tagline": "Terraform 的许可证先变，IBM 的 64 亿美元收购随后",
+      "acquirer": "IBM",
+      "status": "completed",
+      "dealType": "acquisition",
+      "announcedAt": "2024-04-24T00:00:00.000Z",
+      "completedAt": "2025-02-27T00:00:00.000Z",
+      "amount": {
+        "disclosed": true,
+        "value": 6400000000,
+        "currency": "USD",
+        "note": "每股 35 美元现金，企业价值约 64 亿美元。"
+      },
+      "country": "美国",
+      "founded": 2012,
+      "categories": [
+        "基础设施",
+        "DevOps",
+        "开源"
+      ],
+      "license": "BUSL 1.1",
+      "licenseAfter": "BUSL 1.1",
+      "evidence": "A",
+      "featured": false,
+      "summary": "IBM 以约 64 亿美元收购 HashiCorp，2025 年 2 月完成。交易没有让 Terraform 的许可证回到 MPL——2023 年的 BUSL 变更被完整保留，OpenTofu 分叉继续存在。",
+      "lastVerified": "2026-10-28T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "IBM to Acquire HashiCorp, Inc.",
+          "url": "https://newsroom.ibm.com/2024-04-24-IBM-to-Acquire-HashiCorp-Inc-Creating-a-Comprehensive-End-to-End-Hybrid-Cloud-Platform",
+          "publisher": "IBM",
+          "date": "2024-04-24T00:00:00.000Z",
+          "type": "primary",
+          "note": "官方公告，确认 64 亿美元企业价值与每股 35 美元现金对价。"
+        },
+        {
+          "title": "IBM Completes Acquisition of HashiCorp",
+          "url": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp,-creates-comprehensive,-end-to-end-hybrid-cloud-platform",
+          "publisher": "IBM",
+          "date": "2025-02-27T00:00:00.000Z",
+          "type": "primary",
+          "note": "交割完成公告。"
+        },
+        {
+          "title": "HashiCorp adopts Business Source License",
+          "url": "https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license",
+          "publisher": "HashiCorp",
+          "date": "2023-08-10T00:00:00.000Z",
+          "type": "primary",
+          "note": "Terraform 从 MPL 2.0 切换到 BUSL 1.1 的官方说明。"
+        },
+        {
+          "title": "OpenTofu",
+          "url": "https://opentofu.org/",
+          "publisher": "OpenTofu",
+          "type": "primary",
+          "note": "BUSL 变更后社区分叉的 Terraform 替代实现。"
+        },
+        {
+          "title": "HashiCorp — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/HashiCorp",
+          "publisher": "Wikipedia",
+          "type": "analysis",
+          "note": "创立时间与创始人的二手汇总，仅用于基础背景。"
+        },
+        {
+          "title": "HashiCorp officially joins the IBM family",
+          "url": "https://www.hashicorp.com/en/blog/hashicorp-officially-joins-the-ibm-family",
+          "publisher": "HashiCorp",
+          "date": "2025-02-27T00:00:00.000Z",
+          "type": "primary",
+          "note": "管理层对整合方向与\"继续投资\"的表述。"
+        },
+        {
+          "title": "Terraform LICENSE",
+          "url": "https://github.com/hashicorp/terraform/blob/main/LICENSE",
+          "publisher": "GitHub",
+          "type": "primary",
+          "note": "2026-10 核验，仍为 Business Source License 1.1。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2012-01-01T00:00:00.000Z",
+          "dateLabel": "2012 年",
+          "title": "Mitchell Hashimoto 与 Armon Dadgar 创立 HashiCorp",
+          "kind": "founding",
+          "source": "https://en.wikipedia.org/wiki/HashiCorp"
+        },
+        {
+          "date": "2023-08-10T00:00:00.000Z",
+          "title": "Terraform 从 MPL 2.0 切换到 BUSL 1.1",
+          "detail": "限制与 Terraform 竞争的商业使用，社区随后分叉出 OpenTofu。",
+          "kind": "license",
+          "source": "https://www.hashicorp.com/blog/hashicorp-adopts-business-source-license"
+        },
+        {
+          "date": "2024-04-24T00:00:00.000Z",
+          "title": "IBM 宣布以约 64 亿美元收购 HashiCorp",
+          "kind": "deal",
+          "source": "https://newsroom.ibm.com/2024-04-24-IBM-to-Acquire-HashiCorp-Inc-Creating-a-Comprehensive-End-to-End-Hybrid-Cloud-Platform"
+        },
+        {
+          "date": "2025-02-27T00:00:00.000Z",
+          "title": "交易完成，HashiCorp 成为 IBM Software 的一个部门",
+          "kind": "deal",
+          "source": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp,-creates-comprehensive,-end-to-end-hybrid-cloud-platform"
+        }
+      ],
+      "plans": [],
+      "checks": [
+        {
+          "date": "2026-10-30T00:00:00.000Z",
+          "label": "维护活跃度",
+          "value": "最近 90 天 100+ 次提交、12 个月 63 次发布；提交集中在 SarahFrench(49) 与 jbardin(30)",
+          "source": "https://github.com/hashicorp/terraform"
+        },
+        {
+          "date": "2024-01-31T00:00:00.000Z",
+          "label": "维护团队规模（交割前）",
+          "value": "2,200 人（2024 财年，SEC 10-K 口径；官方 about 页同口径）",
+          "source": "https://stockanalysis.com/stocks/hcp/employees/"
+        },
+        {
+          "date": "2026-10-28T00:00:00.000Z",
+          "label": "Terraform 许可证",
+          "value": "BUSL 1.1（收购后未回到 MPL）",
+          "source": "https://github.com/hashicorp/terraform/blob/main/LICENSE"
+        }
+      ],
+      "promises": [
+        {
+          "claim": "IBM 将继续投资并发展 HashiCorp 的能力。",
+          "status": "pending",
+          "note": "需要观察 2025-2026 的产品投入、人员与定价策略。",
+          "source": "https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp,-creates-comprehensive,-end-to-end-hybrid-cloud-platform"
+        },
+        {
+          "claim": "Terraform 与 Ansible、watsonx 等 IBM 产品线整合。",
+          "status": "pending",
+          "source": "https://www.hashicorp.com/en/blog/hashicorp-officially-joins-the-ibm-family"
+        }
+      ],
+      "openQuestions": [
+        "收购后的团队规模没有公开数据：IBM 未单独披露 HashiCorp 的员工数，交割前口径为 2,200 人（2024-01-31），交割后无对应数字，因此无法计算净变化。",
+        "OpenTofu 在企业市场的实际采用规模缺少权威统计。",
+        "IBM 是否会对 Terraform 的许可策略再做调整，尚无信号。"
+      ],
+      "body": "## 背景：基础设施即代码的标准\n\n2012 年，Mitchell Hashimoto 与 Armon Dadgar 创立 HashiCorp。Terraform 用声明式配置管理云基础设施，Vault 管理密钥，Consul 做服务发现。十几年里，它们成了基础设施即代码（IaC）的事实标准，几乎所有云平台的教程都会先教你写一段 Terraform。\n\n2023 年 8 月，HashiCorp 把 Terraform 的许可证从 MPL 2.0 改为 BUSL 1.1，限制与 Terraform 竞争的商业使用。社区随即分叉出 OpenTofu，后者由 Linux 基金会托管。许可证变更把一个技术项目变成了治理问题。\n\n## 交易：64 亿美元，现金\n\n2024 年 4 月 24 日，IBM 宣布以每股 35 美元现金收购 HashiCorp，企业价值约 64 亿美元。交易于 2025 年 2 月 27 日完成，HashiCorp 作为 IBM Software 的一个部门继续运营。\n\nIBM 给出的理由是与 Red Hat、watsonx、Ansible 的协同：Terraform 负责创建基础设施，Ansible 负责配置，Vault 负责密钥。这是一个典型的“把相邻能力买进来”的故事，只是金额很大。\n\n## 之后：许可证没有回头\n\n值得核对的一条承诺是许可证。IBM 没有把 Terraform 拉回 MPL；截至 2026 年 10 月，Terraform 仓库仍然是 BUSL 1.1。收购改变的是所有者，不是许可策略。\n\n对用户来说，真正的变化有三层：谁决定路线图、谁定价、以及分叉还有没有意义。OpenTofu 继续存在，但它要面对的是一个由 IBM 拥有的、资源更充足的上游。\n\n## 为什么值得研究\n\n- **许可证变更是收购的前奏，也是分叉的导火索。** 2023 年的 BUSL 切换，为 2024 年的出售铺平了道路，也把一部分社区推向了 OpenTofu。\n- **“继续投资”是难以验证的承诺。** 它没有数字、没有期限，只能用产品发布、人员编制和定价变化来间接核对。\n- **开源商业模式与云厂商的结构性冲突。** HashiCorp 的 BUSL 转向，本质上是对云厂商“拿走软件去卖托管服务”的反应；被 IBM 收购后，这个冲突只是换了一个所有者。"
+    },
+    {
+      "id": "netless",
+      "name": "Netless",
+      "tagline": "把互动白板做成 SDK，上市五个月后被声网整体买下",
+      "acquirer": "声网 Agora",
+      "status": "completed",
+      "dealType": "acquisition",
+      "announcedAt": "2020-11-27T00:00:00.000Z",
+      "completedAt": "2020-11-27T00:00:00.000Z",
+      "amount": {
+        "disclosed": false,
+        "currency": "USD",
+        "note": "公司未单独披露总对价。20-F 显示约 20 万美元开发技术资产与约 310 万美元商誉；部分中文报道称约 400 万美元，未获公司原文确认。"
+      },
+      "country": "中国",
+      "founded": 2019,
+      "categories": [
+        "实时互动",
+        "互动白板",
+        "教育科技"
+      ],
+      "license": "商业 SDK",
+      "evidence": "B",
+      "featured": false,
+      "summary": "上海团队把实时互动白板做成可嵌入的 White SDK，2020 年 11 月被刚上市的声网收购 100% 股权。能力被并入 RTE 产品线，独立品牌随后淡出。",
+      "lastVerified": "2026-10-28T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "Agora acquires Netless — deal terms",
+          "url": "https://vectorshift.ai/research/deals/agora-netless-2020",
+          "publisher": "VectorShift Research",
+          "date": "2020-11-27T00:00:00.000Z",
+          "type": "analysis",
+          "note": "依据声网 20-F 整理交易结构、开发技术资产与商誉数字。"
+        },
+        {
+          "title": "Netless 项目信息",
+          "url": "https://pitchhub.36kr.com/project/2316531749456134",
+          "publisher": "36氪",
+          "type": "data",
+          "note": "记录运营主体上海它山石信息科技有限公司、法定代表人丁楠、创始人伍双与股东结构。"
+        },
+        {
+          "title": "声网 20-F（2020 财年）",
+          "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=API&type=20-F",
+          "publisher": "SEC EDGAR",
+          "type": "filing",
+          "note": "交易对价与商誉的原始披露出处；本页数字经二手分析转述，建议引用前回查原文。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2019-01-16T00:00:00.000Z",
+          "title": "上海它山石信息科技有限公司注册",
+          "detail": "法定代表人为丁楠，创始人伍双；产品以 White SDK / herewhite 为开发者所知。",
+          "kind": "founding",
+          "source": "https://pitchhub.36kr.com/project/2316531749456134"
+        },
+        {
+          "date": "2020-06-26T00:00:00.000Z",
+          "title": "声网在纳斯达克上市",
+          "kind": "funding",
+          "source": "https://vectorshift.ai/research/deals/agora-netless-2020"
+        },
+        {
+          "date": "2020-11-27T00:00:00.000Z",
+          "title": "声网完成收购 Netless 100% 股权",
+          "detail": "结构为现金加向加入声网的 Netless 员工发放的股份激励；总对价未单独披露。",
+          "kind": "deal",
+          "source": "https://vectorshift.ai/research/deals/agora-netless-2020"
+        },
+        {
+          "date": "2021-04-01T00:00:00.000Z",
+          "title": "声网 20-F 披露交易带来的开发技术与商誉",
+          "detail": "约 20 万美元开发技术（五年摊销）与约 310 万美元商誉，商誉归因于与实时互动平台的协同。",
+          "kind": "aftermath",
+          "source": "https://vectorshift.ai/research/deals/agora-netless-2020"
+        }
+      ],
+      "plans": [],
+      "checks": [
+        {
+          "date": "2026-10-30T00:00:00.000Z",
+          "label": "维护活跃度",
+          "value": "维护显著减弱：flat 仓库最近 90 天 0 次提交，最后一次发布是 2025-01 的 v2.3.6（21 个月前），最后提交停在 2026-07-08",
+          "source": "https://github.com/netless-io/flat"
+        }
+      ],
+      "promises": [],
+      "openQuestions": [
+        "Netless 团队加入声网后的具体去向与存续时间，缺少公开记录。",
+        "声网互动白板产品线的最终状态（继续售卖、合并或停运）没有一手公告。",
+        "交易总对价的不同口径（约 400 万美元 vs 未披露）需要回查 20-F 原文。",
+        "团队规模无公开记录：Netless 被收购前的人数未见披露，声网 20-F 未单列该团队的编制。"
+      ],
+      "body": "## 背景：不做白板，做白板的 SDK\n\nNetless 是一家上海团队，运营主体上海它山石信息科技有限公司注册于 2019 年 1 月，创始人为伍双。它没有做面向终端用户的协作白板，而是把实时互动白板做成 SDK：开发者接入 White SDK，就能在在线课堂、会议或协作应用里嵌入一块多人同步的画布。\n\n这个定位很直接。在线教育最热的几年，几乎所有课堂产品都需要白板，但自研实时同步、笔迹渲染和多人协作的成本很高。Netless 卖的是“能力”，不是“应用”，因此可以嵌进别人的产品里，避开与客户竞争。\n\n2020 年 6 月，声网在纳斯达克上市。五个月后，它买下了这家白板公司。\n\n## 交易：上市后的第一笔补强\n\n2020 年 11 月 27 日，声网完成对 Netless 100% 股权的收购。交易结构是现金，加上向加入声网的 Netless 员工发放的股份激励——这不是单纯买资产，而是把团队一起留下。\n\n声网没有单独披露总对价。其 20-F 显示，这笔交易带来约 20 万美元的开发技术资产（按五年摊销）和约 310 万美元商誉，商誉归因于白板能力与实时音视频平台的预期协同。中文媒体常引用“约 400 万美元”的口径，但我们没有找到公司原文确认这个数字，因此档案把它标为“未披露”，并在注释里保留两种口径。\n\n从战略上看，这笔交易几乎不需要解释：白板是实时音视频最自然的邻近能力。客户买的是“一整套在线课堂/会议能力”，声网不希望这块拼图落在别人手里。\n\n## 之后：能力留下，品牌淡出\n\n收购后，Netless 没有保持独立品牌运营。白板能力被并入声网的实时互动（RTE）产品组合，Netless 作为独立 SDK 品牌的存在感迅速下降。截至 2026 年 10 月，herewhite.com 已无法访问（本次核验直接访问的结果）。\n\n需要说明的是：我们没有找到声网发布的“白板产品线整合/停运”专门公告。这段过程缺少一手记录，只能从品牌网站消失、产品文档收敛这些侧面观察。对档案来说，这是一个诚实的空白，而不是可以补写的剧情。\n\n## 为什么值得研究\n\n- **小额并购补的是产品拼图，不是增长。** 几百万美元买一个能力、一个团队，让它消失在母体产品里——这是 To B 软件常见的并购形态，却很少被记录。\n- **对价披露可以很模糊。** 商誉、开发技术资产、现金与股份激励分散在不同段落，“交易值多少钱”往往没有单一答案。\n- **被收购的开发者品牌如何消失。** 代码和能力继续存在，品牌、文档、社区却可能在一两年内归零；依赖这些 SDK 的开发者需要提前评估迁移路径。"
+    },
+    {
+      "id": "npm",
+      "name": "npm",
+      "tagline": "全球最大 JavaScript 包注册表，被 GitHub 收进平台",
+      "acquirer": "GitHub（微软）",
+      "status": "completed",
+      "dealType": "acquisition",
+      "announcedAt": "2020-03-16T00:00:00.000Z",
+      "completedAt": "2020-04-15T00:00:00.000Z",
+      "amount": {
+        "disclosed": false,
+        "currency": "USD",
+        "note": "对价未披露。"
+      },
+      "country": "美国",
+      "founded": 2014,
+      "categories": [
+        "包管理",
+        "开发者基础设施",
+        "JavaScript"
+      ],
+      "license": "Artistic-2.0（CLI）/ 专有 registry",
+      "licenseAfter": "Artistic-2.0（CLI）/ 专有 registry",
+      "evidence": "A",
+      "featured": false,
+      "summary": "GitHub 于 2020 年 3 月宣布收购 npm，4 月完成。公共 registry 保持免费，付费的 npm Enterprise 在一年后停止支持，客户迁往 GitHub Packages。",
+      "lastVerified": "2026-10-28T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "npm is joining GitHub",
+          "url": "https://github.blog/2020-03-16-npm-is-joining-github/",
+          "publisher": "GitHub",
+          "date": "2020-03-16T00:00:00.000Z",
+          "type": "primary",
+          "note": "收购公告，承诺公共 registry 永久免费，并说明对 npm Pro/Teams/Enterprise 客户的安排。"
+        },
+        {
+          "title": "npm (software) — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Npm_(software)",
+          "publisher": "Wikipedia",
+          "type": "analysis",
+          "note": "npm, Inc. 于 2014 年成立、npm 的早期历史，仅用于背景。"
+        },
+        {
+          "title": "Sunsetting npm Enterprise",
+          "url": "https://docs.npmjs.com/enterprise",
+          "publisher": "npm Docs",
+          "date": "2023-10-23T00:00:00.000Z",
+          "type": "primary",
+          "note": "记录 2020 年 6 月 30 日通知客户、2021 年 6 月 30 日停止支持的时间表。"
+        },
+        {
+          "title": "GitHub Completes Its Acquisition Of The NPM JavaScript/Node.js Package Manager",
+          "url": "https://www.phoronix.com/news/GitHub-NPM-Acquisition-Complete",
+          "publisher": "Phoronix",
+          "date": "2020-04-15T00:00:00.000Z",
+          "type": "press",
+          "note": "报道交易完成。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2014-01-01T00:00:00.000Z",
+          "dateLabel": "2014 年",
+          "title": "npm, Inc. 成立，运营 npm registry",
+          "kind": "founding",
+          "source": "https://en.wikipedia.org/wiki/Npm_(software)"
+        },
+        {
+          "date": "2020-03-16T00:00:00.000Z",
+          "title": "GitHub 宣布收购 npm",
+          "detail": "当时 npm 承载超过 130 万个包、每月约 750 亿次下载；GitHub 承诺公共 registry 永远免费。",
+          "kind": "deal",
+          "source": "https://github.blog/2020-03-16-npm-is-joining-github/"
+        },
+        {
+          "date": "2020-04-15T00:00:00.000Z",
+          "title": "交易完成",
+          "kind": "deal",
+          "source": "https://www.phoronix.com/news/GitHub-NPM-Acquisition-Complete"
+        },
+        {
+          "date": "2020-06-30T00:00:00.000Z",
+          "title": "GitHub 通知 npm Enterprise 客户产品将停止支持",
+          "detail": "支持期至 2021 年 6 月 30 日，客户被引导迁移到 GitHub Packages。",
+          "kind": "shutdown",
+          "source": "https://docs.npmjs.com/enterprise"
+        },
+        {
+          "date": "2021-06-30T00:00:00.000Z",
+          "title": "npm Enterprise 支持结束",
+          "kind": "shutdown",
+          "source": "https://docs.npmjs.com/enterprise"
+        }
+      ],
+      "plans": [],
+      "checks": [
+        {
+          "date": "2026-10-30T00:00:00.000Z",
+          "label": "维护活跃度",
+          "value": "最近 90 天 39 次提交、12 个月 100+ 次发布；提交分布分散，无单一主导维护者",
+          "source": "https://github.com/npm/cli"
+        }
+      ],
+      "promises": [
+        {
+          "claim": "公共 npm registry 将永远可用、永远免费。",
+          "status": "kept",
+          "note": "截至 2026-10 仍然成立。",
+          "source": "https://github.blog/2020-03-16-npm-is-joining-github/"
+        },
+        {
+          "claim": "继续投资 registry 基础设施，并改进发布与多因素认证体验。",
+          "status": "partial",
+          "note": "npm 后来加入了 2FA 强制策略与 provenance 等能力，但供应链安全事件仍反复出现。",
+          "source": "https://github.blog/2020-03-16-npm-is-joining-github/"
+        }
+      ],
+      "openQuestions": [
+        "交易对价从未披露。",
+        "npm, Inc. 在被收购前的财务状况只有零散报道。",
+        "团队规模无公开记录：npm, Inc. 在被收购前的员工人数没有公开数据。"
+      ],
+      "body": "## 背景：一个注册表撑起整个生态\n\nnpm 最初是 Isaac Schlueter 在 2009 年前后为 Node.js 写的包管理器，后来独立成公司 npm, Inc.，运营全球最大的 JavaScript 包注册表。\n\n到 2020 年，npm 承载超过 130 万个包、每月约 750 亿次下载——它是 JavaScript 生态真正的底座。但底座本身很难赚钱：公共 registry 免费，收入主要来自 npm Pro、Teams 和 Enterprise 这些私有 registry 订阅，规模有限。\n\n## 交易：平台接手基础设施\n\n2020 年 3 月 16 日，GitHub 宣布收购 npm，价格未披露。GitHub 的公告给出三条承诺：公共 registry 永远免费；投资 registry 基础设施；继续支持 npm v7 CLI 与 Workspaces 等特性。交易在 2020 年 4 月完成。\n\n从战略上看，这更像一次“基础设施归位”：GitHub 已经托管了绝大多数 JavaScript 源码，把包注册表也拿进来，可以让“从 PR 到发布”的链路闭环。\n\n## 之后：免费承诺兑现，付费产品线消失\n\n2020 年 6 月 30 日，GitHub 通知 npm Enterprise 客户：产品将于 2021 年 6 月 30 日停止支持，建议迁移到 GitHub Packages。这是收购后直接的产品线收敛——公共 registry 留下了，私有 registry 生意被并进平台。\n\n对开发者来说，npm 变得更稳、更“基础设施化”；对 npm 公司来说，独立商业化到此结束。这个案例的看点不是价格，而是一个关键公共品如何在商业上失败、又被平台以非市场的方式维持。\n\n## 为什么值得研究\n\n- **关键基础设施的“公共品”困境。** 所有人都依赖它，但很少有人愿意为它付费；最终接手的往往是有其他收入来源的平台。\n- **免费承诺与商业可持续性。** “永远免费”能兑现，前提是收购方不靠它赚钱。\n- **产品线收敛是收购后的常态。** 付费产品被并入更大的平台，客户被迫迁移，这在开发者工具领域反复发生。"
+    },
+    {
+      "id": "teambition",
+      "name": "Teambition",
+      "tagline": "从腾讯战投到阿里全资，一支 90 后团队与它的协作工具",
+      "acquirer": "阿里巴巴",
+      "status": "completed",
+      "dealType": "acquisition",
+      "announcedAt": "2019-03-28T00:00:00.000Z",
+      "completedAt": "2019-03-28T00:00:00.000Z",
+      "amount": {
+        "disclosed": false,
+        "currency": "USD",
+        "note": "2018 年 11 月曾获阿里 1 亿美元投资；全资收购对价未披露，媒体常把两者混为一谈。"
+      },
+      "country": "中国",
+      "founded": 2011,
+      "categories": [
+        "协同办公",
+        "SaaS",
+        "中国企业服务"
+      ],
+      "license": "专有软件",
+      "evidence": "B",
+      "featured": true,
+      "summary": "国内最早一批协同办公 SaaS 之一。2018 年接受阿里 1 亿美元投资，四个月后阿里主体持股 100%；团队随后转向阿里云盘，创始人齐俊元于 2023 年离开阿里。",
+      "lastVerified": "2026-10-28T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "Teambition 被阿里巴巴全资收购，曾接受腾讯战略投资",
+          "url": "http://www.eeo.com.cn/2019/0328/351890.shtml",
+          "publisher": "经济观察网",
+          "date": "2019-03-28T00:00:00.000Z",
+          "type": "press",
+          "note": "引用天眼查工商变更记录，确认 100% 持股与齐俊元继续任执行董事。"
+        },
+        {
+          "title": "“90后”字节豆包PC端负责人齐俊元离职，曾任阿里云盘负责人",
+          "url": "https://stcn.com/article/detail/3481297.html",
+          "publisher": "证券时报",
+          "date": "2025-11-06T00:00:00.000Z",
+          "type": "press",
+          "note": "梳理 2011 年创业、融资、2019 年被阿里收购、阿里云盘与字节任职时间线。"
+        },
+        {
+          "title": "Teambition 官网",
+          "url": "https://www.teambition.com",
+          "publisher": "Teambition",
+          "type": "primary",
+          "note": "2026-10 访问正常，产品仍在运营。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2011-01-01T00:00:00.000Z",
+          "dateLabel": "2011 年",
+          "title": "齐俊元在大三期间推出 Teambition",
+          "detail": "面向中小团队的轻量协作工具，把任务、文件、日程和讨论放在同一个项目空间。",
+          "kind": "product",
+          "source": "https://stcn.com/article/detail/3481297.html"
+        },
+        {
+          "date": "2011-04-01T00:00:00.000Z",
+          "title": "上海汇翼信息科技有限公司成立",
+          "kind": "founding",
+          "source": "http://www.eeo.com.cn/2019/0328/351890.shtml"
+        },
+        {
+          "date": "2016-08-01T00:00:00.000Z",
+          "title": "接受腾讯产业共赢基金战略投资",
+          "kind": "funding",
+          "source": "http://www.eeo.com.cn/2019/0328/351890.shtml"
+        },
+        {
+          "date": "2018-11-01T00:00:00.000Z",
+          "title": "获阿里巴巴 1 亿美元投资",
+          "kind": "funding",
+          "source": "http://www.eeo.com.cn/2019/0328/351890.shtml"
+        },
+        {
+          "date": "2019-03-28T00:00:00.000Z",
+          "title": "阿里创投持股 100%，全资收购完成",
+          "detail": "杭州阿里巴巴创业投资管理有限公司入股运营主体，齐俊元仍任执行董事；对价未披露。",
+          "kind": "deal",
+          "source": "http://www.eeo.com.cn/2019/0328/351890.shtml"
+        },
+        {
+          "date": "2021-09-01T00:00:00.000Z",
+          "title": "阿里云盘正式运营，Teambition 网盘服务终止",
+          "detail": "原 Teambition 网盘用户数据合并迁移至阿里云盘。",
+          "kind": "shutdown",
+          "source": "https://stcn.com/article/detail/3481297.html"
+        },
+        {
+          "date": "2023-01-01T00:00:00.000Z",
+          "title": "创始人加入飞书，任产品副总裁",
+          "kind": "aftermath",
+          "source": "https://stcn.com/article/detail/3481297.html"
+        },
+        {
+          "date": "2024-01-01T00:00:00.000Z",
+          "title": "转岗字节 Flow 部门，负责豆包 PC 端",
+          "kind": "aftermath",
+          "source": "https://stcn.com/article/detail/3481297.html"
+        },
+        {
+          "date": "2025-11-06T00:00:00.000Z",
+          "title": "媒体报道齐俊元从字节离职",
+          "kind": "aftermath",
+          "source": "https://stcn.com/article/detail/3481297.html"
+        }
+      ],
+      "plans": [],
+      "checks": [],
+      "promises": [],
+      "openQuestions": [
+        "全资收购的具体对价始终未披露。",
+        "Teambition 目前由阿里/钉钉体系内的哪个团队负责，公开信息不足。",
+        "齐俊元离职后的去向有多种报道，尚未有本人或新公司的一手确认。",
+        "团队规模无公开记录：Teambition 被全资收购时的人数、以及并入阿里后的留存人数均无公开披露。"
+      ],
+      "body": "## 背景：校园里的协作工具\n\n齐俊元在上海交通大学读本科时开始创业。2011 年，他推出 Teambition——一个面向中小团队的轻量协作工具，把任务、文件、日程和讨论放进同一个项目空间。运营主体上海汇翼信息科技有限公司于 2011 年 4 月成立。\n\n在当时的国内协同办公市场，Teambition 是少数以产品体验见长的团队。2012 到 2015 年，它连续获得戈壁创投、IDG 资本、盘古创富和北极光的融资；2016 年 8 月，腾讯产业共赢基金战略投资入股。对一家独立 SaaS 公司来说，这几乎是一份标准答案式的履历。\n\n## 交易：先投资，后控股\n\n2018 年 11 月，Teambition 获得阿里巴巴 1 亿美元投资。四个月后，2019 年 3 月 28 日，杭州阿里巴巴创业投资管理有限公司入股，持股比例变为 100%，齐俊元继续担任上海汇翼执行董事。\n\n这里需要把两件事分开：**1 亿美元是 2018 年的投资，不是全资收购的对价**。收购金额从未披露，但不少报道把“1 亿美元”直接写成收购价。对一份以事实为核心的档案来说，这种混淆比“金额不详”更有害。\n\n从结果看，这是一条很典型的路径：平台先以战略投资进入，再在业务协同需要时转为控股。腾讯此前的战投并没有阻挡这笔交易，也说明少数股权投资对创始团队的去向几乎没有约束力。\n\n## 之后：产品留下，团队被重新编队\n\n收购完成后，齐俊元加入阿里，出任阿里云盘负责人，主导该产品研发。2021 年 9 月，阿里云盘正式运营；同月，原 Teambition 网盘服务终止，用户数据合并迁移。一个协作工具长出来的网盘能力，最终变成了阿里自己的消费级产品。\n\n2023 年 1 月，齐俊元离开阿里加入飞书，任产品副总裁，直接向 CEO 谢欣汇报；2024 年 1 月转岗至字节 Flow 部门，负责豆包 PC 端产品；2025 年 11 月，多家媒体报道其从字节离职。\n\nTeambition 本身仍在运营。截至 2026 年 10 月，官网可正常访问。但它已经不再是这家公司故事的中心——品牌保留，团队和增长叙事都换了轨道。\n\n## 为什么值得研究\n\n- **战略投资与收购之间没有防火墙。** 接受平台战略投资，往往意味着提前进入收购通道；这一点在 Teambition、以及后来的多起中国 To B 交易里反复出现。\n- **“投资额”和“收购价”是两个数字。** 媒体叙事倾向于把最大的那个数字安到交易上，档案必须逐条区分。\n- **被整合不等于失败。** 产品继续服务用户，团队被调去做更大的产品，创始人在平台内获得新角色。这是一种退出，也是一种转向，但很难用“成功/失败”二分。"
+    }
+  ],
+  "watchlist": [
+    {
+      "id": "affine",
+      "name": "AFFiNE",
+      "tagline": "从爆红的开源 Notion 替代品，到创始人离任与未兑现的 Apache 2.0",
+      "url": "https://affine.pro",
+      "status": "venture-backed",
+      "founded": 2022,
+      "founders": [
+        "贺嘉琛（JiaChen He，2026 年 5 月前任 CEO）",
+        "张驰（CTO）",
+        "王译锋（首席架构师）",
+        "魏伊培（COO）"
+      ],
+      "location": "新加坡（TOEVERYTHING PTE. LTD.）",
+      "license": "MIT + EE",
+      "licenseNotes": "除 packages/backend 与 packages/common/native 外为 MIT；后端采用 AFFiNE Enterprise Edition 许可，生产使用需要有效的 EE 订阅。2026-05-13 新任 CEO 宣布将“从 open-core 转向 Apache 2.0 的全开源仓库”，截至 2026-10-29 仓库仍为 MIT + EE 拆分，承诺尚未落地。",
+      "businessModel": "open-core SaaS：免费社区版与自托管、付费 Pro 云计划、Team/Enterprise（私有云、自托管、授权），以及 8.9 美元/月的 AI 附加包；另有 OEM/白标代码授权。",
+      "categories": [
+        "知识库",
+        "协作",
+        "开源"
+      ],
+      "summary": "AFFiNE 在 2022 年以开源 Notion/Miro 替代品的定位爆红，2023 年完成约千万美元 Pre-A。2026 年 5 月创始人贺嘉琛离任，新任 CEO 承诺转向 Apache 2.0，但截至 10 月尚未执行。",
+      "watchReasons": [
+        "它完整走过了“爆红开源 → open-core 变现 → 创始人离任”的弧线，是研究开源项目生命周期的样本。",
+        "新 CEO 承诺 Apache 2.0 却未落地，是检验“过渡期开源承诺”可信度的直接案例。",
+        "中文开发者社区对它的讨论密集，但大量说法缺少一手来源，适合做事实核对的示范。"
+      ],
+      "signals": [
+        {
+          "label": "归属状态",
+          "value": "独立经营，未发现收购；2026-05 管理层更替",
+          "source": "https://affine.pro/blog/next-chapter-of-affine"
+        },
+        {
+          "label": "融资",
+          "value": "约千万美元 Pre-A（2023-02），华创资本、红点中国、创新工场联合领投",
+          "source": "http://www.chinagrowthcapital.com/Index/article/id/1633"
+        },
+        {
+          "label": "治理",
+          "value": "创始人贺嘉琛离任去做 Bridge；Vincent Chen 接任 CEO"
+        },
+        {
+          "label": "许可",
+          "value": "MIT + EE 后端；Apache 2.0 迁移已宣布、未执行",
+          "source": "https://github.com/toeverything/AFFiNE/blob/canary/LICENSE"
+        },
+        {
+          "label": "规模（公司口径）",
+          "value": "68.3k GitHub stars、700 万+ 下载（2026-05）",
+          "source": "https://affine.pro/blog/next-chapter-of-affine"
+        }
+      ],
+      "featured": true,
+      "lastVerified": "2026-10-29T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "AFFiNE's Next Chapter",
+          "url": "https://affine.pro/blog/next-chapter-of-affine",
+          "publisher": "AFFiNE（Vincent Chen）",
+          "date": "2026-05-13T00:00:00.000Z",
+          "type": "primary",
+          "note": "创始人离任、CEO 更替、Apache 2.0 计划与路线图。"
+        },
+        {
+          "title": "开源软件 AFFiNE 完成 Pre-A 轮融资，华创资本联合领投",
+          "url": "http://www.chinagrowthcapital.com/Index/article/id/1633",
+          "publisher": "华创资本",
+          "date": "2023-02-14T00:00:00.000Z",
+          "type": "primary",
+          "note": "Pre-A 轮、投资方、新加坡主体与创始团队。"
+        },
+        {
+          "title": "AFFiNE LICENSE（canary 分支）",
+          "url": "https://github.com/toeverything/AFFiNE/blob/canary/LICENSE",
+          "publisher": "GitHub / Toeverything Pte. Ltd.",
+          "type": "primary",
+          "note": "确认 MIT + EE 的现状，Apache 2.0 尚未落地。"
+        },
+        {
+          "title": "AFFiNE 定价",
+          "url": "https://affine.pro/pricing",
+          "publisher": "AFFiNE",
+          "type": "primary",
+          "note": "Pro、AI 附加包与自托管/企业版定价。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2022-01-01T00:00:00.000Z",
+          "dateLabel": "2022 年",
+          "title": "AFFiNE 开源并快速获得关注",
+          "detail": "投资方称其 72 小时获得 1,000 stars、43 天达到 10,000 stars。",
+          "kind": "product",
+          "source": "http://www.chinagrowthcapital.com/Index/article/id/1633"
+        },
+        {
+          "date": "2023-02-14T00:00:00.000Z",
+          "title": "完成约千万美元 Pre-A 轮",
+          "detail": "华创资本、红点中国、创新工场联合领投，奇绩创坛跟投。",
+          "kind": "funding",
+          "source": "http://www.chinagrowthcapital.com/Index/article/id/1633"
+        },
+        {
+          "date": "2024-03-04T00:00:00.000Z",
+          "title": "AFFiNE AI 进入早期访问",
+          "kind": "product",
+          "source": "https://affine.pro/blog/affine-0-12-0-launch-week-day-3-early-access-affine-ai-self-host-upcoming-0-13-unveiled"
+        },
+        {
+          "date": "2025-02-17T00:00:00.000Z",
+          "title": "通过 SourceNext 进入日本零售渠道",
+          "detail": "日本经销商开始销售 AFFiNE 一年期许可与 AI 计划。",
+          "kind": "product",
+          "source": "https://sourcenext.co.jp/pressrelease_html/JS/2025/2025021701"
+        },
+        {
+          "date": "2026-05-13T00:00:00.000Z",
+          "title": "创始人离任，CEO 更替，宣布转向 Apache 2.0",
+          "detail": "贺嘉琛去做 agent-native 产品 Bridge；Vincent Chen 接任 CEO，承诺 Markdown 优先、BYOK 与全开源。",
+          "kind": "governance",
+          "source": "https://affine.pro/blog/next-chapter-of-affine"
+        }
+      ],
+      "plans": [],
+      "openQuestions": [
+        "2023 年 Pre-A 之后是否还有融资，缺少一手确认。",
+        "Pre-A 金额只有“千万美元”口径，精确数字未知。",
+        "Apache 2.0 是否会在 2026 年内落地，仍待观察。",
+        "社区关于“团队解散、只剩一名维护者”的说法无法核实，GitHub 显示仍在持续提交。"
+      ],
+      "body": "## 从爆红到 open-core\n\nAFFiNE 在 2022 年以“开源 Notion + Miro 替代品”的定位出现，投资方华创资本称它 72 小时获得 1,000 stars、43 天达到 10,000 stars。2023 年 2 月，它完成约千万美元 Pre-A 轮，华创资本、红点中国、创新工场联合领投。\n\n商业化走的是 open-core：编辑器 MIT，后端走 AFFiNE Enterprise Edition 许可，生产使用需要订阅；云版 Pro、团队版、企业版与 AI 附加包构成收入。这是开源项目常见的变现结构，也埋下了“哪些部分算开源”的争议。\n\n## 创始人离任与未兑现的承诺\n\n2026 年 5 月 13 日，创始人贺嘉琛宣布离任，去做 agent-native 产品 Bridge；Vincent Chen 接任 CEO。同一篇公告里，新 CEO 承诺把 AFFiNE 从 open-core 转向 Apache 2.0 的全开源仓库，并把 Markdown 作为一等文件格式、支持 BYOK 与 agent 互操作。\n\n截至 2026 年 10 月 29 日，仓库仍然是 MIT + EE 拆分。承诺已经宣布五个月，代码还没动。这不是说承诺一定不会兑现，而是提醒：**过渡期的开源承诺，需要用仓库状态来验证，而不是用公告语气来判断。**\n\n## 为什么值得观察\n\n- 它是一条完整的生命周期样本：爆红、融资、open-core、创始人离任、治理承诺。\n- 它是“承诺与执行之间时差”的活案例；档案会持续核对 Apache 2.0 是否落地。\n- 中文社区对它的讨论很多，但大量说法没有一手来源。把它放进观察名单，也是在做一次事实核对的示范。"
+    },
+    {
+      "id": "excalidraw",
+      "name": "Excalidraw",
+      "tagline": "完全 MIT 的手绘风白板，靠托管服务而不是许可证赚钱",
+      "url": "https://excalidraw.com",
+      "status": "independent",
+      "founded": 2020,
+      "founders": [
+        "Christopher Chedeau（2020 年创建）",
+        "David Luzar",
+        "Milos Vetesnik"
+      ],
+      "location": "捷克布尔诺（Excalidraw s.r.o.，2021 年 5 月注册）",
+      "license": "MIT",
+      "licenseNotes": "excalidraw.com 编辑器与 @excalidraw/excalidraw npm 包均为 MIT，未发现许可变更；商业托管产品 Excalidraw+ 是独立的专有服务。因为核心是 MIT 且可自托管，即使未来所有权变化，免费产品仍可继续存在。",
+      "businessModel": "免费 MIT 编辑器 + Excalidraw+ 订阅（6 美元/用户/月，按年计费），提供无限云端画布、访问控制、评论、演示、SOC 2 Type 2、更高 AI 额度与 MCP/REST API；免费版含每天 10 次 AI 请求与无限协作。",
+      "categories": [
+        "白板",
+        "开源",
+        "协作"
+      ],
+      "summary": "Excalidraw 是这份名单里直接的反例：编辑器完全 MIT、可自托管，公司只对托管层收费。它没有外部融资记录，却做到约 85 万月活（2024 年公司披露）与 13 万+ GitHub stars。",
+      "watchReasons": [
+        "它证明“MIT + 托管订阅”可以支撑一个数百万人使用的产品，而不需要改许可证。",
+        "没有融资记录、没有收购，是研究独立软件可持续性的干净样本。",
+        "中文、日文、韩文手绘字体的工程实现，说明小团队也能做长期基础设施级投入。"
+      ],
+      "signals": [
+        {
+          "label": "归属状态",
+          "value": "独立经营；未发现收购"
+        },
+        {
+          "label": "融资",
+          "value": "未发现外部融资记录"
+        },
+        {
+          "label": "许可",
+          "value": "MIT（编辑器与 npm 包），核心可自托管"
+        },
+        {
+          "label": "规模（公司披露）",
+          "value": "约 85 万月活、8.9 万 stars（2024 年）",
+          "source": "https://plus.excalidraw.com/blog/excalidraw-in-2024"
+        },
+        {
+          "label": "仓库",
+          "value": "13.4 万 stars（2026-10）",
+          "source": "https://github.com/excalidraw/excalidraw"
+        },
+        {
+          "label": "商业产品",
+          "value": "Excalidraw+，6 美元/用户/月（年付）",
+          "source": "https://plus.excalidraw.com/pricing"
+        }
+      ],
+      "featured": true,
+      "lastVerified": "2026-10-29T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "Excalidraw in 2024",
+          "url": "https://plus.excalidraw.com/blog/excalidraw-in-2024",
+          "publisher": "Excalidraw",
+          "date": "2025-01-09T00:00:00.000Z",
+          "type": "primary",
+          "note": "约 85 万月活、8.9 万 stars 与 2024 年功能回顾。"
+        },
+        {
+          "title": "excalidraw/excalidraw",
+          "url": "https://github.com/excalidraw/excalidraw",
+          "publisher": "GitHub",
+          "type": "data",
+          "note": "MIT 许可、13.4 万 stars、2026-10-28 仍有提交。"
+        },
+        {
+          "title": "Excalidraw+ 定价",
+          "url": "https://plus.excalidraw.com/pricing",
+          "publisher": "Excalidraw",
+          "type": "primary",
+          "note": "免费版限制、Plus 价格、SOC 2 与 AI 额度。"
+        },
+        {
+          "title": "Adding hand-drawn font for Chinese, Japanese, Korean",
+          "url": "https://plus.excalidraw.com/blog/adding-hand-drawn-font-for-chinese-japanese-korean",
+          "publisher": "Excalidraw",
+          "date": "2024-11-07T00:00:00.000Z",
+          "type": "primary",
+          "note": "CJK 手绘字体的工程实现（209 个分块、Web Worker 子集化）。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2020-01-01T00:00:00.000Z",
+          "dateLabel": "2020 年 1 月",
+          "title": "Christopher Chedeau 创建 Excalidraw",
+          "kind": "founding",
+          "source": "https://en.wikipedia.org/wiki/Excalidraw"
+        },
+        {
+          "date": "2021-05-01T00:00:00.000Z",
+          "dateLabel": "2021 年 5 月",
+          "title": "Excalidraw s.r.o. 在布尔诺注册",
+          "kind": "founding",
+          "source": "https://en.wikipedia.org/wiki/Excalidraw"
+        },
+        {
+          "date": "2024-11-07T00:00:00.000Z",
+          "title": "支持中文、日文、韩文手绘字体",
+          "kind": "product",
+          "source": "https://plus.excalidraw.com/blog/adding-hand-drawn-font-for-chinese-japanese-korean"
+        },
+        {
+          "date": "2025-01-09T00:00:00.000Z",
+          "title": "公布 2024 年数据：约 85 万月活",
+          "kind": "product",
+          "source": "https://plus.excalidraw.com/blog/excalidraw-in-2024"
+        },
+        {
+          "date": "2026-09-30T00:00:00.000Z",
+          "title": "发布演示动画与便签工具",
+          "kind": "product",
+          "source": "https://plus.excalidraw.com/changelog"
+        }
+      ],
+      "plans": [],
+      "openQuestions": [
+        "没有公开融资记录，但 Excalidraw s.r.o. 是否有外部股东未知。",
+        "收入与人数未披露。",
+        "2026 年 Miro 被 Bending Spoons 收购的传闻与 Excalidraw 无关，未找到一手证据。"
+      ],
+      "body": "## 一个 MIT 白板如何赚钱\n\nExcalidraw 由 Christopher Chedeau 在 2020 年创建，随后由捷克的 David Luzar、Milos Vetesnik 接手运营，2021 年 5 月在布尔诺注册公司。它的编辑器、npm 包全部 MIT，任何人都可以自托管、修改、再发布。\n\n商业产品是 Excalidraw+：6 美元/用户/月的托管订阅，卖的是云端画布、权限、评论、演示、合规与更高的 AI 额度。换句话说，它卖的不是代码，而是“不用自己运维”的那部分。\n\n这个模式的效果不错。公司披露 2024 年 excalidraw.com 约有 85 万月活、8.9 万 GitHub stars；到 2026 年 10 月，仓库有 13.4 万 stars，仍在持续提交。它没有融资记录，也没有被收购。\n\n## 为什么值得观察\n\n- 它是“MIT + 托管订阅”可行性的有力证据：不改许可证也能养活产品。\n- 它说明开源项目的护城河可以是运维、合规与协作体验，而不是代码封锁。\n- 如果它某天被收购，MIT 核心仍然可以被分叉——这是许可证给用户的真正保险。"
+    },
+    {
+      "id": "obsidian",
+      "name": "Obsidian",
+      "tagline": "不融资、不追踪、不强制付费的笔记软件",
+      "url": "https://obsidian.md",
+      "status": "bootstrapped",
+      "founded": 2020,
+      "founders": [
+        "Erica Xu（联合创始人、COO）",
+        "Shida Li（联合创始人、CTO）",
+        "Steph Ango（CEO，后加入）"
+      ],
+      "location": "加拿大（Dynalist Inc.，安大略省法域）",
+      "license": "专有（免费使用）",
+      "licenseNotes": "应用闭源，但个人、商业、非营利、教育与政府用途均可免费使用。2025-02-20 之前，工作用途需要购买 Commercial 许可；当天 Obsidian 宣布“对工作免费”，商业许可变成自愿支持。插件与主题由社区开发，使用各自许可。",
+      "businessModel": "应用免费，付费来自可选服务：Sync 4 美元/用户/月（年付）、Publish 8 美元/站点/月、25 美元一次性 Catalyst、50 美元/用户/年的可选商业许可，以及企业版；无广告、无需账号、无遥测。",
+      "categories": [
+        "笔记",
+        "知识管理",
+        "本地优先"
+      ],
+      "summary": "Obsidian 由 Erica Xu 与 Shida Li 在 2020 年创立，团队不到十人，没有外部融资，靠用户付费的 Sync 与 Publish 服务维持。2025 年 2 月，它把商业许可改成自愿购买。",
+      "watchReasons": [
+        "它是“用户付费养活产品”的参考案例：没有 VC，没有广告，没有把用户数据当产品。",
+        "2025 年把商业许可改为可选，是一次罕见的“不强制收费”实验。",
+        "本地文件 + 闭源应用的组合，说明可持续性不必以开源为前提。"
+      ],
+      "signals": [
+        {
+          "label": "归属状态",
+          "value": "独立经营；公司称“100% 由用户支持，没有投资人”",
+          "source": "https://obsidian.md/about"
+        },
+        {
+          "label": "融资",
+          "value": "未发现外部融资"
+        },
+        {
+          "label": "团队",
+          "value": "不到 10 人（About 页列 8 人）",
+          "source": "https://obsidian.md/about"
+        },
+        {
+          "label": "收入结构",
+          "value": "Sync 与 Publish 订阅、Catalyst、可选商业许可"
+        },
+        {
+          "label": "许可",
+          "value": "专有软件，免费使用；商业许可自 2025-02-20 起可选",
+          "source": "https://obsidian.md/blog/free-for-work/"
+        }
+      ],
+      "featured": true,
+      "lastVerified": "2026-10-29T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "About Obsidian",
+          "url": "https://obsidian.md/about",
+          "publisher": "Obsidian",
+          "type": "primary",
+          "note": "创始人、团队规模与“100% 由用户支持”的表述。"
+        },
+        {
+          "title": "Obsidian is now free for work",
+          "url": "https://obsidian.md/blog/free-for-work/",
+          "publisher": "Obsidian",
+          "date": "2025-02-20T00:00:00.000Z",
+          "type": "primary",
+          "note": "商业许可改为可选，以及超过 1 万家组织的使用情况。"
+        },
+        {
+          "title": "Pricing",
+          "url": "https://obsidian.md/pricing",
+          "publisher": "Obsidian",
+          "type": "primary",
+          "note": "Sync、Publish、Catalyst 与商业许可定价；无遥测。"
+        },
+        {
+          "title": "Obsidian Sync audits",
+          "url": "https://obsidian.md/blog/cure53-tob-sync-audits/",
+          "publisher": "Obsidian",
+          "date": "2026-05-13T00:00:00.000Z",
+          "type": "primary",
+          "note": "Cure53 与 Trail of Bits 对 Sync 的第三方审计。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2020-01-01T00:00:00.000Z",
+          "dateLabel": "2020 年",
+          "title": "Erica Xu 与 Shida Li 创立 Obsidian",
+          "kind": "founding",
+          "source": "https://obsidian.md/about"
+        },
+        {
+          "date": "2025-02-20T00:00:00.000Z",
+          "title": "商业许可改为自愿购买",
+          "detail": "“Obsidian is now free for work”；旧条款被认为“令人困惑”。",
+          "kind": "license",
+          "source": "https://obsidian.md/blog/free-for-work/"
+        },
+        {
+          "date": "2026-05-13T00:00:00.000Z",
+          "title": "公布 Sync 的第三方安全审计",
+          "detail": "Cure53（2024-10）与 Trail of Bits（2025-12）的审计结果公开，问题均已修复。",
+          "kind": "product",
+          "source": "https://obsidian.md/blog/cure53-tob-sync-audits/"
+        }
+      ],
+      "plans": [],
+      "openQuestions": [
+        "收入与估值未披露；网传“3.5 亿美元估值”没有一手来源。",
+        "当前确切人数不清楚，About 页列 8 人。",
+        "是否发生过老股转让未知；公司自称没有投资人。"
+      ],
+      "body": "## 不融资的公司\n\nObsidian 由 Erica Xu 与 Shida Li 在 2020 年创立，团队不到十人，没有外部融资。公司的自我描述很直接：“100% 由用户支持，而不是投资人。”\n\n产品是本地优先的 Markdown 笔记库：文件存在你自己的磁盘上，应用本身闭源但免费，没有广告、不要求账号、不做遥测。收入来自可选服务——Sync 同步、Publish 发布、一次性的 Catalyst 许可，以及商业许可。\n\n这套组合在“开源才可信”的叙事之外，提供了另一种答案：用户愿意为“不被打扰、不被锁定”付费。\n\n## 2025：商业许可变成可选\n\n2025 年 2 月 20 日，Obsidian 宣布“对工作免费”：此前公司用途需要购买 50 美元/用户/年的 Commercial 许可，此后变成自愿支持。官方理由很坦率——旧条款让人困惑，而且真正愿意付钱的人不会因为“不强制”就跑掉。\n\n这是一次罕见的实验：**不靠许可证执法，也能收费。** 它是否成立，取决于产品是否真的让人愿意付钱，而不是取决于合同条款。\n\n## 为什么值得观察\n\n- 它证明小团队、无融资、无广告的软件可以长期存在。\n- 它把“收费”建立在价值而非限制上，是研究软件商业模式的好样本。\n- 如果它未来被收购，本地文件格式会让用户迁移成本较低——这是产品设计带来的另一种保险。"
+    },
+    {
+      "id": "raycast",
+      "name": "Raycast",
+      "tagline": "从 macOS 启动器长成订阅套件，然后被 AI 成本追上",
+      "url": "https://raycast.com",
+      "status": "venture-backed",
+      "founded": 2020,
+      "founders": [
+        "Thomas Paul Mann（CEO）",
+        "Petr Nikolaev（CTO）"
+      ],
+      "location": "英国（Raycast Technologies Ltd.，远程团队）",
+      "license": "专有",
+      "licenseNotes": "应用闭源。扩展基于公开的 React/TypeScript API 开发，通过 Raycast Store 分发；应用本身未发生许可变更。",
+      "businessModel": "免费核心启动器 + 订阅：Pro 10 美元/月（500 AI credits）、Pro+ 20 美元/月（3,000）、Max 50 美元/月（7,500），另有 Teams 与 Enterprise。2026-09-10 起 AI 改为按量计费，订阅价格不变；可自带 Claude/ChatGPT 订阅或 API key。",
+      "categories": [
+        "启动器",
+        "生产力",
+        "macOS"
+      ],
+      "summary": "Thomas Paul Mann 与 Petr Nikolaev 在 2020 年通过 YC 创立 Raycast，累计融资至少 4,770 万美元。2026 年它完成底层重写，并把 AI 从固定额度改成按量计费——因为推理成本已经无法用订阅费覆盖。",
+      "watchReasons": [
+        "它展示了“独立风格产品 + VC 融资”之后的经济学：用户增长、平台扩张，然后是成本压力。",
+        "2026 年的 AI 定价改革，是“按席位订阅”被推理成本击穿的清晰案例。",
+        "团队公开人数、定价理由与薪酬政策，可核对性较高。"
+      ],
+      "signals": [
+        {
+          "label": "归属状态",
+          "value": "独立经营，未发现收购；YC W20",
+          "source": "https://www.raycast.com/careers"
+        },
+        {
+          "label": "累计融资",
+          "value": "至少 4,770 万美元（Seed 270 万 + A 轮 1,500 万 + B 轮 3,000 万）",
+          "source": "https://www.raycast.com/blog/series-b"
+        },
+        {
+          "label": "团队",
+          "value": "39 人，全远程（2026 年公司披露）",
+          "source": "https://www.raycast.com/careers"
+        },
+        {
+          "label": "定价",
+          "value": "Pro 10 / Pro+ 20 / Max 50 美元每月；AI 按 credits 计费",
+          "source": "https://www.raycast.com/pricing"
+        },
+        {
+          "label": "平台",
+          "value": "macOS、Windows（2025 公测）、iOS（2025）",
+          "source": "https://www.raycast.com/careers"
+        }
+      ],
+      "featured": false,
+      "lastVerified": "2026-10-29T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "Raycast Pricing",
+          "url": "https://www.raycast.com/pricing",
+          "publisher": "Raycast",
+          "type": "primary",
+          "note": "Pro / Pro+ / Max 计划与 AI credits 额度。"
+        },
+        {
+          "title": "$30M Series B to bring Raycast to new platforms",
+          "url": "https://www.raycast.com/blog/series-b",
+          "publisher": "Raycast",
+          "date": "2024-09-25T00:00:00.000Z",
+          "type": "primary",
+          "note": "B 轮金额、平台计划与公司起点。"
+        },
+        {
+          "title": "Why We're Changing How Raycast AI Is Priced",
+          "url": "https://www.raycast.com/blog/changing-how-raycast-ai-is-priced",
+          "publisher": "Raycast",
+          "date": "2026-09-10T00:00:00.000Z",
+          "type": "primary",
+          "note": "credits 计费、各档额度、自带 key 政策与成本理由。"
+        },
+        {
+          "title": "The New Raycast",
+          "url": "https://www.raycast.com/blog/the-new-raycast",
+          "publisher": "Raycast",
+          "date": "2026-05-14T00:00:00.000Z",
+          "type": "primary",
+          "note": "2026 年 5 月的底层重写、自建索引与听写功能。"
+        },
+        {
+          "title": "Careers at Raycast",
+          "url": "https://www.raycast.com/careers",
+          "publisher": "Raycast",
+          "type": "primary",
+          "note": "团队人数、远程设置与产品时间线。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2020-01-01T00:00:00.000Z",
+          "dateLabel": "2020 年",
+          "title": "通过 Y Combinator W20 创立",
+          "kind": "founding",
+          "source": "https://www.raycast.com/careers"
+        },
+        {
+          "date": "2021-11-30T00:00:00.000Z",
+          "title": "完成 1,500 万美元 A 轮",
+          "kind": "funding",
+          "source": "https://www.raycast.com/blog/series-a"
+        },
+        {
+          "date": "2024-09-25T00:00:00.000Z",
+          "title": "完成 3,000 万美元 B 轮",
+          "detail": "Atomico 领投，用于扩展到 Windows 与 iOS。",
+          "kind": "funding",
+          "source": "https://www.raycast.com/blog/series-b"
+        },
+        {
+          "date": "2025-04-30T00:00:00.000Z",
+          "title": "推出 iOS 版",
+          "kind": "product",
+          "source": "https://www.raycast.com/blog/raycast-for-ios"
+        },
+        {
+          "date": "2026-05-14T00:00:00.000Z",
+          "title": "完成底层重写（The New Raycast）",
+          "detail": "自建磁盘索引替代 Spotlight，加入系统级听写与新的快捷键录制。",
+          "kind": "product",
+          "source": "https://www.raycast.com/blog/the-new-raycast"
+        },
+        {
+          "date": "2026-09-10T00:00:00.000Z",
+          "title": "AI 改为按量计费",
+          "detail": "订阅价格不变，加入 credits 额度，新增 50 美元/月的 Max；官方称无法再补贴推理成本。",
+          "kind": "product",
+          "source": "https://www.raycast.com/blog/changing-how-raycast-ai-is-priced"
+        }
+      ],
+      "plans": [],
+      "openQuestions": [
+        "未发现 C 轮及以后融资；估值与收入未披露。",
+        "种子轮的确切日期未知。",
+        "2026 年出现的 Glaze 与 Raycast 的关系，现有公告没有说清。"
+      ],
+      "body": "## 从启动器到订阅套件\n\n2020 年，Thomas Paul Mann 与 Petr Nikolaev 通过 Y Combinator 创立 Raycast，把 macOS 的 Spotlight 替换成一个可扩展的命令面板。此后它完成 270 万美元种子轮、1,500 万美元 A 轮与 3,000 万美元 B 轮，团队 39 人，全远程。\n\n产品线也从启动器扩到 Windows、iOS、AI 与团队协作。它的扩展生态是关键的护城河：开发者用 React/TypeScript 写扩展，通过 Store 分发，用户换平台的成本被抬高。\n\n## AI 成本改写了定价\n\n2026 年 9 月，Raycast 把 AI 从“订阅内含固定额度”改成 credits 按量计费：Pro 500、Pro+ 3,000、新增 Max 7,500（50 美元/月）；想自带 Claude/ChatGPT 订阅或 API key，也必须先订阅付费计划。\n\n官方解释很直接：无法像大模型实验室那样补贴推理成本。这句话点出了 2026 年一批“AI 功能订阅制”产品的共同困境——按席位收固定费用，却要按 token 付变动成本。\n\n## 为什么值得观察\n\n- 它展示了独立风格产品被 VC 加速后的典型路径：扩张平台、增加功能、然后被成本结构反噬。\n- AI 计费改革是一个可复用的观察点：当推理成本超过订阅收入，产品会先改价，还是先砍功能？\n- 它仍然独立。如果未来出现收购意向，扩展生态与订阅用户会是估值核心。"
+    },
+    {
+      "id": "tldraw",
+      "name": "tldraw",
+      "tagline": "把“无限画布”做成 SDK，两年内两次改写许可证",
+      "url": "https://tldraw.dev",
+      "status": "venture-backed",
+      "founded": 2022,
+      "founders": [
+        "Steve Ruiz"
+      ],
+      "location": "英国伦敦",
+      "license": "tldraw license",
+      "licenseNotes": "SDK 源码公开，但按 OSI 定义不算开源。当前许可只允许在开发环境使用；生产环境需要试用、商业或爱好许可，并通过客户端 license key 校验。v3.0.0（2024-09-13）采用“带水印即可免费商用”的模式；v4.0.0（2025-09-18）改为“默认仅限开发 + 许可密钥 + 100 天试用”。示例与 starter kit 为 MIT。",
+      "businessModel": "按价值定价的年度商业 SDK 许可（含多人同步 tldraw sync），另有 100 天试用、非商业爱好许可与创业公司折扣；tldraw.com 免费白板作为旗舰演示。",
+      "categories": [
+        "白板",
+        "协作 SDK",
+        "开发者工具"
+      ],
+      "summary": "Steve Ruiz 在 2022 年创立 tldraw，把无限画布做成可嵌入的 React SDK。公司累计融资约 1,470 万美元，并在 2024 与 2025 年两次收紧许可证，试图把免费采用者转化为付费客户。",
+      "watchReasons": [
+        "它是“源码可见、生产收费”模式清晰的活体实验：代码可读，但不能自由发布。",
+        "创始人长期 build in public，公开收入、客户与许可变更理由，可核对性高。",
+        "许可证在两年内两次收紧，说明“开源获客 + 商业许可”的张力真实存在。"
+      ],
+      "signals": [
+        {
+          "label": "归属状态",
+          "value": "独立经营，未发现收购；VC 支持"
+        },
+        {
+          "label": "累计融资",
+          "value": "约 1,470 万美元（Seed 270 万 + 扩展 200 万 + A 轮 1,000 万）",
+          "source": "https://tldraw.dev/blog/announcing-tldraw-series-a"
+        },
+        {
+          "label": "收入披露",
+          "value": "首个销售年 license 收入“略低于 100 万美元”（2025-04 公司披露）",
+          "source": "https://tldraw.dev/blog/announcing-tldraw-series-a"
+        },
+        {
+          "label": "团队规模",
+          "value": "近 20 人，分布于伦敦、欧洲与美国（2025-04）",
+          "source": "https://tldraw.dev/blog/announcing-tldraw-series-a"
+        },
+        {
+          "label": "许可性质",
+          "value": "source-available，非 OSI 开源；生产使用需付费"
+        }
+      ],
+      "featured": true,
+      "lastVerified": "2026-10-29T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "tldraw raises $10M to build the infinite canvas for developers",
+          "url": "https://tldraw.dev/blog/announcing-tldraw-series-a",
+          "publisher": "tldraw",
+          "date": "2025-04-09T00:00:00.000Z",
+          "type": "primary",
+          "note": "A 轮金额、领投方、首年 license 收入、客户名单与团队规模。"
+        },
+        {
+          "title": "Announcing tldraw SDK 4.0",
+          "url": "https://tldraw.dev/blog/tldraw-sdk-4-0",
+          "publisher": "tldraw",
+          "date": "2025-09-18T00:00:00.000Z",
+          "type": "primary",
+          "note": "改为“仅限开发环境 + 许可密钥”的许可变更与理由。"
+        },
+        {
+          "title": "License",
+          "url": "https://tldraw.dev/community/license",
+          "publisher": "tldraw",
+          "type": "primary",
+          "note": "当前许可机制：开发默认、试用/商业/爱好许可、客户端密钥校验。"
+        },
+        {
+          "title": "Announcing tldraw's seed round",
+          "url": "https://tldraw.dev/blog/announcing-tldraws-seed-round",
+          "publisher": "tldraw",
+          "date": "2022-11-30T00:00:00.000Z",
+          "type": "primary",
+          "note": "270 万美元种子轮与投资方。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2022-11-30T00:00:00.000Z",
+          "title": "完成 270 万美元种子轮",
+          "detail": "Lux Capital 领投，Amplify Partners 等参投。",
+          "kind": "funding",
+          "source": "https://tldraw.dev/blog/announcing-tldraws-seed-round"
+        },
+        {
+          "date": "2023-11-22T00:00:00.000Z",
+          "title": "完成 200 万美元内部扩展轮",
+          "kind": "funding",
+          "source": "https://tldraw.dev/blog/tldraw-raised-another-2m"
+        },
+        {
+          "date": "2024-09-13T00:00:00.000Z",
+          "title": "SDK v3.0.0 引入水印式许可",
+          "detail": "展示“Made with tldraw”水印即可免费商用，付费商业许可用于移除水印。",
+          "kind": "license",
+          "source": "https://tldraw.dev/releases/v3.0.0"
+        },
+        {
+          "date": "2025-04-09T00:00:00.000Z",
+          "title": "完成 1,000 万美元 A 轮",
+          "detail": "Lux Capital 与 Definition 投资；披露首年 license 收入略低于 100 万美元。",
+          "kind": "funding",
+          "source": "https://tldraw.dev/blog/announcing-tldraw-series-a"
+        },
+        {
+          "date": "2025-09-18T00:00:00.000Z",
+          "title": "SDK 4.0 收紧许可，生产使用必须持证",
+          "kind": "license",
+          "source": "https://tldraw.dev/blog/tldraw-sdk-4-0"
+        },
+        {
+          "date": "2026-05-06T00:00:00.000Z",
+          "title": "SDK 5.0 发布，许可条款未再变化",
+          "kind": "product",
+          "source": "https://tldraw.dev/releases/v5.0.0"
+        }
+      ],
+      "plans": [],
+      "openQuestions": [
+        "A 轮后的 ARR、估值与人数未披露。",
+        "2026 年没有新融资或被收购的一手信号。",
+        "6.0 是否会再次收紧许可，目前无法判断。"
+      ],
+      "body": "## 从 build in public 到许可证工程\n\nSteve Ruiz 在 2022 年创立 tldraw，把无限画布做成一个可嵌入的 React SDK：开发者不必从零实现多人同步、笔迹渲染和画布交互，只要接入组件，就能在自己的产品里放一块白板。\n\ntldraw 是 build in public 的典型样本：融资公告里写收入（首个销售年 license 收入“略低于 100 万美元”），公布客户名字（ClickUp、Padlet、Craft、Jam），把团队规模和许可变更的理由都摊开写。它的消费者版 tldraw.com 免费，充当旗舰演示。\n\n## 两次改写许可证\n\n2024 年 9 月，SDK 3.0 引入“水印换免费”的模式：只要展示“Made with tldraw”水印，商用也可以免费；想移除水印就买商业许可。\n\n一年后，4.0 把这个模式整个换掉：SDK 默认只允许在开发环境使用，生产环境必须购买试用、商业或爱好许可，并通过 license key 在客户端校验。官方博客给出的理由很直白——“命运和资本都要求 tldraw 成为一个可持续的项目”。\n\n这就是“源码可见、生产收费”的核心张力：代码在 GitHub 上人人可读，但把它发布到生产环境需要付费。对学习者友好，对商业使用严格。\n\n## 为什么值得观察\n\n- 它是“source-available”模式清晰的活体实验：既不是 MIT 的慷慨，也不是闭源的隔绝。\n- 许可证在两年内两次收紧，说明免费采用与商业收入之间的转换并不顺滑。\n- 如果这种模式成立，它会给独立 SDK 作者提供一条不依赖被收购的路径；如果不成立，它会成为“开源获客”叙事的反例。"
+    },
+    {
+      "id": "zed",
+      "name": "Zed",
+      "tagline": "用 GPL 开源编辑器，赌一个托管服务的未来",
+      "url": "https://zed.dev",
+      "status": "venture-backed",
+      "founded": 2021,
+      "founders": [
+        "Nathan Sobo（CEO）",
+        "Antonio Scandurra",
+        "Max Brunsfeld"
+      ],
+      "location": "美国（Zed Industries, Inc.，全远程）",
+      "license": "GPL-3.0 + Apache-2.0",
+      "licenseNotes": "2024-01-24 之前闭源，当天宣布全部开源：编辑器 GPL、服务端组件 AGPL、GPUI 采用 Apache 2.0。当前仓库 README 表述为“主要为 GPL-3.0-or-later，标注处为 Apache-2.0”；根目录提供 LICENSE-GPL 与 LICENSE-APACHE，已不见 AGPL 文件。",
+      "businessModel": "open-core + 托管服务：免费 Personal（自带 API key 或外部 agent）、Pro 10 美元/月（无限 edit predictions，含 5 美元 token 后按量计费）、Business 30 美元/席位/月（组织级 AI 策略、数据治理、RBAC）；另在构建基于 DeltaDB 的付费托管服务。",
+      "categories": [
+        "代码编辑器",
+        "协作",
+        "开源"
+      ],
+      "summary": "Zed 由 Atom 的核心团队在 2021 年创立，2024 年把编辑器整体开源为 GPL，2025 年完成 3,200 万美元 B 轮，2026 年发布 1.0 并推出 Delta 公测。它想证明 copyleft 编辑器也能靠托管服务养活。",
+      "watchReasons": [
+        "它是“copyleft + 托管服务”在风险投资规模下直接的实验。",
+        "2024 年开源时承诺“专有代码只占极小部分”，这句话值得长期核对。",
+        "Delta/DeltaDB 试图替代 PR 工作流的一部分，是在 GitHub 腹地做生意。"
+      ],
+      "signals": [
+        {
+          "label": "归属状态",
+          "value": "独立经营，未发现收购；VC 支持"
+        },
+        {
+          "label": "累计融资",
+          "value": "超过 4,200 万美元（A 轮 1,000 万 + B 轮 3,200 万）",
+          "source": "https://zed.dev/blog/sequoia-backs-zed"
+        },
+        {
+          "label": "许可",
+          "value": "GPL-3.0-or-later 编辑器；Apache-2.0 组件",
+          "source": "https://zed.dev/blog/zed-is-now-open-source"
+        },
+        {
+          "label": "产品节点",
+          "value": "2024-01 开源；2026-04-29 发布 1.0",
+          "source": "https://zed.dev/blog/zed-1-0"
+        },
+        {
+          "label": "商业",
+          "value": "Pro 10 美元/月；Business 30 美元/席位/月",
+          "source": "https://zed.dev/pricing"
+        }
+      ],
+      "featured": false,
+      "lastVerified": "2026-10-29T00:00:00.000Z",
+      "sources": [
+        {
+          "title": "Zed is now open source",
+          "url": "https://zed.dev/blog/zed-is-now-open-source",
+          "publisher": "Zed Industries",
+          "date": "2024-01-24T00:00:00.000Z",
+          "type": "primary",
+          "note": "开源日期、GPL/AGPL/Apache 的许可划分与变现思路。"
+        },
+        {
+          "title": "Sequoia Backs Zed's Vision for Collaborative Coding",
+          "url": "https://zed.dev/blog/sequoia-backs-zed",
+          "publisher": "Zed Industries",
+          "date": "2025-08-20T00:00:00.000Z",
+          "type": "primary",
+          "note": "B 轮 3,200 万美元、累计融资超过 4,200 万、DeltaDB 计划。"
+        },
+        {
+          "title": "Zed is 1.0",
+          "url": "https://zed.dev/blog/zed-1-0",
+          "publisher": "Zed Industries",
+          "date": "2026-04-29T00:00:00.000Z",
+          "type": "primary",
+          "note": "1.0 发布与 Business 版。"
+        },
+        {
+          "title": "Delta public beta",
+          "url": "https://zed.dev/blog/delta-public-beta",
+          "publisher": "Zed Industries",
+          "date": "2026-09-16T00:00:00.000Z",
+          "type": "primary",
+          "note": "Delta 进入公测，基于 DeltaDB 的 operation-level review。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2021-01-01T00:00:00.000Z",
+          "dateLabel": "2021 年",
+          "title": "Zed 项目启动",
+          "detail": "据 2026 年 4 月的 1.0 公告，团队已构建五年；按此回溯为 2021 年，具体月份未披露。",
+          "kind": "founding",
+          "source": "https://zed.dev/blog/zed-1-0"
+        },
+        {
+          "date": "2023-03-17T00:00:00.000Z",
+          "title": "完成 1,000 万美元 A 轮",
+          "detail": "Redpoint Ventures 领投。",
+          "kind": "funding",
+          "source": "https://www.goodwinlaw.com/en/news-and-events/news/2023/03/03_17-redpoint-ventures-leads-zed-10-million-series-a"
+        },
+        {
+          "date": "2024-01-24T00:00:00.000Z",
+          "title": "编辑器整体开源",
+          "detail": "GPL 编辑器、AGPL 服务端、Apache 2.0 的 GPUI；承诺专有代码只占极小部分。",
+          "kind": "license",
+          "source": "https://zed.dev/blog/zed-is-now-open-source"
+        },
+        {
+          "date": "2025-08-20T00:00:00.000Z",
+          "title": "完成 3,200 万美元 B 轮",
+          "detail": "Sequoia 领投，资金用于 DeltaDB。",
+          "kind": "funding",
+          "source": "https://zed.dev/blog/sequoia-backs-zed"
+        },
+        {
+          "date": "2026-04-29T00:00:00.000Z",
+          "title": "发布 1.0 与 Zed for Business",
+          "kind": "product",
+          "source": "https://zed.dev/blog/zed-1-0"
+        },
+        {
+          "date": "2026-09-16T00:00:00.000Z",
+          "title": "Delta 进入公测",
+          "kind": "product",
+          "source": "https://zed.dev/blog/delta-public-beta"
+        }
+      ],
+      "plans": [],
+      "openQuestions": [
+        "累计融资只有“超过 4,200 万美元”的口径，A 轮之前的种子轮没有一手记录。",
+        "估值与收入未披露。",
+        "服务端组件是否仍为 AGPL，仓库根目录已不见 AGPL 文件，需进一步核对。"
+      ],
+      "body": "## 开源编辑器，靠托管服务赚钱\n\nZed 由 Atom 的核心团队在 2021 年创立。2024 年 1 月，它把全部代码开源：编辑器用 GPL，服务端组件用 AGPL，UI 框架 GPUI 用 Apache 2.0。官方给出的变现思路是——编辑器免费，协作与 AI 服务收费，“专有代码只占极小部分”。\n\n这是 copyleft 商业化的经典赌注：代码可以被分叉，但托管、协作与 AI 的运营能力不能。GPL 也意味着任何分叉都必须回馈代码，社区不至于被锁死。\n\n## 1.0 与 Delta 的赌注\n\n2025 年 8 月，Zed 完成 3,200 万美元 B 轮，累计融资超过 4,200 万美元，资金用于 DeltaDB——一个基于 CRDT 的 operation-level 版本控制系统。2026 年 4 月，Zed 发布 1.0 与 Business 版；9 月，Delta 进入公测，试图用“操作级评审”替代 PR 的一部分工作流。\n\n这是一家在 GitHub 的腹地做生意的公司：编辑器是入口，协作与版本控制才是收入。\n\n## 为什么值得观察\n\n- 它检验“GPL + 托管服务”能否支撑风险投资级别的增长。\n- 2024 年“专有代码只占极小部分”的承诺，可以用仓库与产品结构来核对。\n- 如果 Delta 失败，Zed 可能会更依赖 AI 订阅；如果成功，它会成为“编辑器公司挑战 GitHub”的样本。"
+    }
+  ]
+}
