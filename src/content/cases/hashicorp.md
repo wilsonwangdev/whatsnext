@@ -83,6 +83,10 @@ timeline:
     kind: deal
     source: https://newsroom.ibm.com/2025-02-27-ibm-completes-acquisition-of-hashicorp,-creates-comprehensive,-end-to-end-hybrid-cloud-platform
 checks:
+  - date: 2024-01-31
+    label: 维护团队规模（交割前）
+    value: 2,200 人（2024 财年，SEC 10-K 口径；官方 about 页同口径）
+    source: https://stockanalysis.com/stocks/hcp/employees/
   - date: 2026-10-28
     label: Terraform 许可证
     value: BUSL 1.1（收购后未回到 MPL）
@@ -96,7 +100,7 @@ promises:
     status: pending
     source: https://www.hashicorp.com/en/blog/hashicorp-officially-joins-the-ibm-family
 openQuestions:
-  - 收购后 HashiCorp 的裁员与团队变动没有完整公开数据。
+  - 收购后的团队规模没有公开数据：IBM 未单独披露 HashiCorp 的员工数，交割前口径为 2,200 人（2024-01-31），交割后无对应数字，因此无法计算净变化。
   - OpenTofu 在企业市场的实际采用规模缺少权威统计。
   - IBM 是否会对 Terraform 的许可策略再做调整，尚无信号。
 ---
