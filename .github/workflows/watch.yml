@@ -34,7 +34,15 @@ jobs:
       - name: Append team activity signals
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/watch-team.mjs >> report.md
+        run: |
+          node scripts/watch-team.mjs > team.md
+          # 空输出必须显式失败：静默失败会让周报少一整个板块，而 CI 依然是绿的
+          if ! grep -q "维护活跃度" team.md; then
+            echo "::error::维护活跃度采集失败，脚本输出为空"
+            cat team.md
+            exit 1
+          fi
+          cat team.md >> report.md
 
       - name: Ensure watch label
         env:

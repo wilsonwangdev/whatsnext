@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * PostClose fact check — 站点事实的内置校验器。
+ * What's Next fact check — 站点事实的内置校验器。
  *
  * 目标：让「时间、人数、金额」这类最容易出错的数字，在进入构建前就被检查。
  * 它不判断叙事是否精彩，只判断：
@@ -516,7 +516,7 @@ if (AS_JSON) {
   const yellow = (s) => (process.stdout.isTTY ? `\x1b[33m${s}\x1b[0m` : s);
   const dim = (s) => (process.stdout.isTTY ? `\x1b[2m${s}\x1b[0m` : s);
 
-  console.log(bold(`PostClose fact check · ${entries.length} 个条目${CHECK_LINKS ? ` · ${checkedLinks} 条链接` : ''}`));
+  console.log(bold(`What's Next fact check · ${entries.length} 个条目${CHECK_LINKS ? ` · ${checkedLinks} 条链接` : ''}`));
   for (const issue of issues) {
     if (issue.level === 'info') continue;
     const color = issue.level === 'error' ? red : yellow;
