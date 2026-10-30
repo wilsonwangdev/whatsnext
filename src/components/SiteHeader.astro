@@ -70,7 +70,7 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
     const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
     root.dataset.theme = next;
     try {
-      localStorage.setItem('postclose-theme', next);
+      localStorage.setItem('whatsnext-theme', next);
     } catch {
       /* ignore */
     }

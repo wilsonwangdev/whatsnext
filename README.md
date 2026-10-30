@@ -1,11 +1,13 @@
-# PostClose · 交割之后
+# What's Next · 下一个是谁
 
-[![verify](https://github.com/wilsonwangdev/postclose/actions/workflows/verify.yml/badge.svg)](https://github.com/wilsonwangdev/postclose/actions/workflows/verify.yml)
-[站点](https://wilsonwangdev.github.io/postclose/)
+[![verify](https://github.com/wilsonwangdev/whatsnext/actions/workflows/verify.yml/badge.svg)](https://github.com/wilsonwangdev/whatsnext/actions/workflows/verify.yml)
+[站点](https://wilsonwangdev.github.io/whatsnext/)
 
-> 开发者软件、开源项目与团队归属的公开档案：记录收购与团队加入的事实、公开承诺，以及之后真正发生了什么。
+> 软件产品的代际更替档案：谁退场，谁接手，下一个是谁。
 
-收购公告只讲愿景。这个项目想记录愿景之后的部分：产品是否还在、许可证有没有变、团队去了哪里、当初的承诺兑现了多少。
+被收购、归于平静、就此无声——三种结局都值得留档。这个项目记录每一代开发工具的结局，也记录正在崛起的挑战者：谁在填补留下的位置，凭的是什么。
+
+收购公告只讲愿景。这里记录愿景之后的部分：产品是否还在、许可证有没有变、团队还剩多少人、当初的承诺兑现了多少。
 
 每条核心事实都链接到公开来源，并注明核验日期；拿不准的地方会写进「待核验的问题」，而不是补一个看起来合理的答案。
 
@@ -13,8 +15,8 @@
 
 - **8 个案例**：Teambition → 阿里巴巴、Netless → 声网、Bun → Anthropic、Deno → Cloudflare、Dioxus → Cognition、HashiCorp → IBM、Figma → Adobe（已终止）、npm → GitHub。
 - **6 个观察对象**：tldraw、AFFiNE、Excalidraw、Obsidian、Raycast、Zed。
-- **可筛选的目录**、案例详情页（交易事实 / 承诺核对 / 来源 / 时间线）、全局时间线、[核验状态](https://wilsonwangdev.github.io/postclose/status)、方法与贡献规范。
-- **机器可读导出**：[`/cases.json`](https://wilsonwangdev.github.io/postclose/cases.json)、RSS。
+- **可筛选的目录**、案例详情页（交易事实 / 承诺核对 / 来源 / 时间线）、全局时间线、[核验状态](https://wilsonwangdev.github.io/whatsnext/status)、方法与贡献规范。
+- **机器可读导出**：[`/cases.json`](https://wilsonwangdev.github.io/whatsnext/cases.json)、RSS。
 - 每条案例带 **证据等级**（A/B/C）与 **最后核验日期**。
 - **内置事实核验技能**：`.agents/skills/fact-check/` + `scripts/verify-facts.mjs`，构建前自动检查日期、金额、人数与来源。
 
@@ -80,11 +82,11 @@ src/
 | `evidence` | A：双方一手来源；B：单方或权威媒体；C：仅二手报道 |
 | `timeline` | 只记录已发生的事件；只有年份时用 `dateLabel` 标注精度 |
 | `plans` | 已公布但尚未发生的日期；标注 `announced` / `derived` 与来源 |
-| `checks` | 某个时点的状态核查（如许可证现状），不混入时间线 |
+| `checks` | 某个时点的状态核查（如许可证现状、维护团队规模），不混入时间线 |
 | `promises` | 公告里的可检验承诺及兑现情况 |
 | `openQuestions` | 明确写出还不知道什么 |
 
-完整字段说明见 [`src/content.config.ts`](src/content.config.ts) 与站点的 [`/method`](https://postclose.dev/method) 页面。
+完整字段说明见 [`src/content.config.ts`](src/content.config.ts) 与站点的 [`/method`](https://wilsonwangdev.github.io/whatsnext/method) 页面。
 
 ## 事实核验（内置技能）
 
@@ -112,13 +114,13 @@ src/
 
 ## 部署
 
-站点已部署在 **<https://wilsonwangdev.github.io/postclose/>**（GitHub Pages，`gh-pages` 分支）。
+站点已部署在 **<https://wilsonwangdev.github.io/whatsnext/>**（GitHub Pages，`gh-pages` 分支）。
 
 ```bash
 pnpm deploy:pages
 ```
 
-部署使用子路径 `/postclose/`，因此 `astro.config.mjs` 通过 `BASE_PATH` 设置 base，站内链接统一走 `src/lib/paths.ts` 的 `withBase()`。
+部署使用子路径 `/whatsnext/`，因此 `astro.config.mjs` 通过 `BASE_PATH` 设置 base，站内链接统一走 `src/lib/paths.ts` 的 `withBase()`。
 
 换域名或仓库时修改：
 
@@ -129,7 +131,7 @@ pnpm deploy:pages
 
 ## 贡献
 
-欢迎提名案例、纠错、补充后续。流程与证据要求见 [CONTRIBUTING.md](CONTRIBUTING.md)，或直接读站点上的 [`/contribute`](https://postclose.dev/contribute)。
+欢迎提名案例、纠错、补充后续。流程与证据要求见 [CONTRIBUTING.md](CONTRIBUTING.md)，或直接读站点上的 [`/contribute`](https://wilsonwangdev.github.io/whatsnext/contribute)。
 
 ## 许可
 

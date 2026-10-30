@@ -48,7 +48,7 @@ const ogImage = new URL(withBase('/og.png'), Astro.site ?? SITE.url).href;
       // 在首次绘制前确定主题，避免闪白
       (() => {
         try {
-          const stored = localStorage.getItem('postclose-theme');
+          const stored = localStorage.getItem('whatsnext-theme');
           const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
           const theme = stored || (prefersDark ? 'dark' : 'light');
           document.documentElement.dataset.theme = theme;

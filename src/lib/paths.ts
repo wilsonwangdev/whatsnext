@@ -1,5 +1,5 @@
 /**
- * 站点可能部署在子路径（例如 GitHub Pages 的 /postclose/）。
+ * 站点可能部署在子路径（例如 GitHub Pages 的 /whatsnext/）。
  * 所有站内链接都必须经过 withBase，避免根路径写死。
  */
 export const BASE = import.meta.env.BASE_URL;
