@@ -24,7 +24,7 @@ execFileSync('pnpm', ['build'], {
   env: { ...process.env, SITE_URL: site, BASE_PATH: base },
 });
 
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'postclose-pages-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'whatsnext-pages-'));
 try {
   fs.cpSync('dist', tmp, { recursive: true });
   if (!fs.existsSync(path.join(tmp, '.nojekyll'))) {
@@ -33,7 +33,7 @@ try {
   const git = (args) => execFileSync('git', args, { cwd: tmp, stdio: 'inherit' });
   git(['init', '-b', 'gh-pages']);
   git(['add', '-A']);
-  git(['-c', 'user.name=PostClose Deploy', '-c', 'user.email=deploy@postclose.local', 'commit', '-m', `deploy ${new Date().toISOString()}`]);
+  git(['-c', 'user.name=WhatsNext Deploy', '-c', 'user.email=deploy@whatsnext.local', 'commit', '-m', `deploy ${new Date().toISOString()}`]);
   git(['push', '--force', remote, 'gh-pages']);
   const url = new URL(base.replace(/\/$/, '/'), site).href;
   console.log(`[deploy] pushed gh-pages → ${url}`);

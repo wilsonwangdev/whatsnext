@@ -21,7 +21,7 @@ const ROOT = process.cwd();
 const AS_JSON = process.argv.includes('--json');
 const TOKEN = process.env.GITHUB_TOKEN;
 const SITE = process.env.SITE_URL ?? 'https://wilsonwangdev.github.io';
-const BASE = process.env.BASE_PATH ?? '/postclose/';
+const BASE = process.env.BASE_PATH ?? '/whatsnext/';
 const TODAY = new Date();
 TODAY.setUTCHours(0, 0, 0, 0);
 
@@ -61,7 +61,7 @@ async function request(url, { timeout = 15_000, headers = {} } = {}, attempt = 0
       redirect: 'follow',
       signal: controller.signal,
       headers: {
-        'User-Agent': 'PostClose-Watch/1.0 (+https://github.com/wilsonwangdev/postclose)',
+        'User-Agent': 'WhatsNext-Watch/1.0 (+https://github.com/wilsonwangdev/whatsnext)',
         ...headers,
       },
     });
