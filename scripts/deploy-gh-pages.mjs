@@ -2,11 +2,11 @@
 /**
  * 构建并部署到 GitHub Pages 的 gh-pages 分支。
  *
- * 默认目标：https://wilsonwangdev.github.io/postclose/
+ * 默认目标：https://wilsonwangdev.github.io/whatsnext/
  * 可用环境变量覆盖：
  *   SITE_URL   站点源（默认 https://wilsonwangdev.github.io）
- *   BASE_PATH  子路径（默认 /postclose/）
- *   GH_REPO    仓库（默认 wilsonwangdev/postclose）
+ *   BASE_PATH  子路径（默认 /whatsnext/）
+ *   GH_REPO    仓库（默认 wilsonwangdev/whatsnext）
  */
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -14,8 +14,8 @@ import os from 'node:os';
 import path from 'node:path';
 
 const site = process.env.SITE_URL ?? 'https://wilsonwangdev.github.io';
-const base = process.env.BASE_PATH ?? '/postclose/';
-const repo = process.env.GH_REPO ?? 'wilsonwangdev/postclose';
+const base = process.env.BASE_PATH ?? '/whatsnext/';
+const repo = process.env.GH_REPO ?? 'wilsonwangdev/whatsnext';
 const remote = `git@github.com:${repo}.git`;
 
 console.log(`[deploy] building with site=${site} base=${base}`);
