@@ -28,8 +28,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SITE_URL: https://wilsonwangdev.github.io
-          BASE_PATH: /postclose/
+          BASE_PATH: /whatsnext/
         run: node scripts/watch.mjs > report.md
+
+      - name: Append team activity signals
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/watch-team.mjs >> report.md
 
       - name: Ensure watch label
         env:

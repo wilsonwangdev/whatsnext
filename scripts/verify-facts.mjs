@@ -432,7 +432,7 @@ async function checkLinks(entries) {
           method: 'GET',
           redirect: 'follow',
           signal: controller.signal,
-          headers: { 'User-Agent': 'PostCloseFactCheck/1.0 (+https://github.com/wilsonwangdev/postclose)' },
+          headers: { 'User-Agent': 'WhatsNextFactCheck/1.0 (+https://github.com/wilsonwangdev/whatsnext)' },
         });
         clearTimeout(timer);
         results.push({ url, file, status: res.status });

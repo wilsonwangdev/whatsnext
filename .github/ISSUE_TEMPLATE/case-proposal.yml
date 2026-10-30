@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         感谢提名。请尽量填写可核验的信息；不确定的字段留空，不要猜测。
-        收录标准见 [/method](https://postclose.dev/method)。
+        收录标准见 [/method](https://wilsonwangdev.github.io/whatsnext/method)。
 
   - type: input
     id: target
